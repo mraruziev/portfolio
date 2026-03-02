@@ -4966,4 +4966,101 @@ html.no-csstransitions .s-hero__content {
     .ss-copyright {
         font-size: 1.4rem;
     }
+
+
+
+    /* ===========================
+   ASU maroon + gold overrides
+   Paste this at the end of your CSS
+   =========================== */
+
+:root {
+    --asu-maroon: #8C1D40;
+    --asu-gold:   #FFC627;
+}
+
+/* Section headings (keeps existing layout, just changes color) */
+.section-title h3,
+.item-title,
+.s-portfolio__list .item-title,
+.s-services .item-title {
+    color: var(--asu-maroon) !important;
+}
+
+/* Big display heading inline spans (if you wrapped parts in <span>) */
+.display-1 span,
+.section-title h3 span,
+h1.display-1,
+h1.display-1 span {
+    color: var(--asu-maroon) !important;
+}
+
+/* Highlighted inline phrases — use gold */
+.highlight-conference {
+    color: var(--asu-gold) !important;
+    font-weight: 600;               /* Slight emphasis without changing HTML */
+    text-decoration: none;          /* keep it clean */
+    transition: color .18s ease;
+}
+
+/* Make anchors (links) adopt gold to stand out on dark background */
+a {
+    color: var(--asu-gold);
+    transition: color .18s ease;
+}
+a:hover, a:focus {
+    color: white;
+}
+
+/* Emphasize strong text (numbers, funding, hours) using gold when inline */
+p strong, .item-title strong, li strong {
+    color: var(--asu-gold);
+    font-weight: 700;
+}
+
+/* Small decorative underline for item titles (non-intrusive, keeps original spacing) */
+.item-title {
+    position: relative;
+    padding-bottom: 0.6rem;
+}
+.item-title::after {
+    content: "";
+    display: block;
+    width: 3.6rem;
+    height: 0.28rem;
+    background: linear-gradient(90deg, var(--asu-maroon) 0%, var(--asu-gold) 100%);
+    border-radius: 2px;
+    margin-top: 0.6rem;
+    opacity: .95;
+}
+
+/* Make the section-number background (big faint number) a subtle maroon tint instead of gray */
+.section-title::before {
+    color: rgba(140,29,64,0.12) !important; /* very light maroon */
+}
+
+/* Ensure blockquote / pre / code readability if they contain highlighted spans */
+blockquote p .highlight-conference,
+pre .highlight-conference,
+code .highlight-conference {
+    color: var(--asu-gold);
+}
+
+/* Accessibility: ensure focus outlines remain visible on gold links */
+a:focus {
+    outline: 3px solid rgba(255,198,39,0.18);
+    outline-offset: 2px;
+}
+
+/* Responsive tweak: keep underline width proportional on smaller screens */
+@media screen and (max-width: 600px) {
+    .item-title::after { width: 2.4rem; height: 0.22rem; }
+}
+
+/* Optional - if you ever used .highlight-conference in image captions, ensure contrast */
+figcaption .highlight-conference {
+    color: var(--asu-gold);
+}
+
+/* End of ASU maroon + gold overrides */
 }
