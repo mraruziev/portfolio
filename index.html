@@ -5,9 +5,9 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Asadbek Ruziev — Robotics Engineer</title>
-    <meta name="description" content="Portfolio of Asadbek Ruziev, Robotics Engineering student at Arizona State University. Mechatronics, embedded systems, and robotics projects.">
-    <meta name="author" content="Asadbek Ruziev">
+    <title>Asadbek</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <!-- mobile specific metas
     ================================================== -->
@@ -31,15 +31,14 @@
     <link rel="manifest" href="site.webmanifest">
 
     <style>
-        /* AOS animation reset (kept from original) */
-        [data-aos] {
-            opacity: 1 !important;
-            transform: none !important;
-            visibility: visible !important;
-            transition: none !important;
-        }
-    </style>
-
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    transition: none !important;
+  }
+</style>
+    
 </head>
 
 <body id="top">
@@ -62,33 +61,31 @@
 
         <div class="s-header__logo">
             <a href="index.html">
-                <img src="images/logo.svg" alt="Asadbek Ruziev — Home">
+                <img src="images/logo.svg" alt="Homepage">
             </a>
         </div>
 
         <div class="s-header__content">
-
+    
             <nav class="s-header__nav-wrap">
                 <ul class="s-header__nav">
                     <li><a class="smoothscroll" href="#hero" title="Intro">Home</a></li>
                     <li><a class="smoothscroll" href="#about" title="About">About</a></li>
-                    <li><a class="smoothscroll" href="#experience" title="Experience">Experience</a></li>
-                    <li><a class="smoothscroll" href="#projects" title="Projects">Projects</a></li>
-                    <li><a class="smoothscroll" href="#gcsp" title="GCSP">GCSP</a></li>
+                    <li><a class="smoothscroll" href="#services" title="Services">Experiences</a></li>
+                    <li><a class="smoothscroll" href="#portfolio" title="Works">Projects</a></li>
                 </ul>
-            </nav>
+            </nav> <!-- end s-header__nav-wrap -->
 
-            <a href="https://drive.google.com/file/d/1eFCs0x0Bv4wzjU0PiHy80_BNsl4Z9TmT/view?usp=sharing"
-               class="btn btn--primary btn--small" target="_blank" rel="noopener">
+            <a href="https://drive.google.com/file/d/1eFCs0x0Bv4wzjU0PiHy80_BNsl4Z9TmT/view?usp=sharing" class="btn btn--primary btn--small">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
                 Resume
             </a>
 
-        </div>
+        </div> <!-- end header-content -->
 
         <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
 
-    </header>
+    </header> <!-- end s-header -->
 
 
     <!-- hero
@@ -110,18 +107,25 @@
                     Innovator <br>
                     Problem Solver
                     </p>
-
+    
                     <footer>
                         <div class="s-hero__content-social">
-                            <a href="#0" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                            <a href="#0" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#0" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                            <a href="#0" aria-label="Dribbble"><i class="fab fa-dribbble" aria-hidden="true"></i></a>
+                            <a href="#0"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#0"><i class="fab fa-dribbble" aria-hidden="true"></i></a>
                         </div>
                     </footer>
                 </div>
 
             </div>
+        </div>
+
+        <div class="s-hero__video">
+            <a class="s-hero__video-link" href="https://player.vimeo.com/video/117310401?color=01aef0&amp;title=0&amp;byline=0&amp;portrait=0" data-lity="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 12l-18 12v-24z"/></svg>
+                <span class="s-hero__video-text">Play Video</span>
+            </a>
         </div>
 
         <div class="s-hero__scroll">
@@ -130,7 +134,7 @@
             </a>
         </div>
 
-    </section>
+    </section> <!-- end s-hero -->
 
 
     <!-- about
@@ -154,7 +158,7 @@
                 </h1>
 
                 <p class="lead" data-aos="fade-up">
-                   Mechatronics and Robotics Engineer with focus on designing and building robotic systems, embedded systems. As a student at Arizona State University, I have gained hands-on experience in robotics through coursework, projects and engineering clubs. I am passionate about creating innovative solutions that leverage robotics to solve problems that matter.
+                   Mechatronics and Robotics Engineer with focus on designing and building robotic systems, embedded systems. As a student at Arizona State University, I have gained hands-on experience in robotics through coursework, projects an engineering clubs. I am passionate about creating innovative solutions that leverage robotics to solve problems that matter.
                 </p>
             </div>
 
@@ -166,598 +170,774 @@
         <div class="row block-large-1-2 block-tab-full s-about__process item-list">
             <div class="column item item-process" data-aos="fade-up">
                 <h3 class="item-title">Skills</h3>
-                <ul class="skill-list">
-                    <li><strong>Soft skills:</strong> Teamwork &amp; Collaboration, Problem-solving, Organizational skills, Creativity, Entrepreneurial mindset</li>
-                    <li><strong>Micro-Controllers:</strong> Arduino IDE, Microchip PIC, ESP32, Infineon PsOC, Raspberry Pi</li>
-                    <li><strong>Languages &amp; Frameworks:</strong> Python, C/C++, HTML, MATLAB &amp; Simulink, SOLIDWORKS, Fusion 360, GD&amp;T, schematics and PCBs in KiCad and Cadence</li>
-                    <li><strong>Lab instrumentation:</strong> Oscilloscopes, soldering, multimeters, waveform generators, laser-cutting, drilling, vacuum forming, metalworking, milling</li>
-                </ul>
+                <p>
+                •	Soft skills: Teamwork & Collaboration, Problem-solving, Organizational skills, Creativity, Entrepreneurial mindset <br>
+                •	Micro-Controller: Arduino IDE, Microchip PIC, ESP32, Infineon PsOC, Raspberry Pi <br>
+                •	Language, Frameworks: Python, C/C++, HTML, MATLAB & Simulink, SOLIDWORKS, Fusion 360, GD&T, schematics and PCBs at KiCad and Cadence. <br>
+                •	Lab instrumentation: Oscilloscopes, soldering, multimeters, waveform generators, laser-cutting, soldering, drilling, vacuum forming, metalworking, milling
+
+                </p>
             </div>
             <div class="column item item-process" data-aos="fade-up">
                 <h3 class="item-title">Competitions during school</h3>
-                <ul class="achievement-list">
-                    <li><span class="rank">1st Place</span> International IT-Planet Olympiad — Best representing team from Uzbekistan (hosted in Russia)</li>
-                    <li><span class="rank">Semifinalist</span> "Unlimited Possibilities" IT-Planet World Olympiad</li>
-                    <li><span class="rank">1st Place</span> Technoways all-Uzbek contest — $3,000 funding + laptop</li>
-                    <li><span class="rank">3rd Place</span> International Startup Weekend by USAID — $2,400, represented Uzbekistan in finals</li>
-                    <li><span class="rank">1st Place</span> International Robotics Challenge Uzbekistan stage / 8th in the world — IRC 2019</li>
-                    <li><span class="rank">1st Place ×2</span> One Million Uzbek Coders contest — $1,000</li>
-                    <li><span class="rank">1st Place</span> All-Uzbek IT Ideathon Youth Forum 2021 by IT Park Uzbekistan</li>
-                    <li><span class="rank">Finalist</span> International Challenge MeOut hackathon (Germany)</li>
-                    <li><span class="rank">3rd Place ×3</span> National Robot Uz 2020, Robot Uz 2021</li>
-                    <li><span class="rank">3rd Place</span> Tech of Youth Republic robotics challenge</li>
-                    <li><span class="rank">2nd Place</span> All-Uzbek robotics Youth Forum olympiad</li>
-                    <li><span class="rank">3rd Place</span> National Future Skills Uzbekistan IT &amp; Robotics Olympiad</li>
-                    <li><span class="rank">1st Place</span> Republic IT Ideathon in Youth Forum of Uzbekistan — won a laptop</li>
-                    <li><span class="rank">1st Place</span> National Intellect Olympiad 2020 — won a TV</li>
-                    <li><span class="rank">1st Place</span> "Al-Khwarizmi's Generation" tech contest (won among university students as a high schooler)</li>
-                    <li><span class="rank">1st Place</span> National Uzbek "I'm Creator" contest</li>
-                    <li><span class="rank">Finalist</span> Open Data Challenge Online Hackathon 2020</li>
-                    <li>Completed Udacity Frontend Development track 2020</li>
-                    <li><span class="rank">1st Place</span> Pitchday — IT Entrepreneurship course by IT Park Uzbekistan 2020</li>
-                    <li><span class="rank">1st &amp; 2nd Place</span> "My Army My Pride" creative makers contest — $300; built custom military rover</li>
-                    <li><span class="rank">1st Place</span> "8th March — Prize for Mom" English/Math olympiad (as a middle schooler vs. 30+ college students)</li>
-                </ul>
+                <p>
+                • 1st Place — international IT-Planet Olympiad - Best representing institution's team from Uzbekistan - hosted in Russia. <br>
+                • Semifinalist — "Unlimited Possibilities" IT-Planet World Olympiad, got a chance for finals in Russia. <br>
+                • 1st Place champion — Technoways all-Uzbek contest, funding of 3000$, laptop. <br>
+                • 3rd Place — International Startup Weekend by USAID - 2400$ represented my country in the final. <br>
+                • 1st Place — in the International Robotics Challenge Uzbekistan stage, 8th place in the world stage - IRC 2019 <br>
+                • 1st Place champion for 2 times — One Million Uzbek Coders contest - $1000 <br>
+                • 1st Place — all-Uzbek IT Ideathon Youth forum 2021 by IT Park Uzbekistan <br>
+                • Finalist — International Challenge MeOut hackathon - Germany company hosted online <br>
+                • 3rd place for 3 times — National Robot Uz 2020, Robot Uz 2021 robotics competition <br>
+                • 3rd Place — the Tech of Youth Republic robotics challenge. <br>
+                • 2nd Place — all-Uzbek robotics Youth forum olympiad <br>
+                • 3rd Place — National Future Skills Uzbekistan IT and Robotics Olympiad by MITC, IT Park, Youth Union <br>
+                • 1st Place — Republic IT Ideathon in the Youth Forum of Uzbekistan by IT Park Uzbekistan - won a laptop <br>
+                • 1st Place — National Intellect Olympiad 2020 by Tashkent city gov. : won TV <br>
+                • 1st Place — 'Al Kharazmi's generation' tech contest by MITC, TUIT (Won among University students as a high school student) <br>
+                • 1st Place winner — national Uzbek "I'm creator" contest <br>
+                • Finalist — Open Data Challenge Online hackathon 2020 <br>
+                • Successfully completed Udacity Frontend development track 2020 <br>
+                • 1st Place — Pitchday of IT Entrepreneurship online course by IT Park Uzbekistan 2020 <br>
+                • 1st Place and 2nd Place — 2 nominations of "My army my proud"  creative makers contest: 300$. Built custom millitary rover <br>
+                • 1st Place — the "8th March — prize for mom" contest, won English/math olympiad among 30+ college students as a middle school student <br>
+                </p>
             </div>
             <div class="column item item-process" data-aos="fade-up">
                 <h3 class="item-title">Competitions in college</h3>
-                <ul class="achievement-list">
-                    <li>AIAA International Design / Build / Fly (DBF 2024) — Air Devils</li>
-                    <li><span class="rank">"Best Dressed" Award</span> Sun Devil Smackdown — Combat Ready Robotics ASU</li>
-                    <li>Participant — National Havoc Robot League</li>
-                </ul>
+                <p>
+                • AIAA International  Design/Build/Fly contest (DBF 2024) @ Air Devils <br>
+                • "Best dressed" award at Sun Devil Smackdown @ Combat Ready Robotics ASU <br>
+                • Participant @ National Havoc Robot League 
+
+                </p>
+            </div>
+            <div class="column item item-process" data-aos="fade-up">
+                <h3 class="item-title">Launch</h3>
+                <p>
+                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
+                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
+                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
+                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
+                </p>
             </div>
         </div>
 
-    </section>
+    </section> <!-- end s-about -->
+
+<!-- Work Experience section (fixed, original text fully preserved) -->
+<section id="services" class="s-services">
+
+  <div class="row">
+    <div class="column large-12">
+      <div class="section-title" data-num="02" data-aos="fade-up">
+        <h3 class="h6">Work Experience</h3>
+      </div>
+    </div>
+
+    <div class="column large-6 w-900-stack">
+      <h1 class="display-1" data-aos="fade-up">
+        My Positions
+      </h1>
+    </div>
+
+    <div class="column large-6 w-900-stack">
+      <p class="lead" data-aos="fade-up">
+        Robotics Student with experience of working on robotic and embedded systems, machinning tools, Skilled in CAD modelling, circuit design, and programming microcontrollers, passionate about advancing
+        Robotics and science.
+      </p>
+    </div>
+  </div>
 
 
-    <!-- experience
+    <!-- UGTA / EGR 101 -->
+  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
+    <!-- Left Column: Text -->
+    <div class="column large-6 w-900-stack s-about__intro-text">
+      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">Undergraduate Teaching Assistant (UGTA)</h3>
+      <p style="color:#FFC627; font-weight:500;">August 2024 - December 2024 || EGR 101 class - Fulton Schools of Engineering, Arizona State University</p>
+      <p data-aos="fade-up">
+        As a <span style="color:#FFC627; font-weight:600;">Teacher Assistant</span> for 
+        <span style="color:#FFC627; font-weight:600;">EGR 101</span> at the 
+        <span style="color:#FFC627; font-weight:600;">Fulton Schools of Engineering</span>, 
+        I supported Dr. Daniel Frank by assisting students with foundational 
+        engineering coursework and hands-on design projects. I led regular 
+        <span style="color:#FFC627; font-weight:600;">office hours</span> where I guided students 
+        in building and testing <span style="color:#FFC627; font-weight:600;">catapult projects</span> 
+        and developing introductory <span style="color:#FFC627; font-weight:600;">Arduino</span> systems.
+        Through structured guidance, troubleshooting, and iterative design feedback, 
+        students demonstrated strong performance in both their 
+        <span style="color:#FFC627; font-weight:600;">mid-semester</span> and 
+        <span style="color:#FFC627; font-weight:600;">final projects</span>, successfully meeting 
+        technical requirements and design objectives.
+      </p>
+    </div>
+
+    <!-- Right Column: Image -->
+    <div class="column large-6 w-900-stack s-about__photo-block">
+      <figure>
+        <img src="images/portfolio/TA.jpeg" alt="Research setup" style="width: 100%; height: auto;" />
+      </figure>
+    </div>
+  </div>
+
+  <!-- Senator – Government Operations Chair -->
+  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse">
+    <div class="column large-6 w-900-stack s-about__intro-text">
+      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">
+        Senator – Government Operations Chair
+      </h3>
+      <p style="color:#FFC627; font-weight:500;">Sep 2023 – Apr 2025 || Undergraduate Student Government, ASU</p>
+
+      <p data-aos="fade-up">
+        As an elected <span style="color:#FFC627; font-weight:600;">Undergraduate Student Government Senator</span>,
+        I represented the student body by actively advocating for student needs through
+        <span style="color:#FFC627; font-weight:600;">policy development</span>, governance, and direct campus engagement.
+        I drafted and supported <span style="color:#FFC627; font-weight:600;">5 bills and 4 resolutions</span> focused on
+        improving student life, collaborating closely with university administration and fellow senators
+        to implement sustainable, data-informed solutions.
+        <br><br>
+        I served on key committees including
+        <span style="color:#FFC627; font-weight:600;">Government Operations</span> and
+        <span style="color:#FFC627; font-weight:600;">Appropriations</span>, where I helped oversee and vote on an
+        appropriations <span style="color:#FFC627; font-weight:600;">budget exceeding $125,000</span> for student clubs
+        and campus events, contributing to transparent resource allocation and campus-wide initiatives.
+      </p>
+    </div>
+
+    <div class="column large-6 w-900-stack s-about__photo-block">
+      <figure>
+        <img src="images/portfolio/usg.png" alt="Tutoring session image" style="width: 100%; height: auto;" />
+      </figure>
+    </div>
+  </div>
+
+  
+
+
+  <!-- Fulton Ambassadors -->
+  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse">
+    <div class="column large-6 w-900-stack s-about__intro-text">
+      <h3 class="item-title"  data-aos="fade-up" style="color:#8C1D40;">Ambassador and Co-tour Director @ Fulton Ambassadors</h3>
+      <p style="color:#FFC627; font-weight:500;">January 2024 - December 2024 || ASU Fulton Schools of Engineering</p> 
+      <p  data-aos="fade-up">
+        Fulton Ambassadors is para-professional organisation that represents 
+        Ira A. Fulton Schools of Engineering before the donors and industry partners.
+        As a Co-tour director for Fulton Ambassadors, I collaborated closely with fellow members
+        and the Executive Board, I played a key role in planning and executing campus tours
+        for prospective students and their families. This involved <span style="color:#FFC627; font-weight:600;">coordinating logistics, organizing
+        tour schedules, and ensuring a seamless and informative experience for visitors</span>. Additionally,
+        I actively participated in recruitment efforts, representing the Fulton Ambassadors at events and
+        sharing firsthand insights into the college experience at Fulton Engineering.
+      </p>
+    </div>
+
+    <div class="column large-6 w-900-stack s-about__photo-block">
+      <figure>
+        <img src="images/portfolio/fulton_ambassadors.jpg" alt="Eboard image" style="width: 100%; height: auto;" />
+      </figure>
+    </div>
+  </div>
+
+  <!-- Classroom Support – Technology Consultant -->
+  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse">
+    <div class="column large-6 w-900-stack s-about__intro-text">
+      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">
+        Classroom Support – Technology Consultant
+      </h3>
+      <p style="color:#FFC627; font-weight:500;">May 2023 – Present || ASU Enterprise Technology</p>
+
+      <p data-aos="fade-up">
+        I provided classroom technology support across campus by conducting routine checks of
+        <span style="color:#FFC627; font-weight:600;">Zoom-enabled classrooms</span> and responding to live support calls
+        to troubleshoot <span style="color:#FFC627; font-weight:600;">audio-visual</span> and connectivity issues.
+        I assisted faculty and staff with real-time problem resolution, ensuring minimal disruption
+        to instruction and campus operations.
+        <br><br>
+        I coordinated <span style="color:#FFC627; font-weight:600;">equipment monitoring and maintenance</span> to support
+        seamless daily classroom operations, and delivered on-demand training for
+        <span style="color:#FFC627; font-weight:600;">university-endorsed software and hardware</span>, improving user
+        proficiency and reliability of instructional technology.
+      </p>
+    </div>
+
+    <div class="column large-6 w-900-stack s-about__photo-block">
+      <figure>
+        <img src="images/portfolio/TCjobPoly.jpg" alt="Passport Pic" style="width: 100%; height: auto;" />
+      </figure>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- Project Experience section (ALL projects combined) -->
+<section id="projects" class="s-services">
+
+  <div class="row">
+    <div class="column large-12">
+      <div class="section-title" data-num="02" data-aos="fade-up">
+        <h3 class="h6"><span style="color:#8C1D40;">Project Experience</span></h3>
+      </div>
+    </div>
+
+    <div class="column large-6 w-900-stack">
+      <h1 class="display-1" data-aos="fade-up" style="color:#8C1D40;">
+        Projects & Builds
+      </h1>
+    </div>
+
+    <div class="column large-6 w-900-stack">
+      <p class="lead" data-aos="fade-up">
+        Robotics student focused on embedded systems, mechatronics integration, and control.
+        Experienced with CAD modeling, circuit design, microcontrollers, and hands-on prototyping.
+      </p>
+    </div>
+  </div>
+
+  <!-- 1) Bluetooth-Controlled Electric Skateboard -->
+  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
+    <div class="column large-6 w-900-stack s-about__intro-text">
+      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">Bluetooth-Controlled Electric Skateboard</h3>
+      <p style="color:#FFC627; font-weight:500;">Personal Project || Embedded Systems, Motor Control, Wireless Communication</p>
+
+      <p data-aos="fade-up">
+        Designed and fabricated a <span style="color:#FFC627; font-weight:600;">high-torque electric skateboard</span>
+        integrating a <span style="color:#FFC627; font-weight:600;">BLDC motor</span>, <span style="color:#FFC627; font-weight:600;">programmable ESC</span>,
+        and custom <span style="color:#FFC627; font-weight:600;">Bluetooth handheld remote</span>.
+        Implemented reliable wireless communication and control logic to deliver smooth, low-latency throttle response
+        across varying speeds and load conditions.
+        <br><br>
+        Tuned throttle curves, current limits, and battery configuration through iterative testing; validated stable
+        operation above <span style="color:#FFC627; font-weight:600;">25 km/h</span>, maintaining consistent power delivery and thermal
+        reliability in real-world riding conditions.
+      </p>
+
+      <ul class="disc" data-aos="fade-up">
+        <li><strong>Tech:</strong> BLDC motor, ESC tuning, Bluetooth, control logic, system testing</li>
+        <li><strong>Focus:</strong> low-latency control, safety limits, thermal stability, reliability</li>
+      </ul>
+    </div>
+
+    <div class="column large-6 w-900-stack s-about__photo-block">
+      <figure>
+        <img src="images/portfolio/skateboard.jpg" alt="Bluetooth-Controlled Electric Skateboard" style="width: 100%; height: auto;" />
+      </figure>
+    </div>
+  </div>
+
+  <!-- 2) EyeMed App -->
+  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
+    <div class="column large-6 w-900-stack s-about__intro-text">
+      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">EyeMed App — Eye Care & Digital Well-Being</h3>
+      <p style="color:#FFC627; font-weight:500;">Personal Project || Mobile App, User Experience, Digital Wellness</p>
+
+      <p data-aos="fade-up">
+        Built <span style="color:#FFC627; font-weight:600;">EyeMed</span>, a digital well-being app designed to reduce eye strain and
+        screen fatigue through <span style="color:#FFC627; font-weight:600;">scheduled breaks</span> and guided activities.
+        The app prompts users every <span style="color:#FFC627; font-weight:600;">30 minutes</span> and encourages quick exercises and
+        optional phone-lock breaks to support healthier screen habits.
+        <br><br>
+        Focused on a simple, motivating user experience that helps users follow a consistent routine and improve comfort
+        during prolonged screen use.
+      </p>
+
+      <ul class="disc" data-aos="fade-up">
+        <li><strong>Focus:</strong> habit-building reminders, user-friendly flows, wellness activities</li>
+        <li><strong>Outcome:</strong> structured break routine to reduce screen-related eye strain</li>
+      </ul>
+
+      <p data-aos="fade-up">
+        <a href="https://play.google.com/store/apps/details?id=uz.bestarorg.jaxadev.pomodoro" target="_blank" rel="noopener" style="color:#FFC627;">Google Play — EyeMed / Pomodoro</a><br />
+        <a href="https://play.google.com/store/apps/details?id=uz.jaxadev.appdatausagetracker" target="_blank" rel="noopener" style="color:#FFC627;">Google Play — App Data Usage Tracker</a>
+      </p>
+    </div>
+
+    <div class="column large-6 w-900-stack s-about__photo-block">
+      <figure>
+        <img src="images/portfolio/eyemed.png" alt="EyeMed app preview" style="width: 100%; height: auto;" />
+      </figure>
+    </div>
+  </div>
+
+  <!-- 3) Combat Ready Robotics Battlebot -->
+  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
+    <div class="column large-6 w-900-stack s-about__intro-text">
+      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">Combat Ready Robotics @ ASU — “Cheese Touch” Battlebot</h3>
+      <p style="color:#FFC627; font-weight:500;">Student Organization Project || Mechanical Assembly, Rapid Prototyping, Competition</p>
+
+      <p data-aos="fade-up">
+        Built a <span style="color:#FFC627; font-weight:600;">3-pound battlebot</span> (“<span style="color:#FFC627; font-weight:600;">Cheese Touch</span>”)
+        through Combat Ready Robotics workshops and team collaboration. Gained experience assembling, preparing, and
+        troubleshooting the robot in a competition environment with fast iteration under time and budget constraints.
+        <br><br>
+        Earned a <span style="color:#FFC627; font-weight:600;">“Best Dressed”</span> nomination and strengthened practical skills in
+        teamwork, rapid debugging, and build decision-making.
+      </p>
+
+      <ul class="disc" data-aos="fade-up">
+        <li><strong>Skills:</strong> build iteration, competition prep, troubleshooting, teamwork</li>
+        <li><strong>Experience:</strong> hands-on mechanical/electrical assembly in a fast-paced environment</li>
+      </ul>
+    </div>
+
+    <div class="column large-6 w-900-stack s-about__photo-block">
+      <figure>
+        <img src="images/portfolio/cheesetouch.png" alt="Cheese Touch battlebot" style="width: 100%; height: auto;" />
+      </figure>
+    </div>
+  </div>
+
+  <!-- 4) EPICS Nepal Pyrolyzer -->
+  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
+    <div class="column large-6 w-900-stack s-about__intro-text">
+      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">EPICS at ASU — Nepal Pyrolyzer / Biochar Kiln Improvement</h3>
+      <p style="color:#FFC627; font-weight:500;">Community Engineering Project || Thermal Design, Prototyping, Field Constraints</p>
+
+      <p data-aos="fade-up">
+        Contributed to an <span style="color:#FFC627; font-weight:600;">EPICS</span> project supporting communities in Nepal that convert
+        invasive <span style="color:#FFC627; font-weight:600;">Lantana camara</span> into biochar using kilns.
+        Developed and evaluated design modifications to increase maximum internal temperature and improve biochar quality.
+        <br><br>
+        Focused on concepts to <span style="color:#FFC627; font-weight:600;">recirculate heat</span> and raise kiln performance, targeting
+        at least <span style="color:#FFC627; font-weight:600;">350°C</span>. Iterated designs based on prototype testing while keeping
+        solutions adaptable to local constraints.
+      </p>
+
+      <ul class="disc" data-aos="fade-up">
+        <li><strong>Focus:</strong> thermal performance, test-driven iteration, real-world constraints</li>
+        <li><strong>Impact:</strong> higher-quality biochar for water purification and fuel applications</li>
+      </ul>
+    </div>
+
+    <div class="column large-6 w-900-stack s-about__photo-block">
+      <figure>
+        <img src="images/portfolio/Pyrolizer.png" alt="EPICS Nepal pyrolyzer prototype" style="width: 100%; height: auto;" />
+      </figure>
+    </div>
+  </div>
+
+  <!-- 5) Sparkyville Renewable Energy Producer -->
+  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
+    <div class="column large-6 w-900-stack s-about__intro-text">
+      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">Renewable Energy Producer for Sparkyville (EGR 102)</h3>
+      <p style="color:#FFC627; font-weight:500;">Course Project || Mechanical Build, Power Generation, Design Constraints</p>
+
+      <p data-aos="fade-up">
+        Designed and built a compact power system for the <span style="color:#FFC627; font-weight:600;">Sparkyville</span> challenge:
+        produce as much continuous electrical energy as possible while meeting strict size, stability, and cost constraints.
+        Evaluated wind/solar/hydro options and selected a <span style="color:#FFC627; font-weight:600;">wind-based design</span> to maximize
+        cost-to-power performance.
+        <br><br>
+        Built within a 1 ft × 1 ft base and height/clearance limits, emphasizing structural stability and reliable output
+        during testing.
+      </p>
+
+      <ul class="disc" data-aos="fade-up">
+        <li><strong>Focus:</strong> design-to-constraints, prototyping, iterative improvement</li>
+        <li><strong>System:</strong> wind-based power generation with practical tradeoffs</li>
+      </ul>
+    </div>
+
+    <div class="column large-6 w-900-stack s-about__photo-block">
+      <figure>
+        <img src="images/portfolio/sparkyville.png" alt="Sparkyville renewable energy project" style="width: 100%; height: auto;" />
+      </figure>
+    </div>
+  </div>
+
+  <!-- 6) Air Devils — AIAA DBF RC Plane -->
+  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
+    <div class="column large-6 w-900-stack s-about__intro-text">
+      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">Air Devils @ ASU — AIAA Design/Build/Fly (DBF) RC Aircraft</h3>
+      <p style="color:#FFC627; font-weight:500;">Student Team Project || Assembly, Modeling, Engineering Documentation</p>
+
+      <p data-aos="fade-up">
+        Member of the <span style="color:#FFC627; font-weight:600;">Air Devils</span> team participating in the
+        <span style="color:#FFC627; font-weight:600;">AIAA Design/Build/Fly</span> competition.
+        Contributed to assembling the aircraft, supporting modeling tasks, and assisting with engineering design reports.
+        <br><br>
+        Gained experience in large-scale RC aircraft build processes, build quality, and structured documentation
+        for a competitive design environment.
+      </p>
+
+      <ul class="disc" data-aos="fade-up">
+        <li><strong>Contributions:</strong> aircraft assembly, modeling support, design reports</li>
+        <li><strong>Skills:</strong> teamwork, build quality, documentation, iteration</li>
+      </ul>
+    </div>
+
+    <div class="column large-6 w-900-stack s-about__photo-block">
+      <figure>
+        <img src="images/portfolio/air-devils.jpg" alt="Air Devils DBF RC plane" style="width: 100%; height: auto;" />
+      </figure>
+    </div>
+  </div>
+
+  <!-- 7) Embedded Systems Design (VibeWater / PCB / PIC18F / ESP32) -->
+  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
+    <div class="column large-6 w-900-stack s-about__intro-text">
+      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">Embedded Systems Design (EGR 304 / EGR 314)</h3>
+      <p style="color:#FFC627; font-weight:500;">Course Projects || PCB Design, Microcontrollers, Mechatronics Integration</p>
+
+      <p data-aos="fade-up">
+        Delivered the <span style="color:#FFC627; font-weight:600;">VibeWater</span> project featuring a custom
+        <span style="color:#FFC627; font-weight:600;">PCB for actuator control</span> and embedded firmware on a
+        <span style="color:#FFC627; font-weight:600;">PIC18F microcontroller</span> for reliable mechatronics integration.
+        <br><br>
+        Applied the engineering design process from concept to prototyping and iteration; currently working on
+        <span style="color:#FFC627; font-weight:600;">ESP32</span> integration for a rover system to improve connectivity and modularity.
+      </p>
+
+      <ul class="disc" data-aos="fade-up">
+        <li><strong>Tech:</strong> PIC18F, ESP32, PCB design, embedded debugging, actuator integration</li>
+      </ul>
+    </div>
+
+    <div class="column large-6 w-900-stack s-about__photo-block">
+      <figure>
+        <img src="images/portfolio/embedded.png" alt="Embedded systems project" style="width: 100%; height: auto;" />
+      </figure>
+    </div>
+  </div>
+
+  <!-- 8) 3-DOF Manipulator + Vision Pick-and-Place -->
+  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
+    <div class="column large-6 w-900-stack s-about__intro-text">
+      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">3-DOF Manipulator + Machine Vision Pick-and-Place (EGR 455 / EGR 456)</h3>
+      <p style="color:#FFC627; font-weight:500;">Course Project || Robotics, Kinematics, Motion Control</p>
+
+      <p data-aos="fade-up">
+        Built a <span style="color:#FFC627; font-weight:600;">3-DOF robotic manipulator</span> and a
+        <span style="color:#FFC627; font-weight:600;">machine vision</span> system capable of locating a nut placed at arbitrary
+        positions, picking it up, and returning it to its original location.
+        <br><br>
+        Implemented forward and inverse kinematics and motion control using
+        <span style="color:#FFC627; font-weight:600;">Python and C++</span>, and integrated sensors/actuators to improve repeatability
+        and task accuracy.
+      </p>
+
+      <ul class="disc" data-aos="fade-up">
+        <li><strong>Tech:</strong> Python, C++, kinematics, motion control, sensors/actuators</li>
+      </ul>
+    </div>
+
+    <div class="column large-6 w-900-stack s-about__photo-block">
+      <figure>
+        <img src="images/portfolio/robot_arm.png" alt="3-DOF manipulator project" style="width: 100%; height: auto;" />
+      </figure>
+    </div>
+  </div>
+
+<!-- EGR 294 Manual Machining Projects -->
+<div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
+
+  <!-- Image Column -->
+  <div class="column large-6 w-900-stack" data-aos="fade-up">
+    <img src="images/portfolio/EGR294.jpg" alt="Screw Jack and Milling Vise Project" class="img-fluid">
+  </div>
+
+  <!-- Text Column -->
+  <div class="column large-6 w-900-stack s-about__intro-text">
+    <h3 class="item-title" style="color:#8C1D40;">Manual Machining Projects – Screw Jack & Milling Vise (EGR 294)</h3>
+    <p style="color:#FFC627; font-weight:500;">Course Project || Manual Machining, Manufacturing Processes, GD&T</p>
+
+    <p>
+      Designed and fabricated a functional <span style="color:#FFC627; font-weight:600;">Screw Jack (Lathe Project)</span> and 
+      <span style="color:#FFC627; font-weight:600;">Milling Vise (Mill Project)</span> using manual machining processes.
+      <br><br>
+      Performed precision turning, threading, knurling, drilling, boring, surfacing, slot cutting, and tapping operations 
+      while maintaining dimensional tolerances and alignment. Applied 
+      <span style="color:#FFC627; font-weight:600;">GD&T principles</span>, measurement techniques, and shop safety practices 
+      to ensure proper fit, smooth motion, and functional assembly.
+    </p>
+
+    <ul class="disc">
+      <li><strong>Tech:</strong> Manual Lathe, Manual Mill, Drilling, Thread Cutting, GD&T, Precision Measurement Tools</li>
+    </ul>
+  </div>
+
+</div>
+
+
+
+</section> 
+
+<!-- services
+================================================== -->
+<section id="services" class="s-services">
+
+    <div class="row">
+        <div class="column large-12">
+            <div class="section-title" data-num="02" data-aos="fade-up">
+                <h3 class="h6">
+                    <span style="color:#8C1D40;">Grand Challenges Scholars Program: GCSP</span>
+                </h3>
+            </div>
+        </div>
+        <div class="column large-6 w-900-stack">
+            <h1 class="display-1" data-aos="fade-up">
+                As a <span style="color:#8C1D40;">GCSP Scholar</span>, 
+                I have developed competencies through leadership, service learning, multidisciplinary collaboration, entrepreneurship, and talent development.
+            </h1>
+        </div>
+    </div>
+
+    <div class="row block-large-1-2 block-tab-full s-services__services item-list">
+
+        <!-- Multidisciplinary -->
+        <div class="column item item-service" data-aos="fade-up">
+            <h3 class="item-title">
+                <span style="color:#8C1D40;">Multidisciplinary</span> – 
+                <span style="color:#FFC627;">FSE 150 & Undergraduate Student Government</span>
+            </h3>
+
+            <p>
+            I had the opportunity to enroll in <span style="color:#FFC627;">FSE 150</span> in Fall 2024, a course designed for 
+            <span style="color:#8C1D40;">Grand Challenges Scholars Program (GCSP)</span> students. This interdisciplinary course brought together students from various engineering disciplines to collaborate on projects that address challenges set by the National Academy of Engineering's GCSP.
+            </p>
+
+            <p>
+            As a <span style="color:#8C1D40;">Senator</span> and 
+            <span style="color:#8C1D40;">Government Operations Chair</span>, I have been part of a multidisciplinary team of many other students. I worked in areas such as public policy, communication and narrative framing, ethics, and human behavior. I advocated for students by talking with at least three of them weekly and hearing about their problems on campus.
+            </p>
+
+            <p>
+            I voted in appropriations committee meetings weekly, ensuring cost per student did not go over $25 and that university funds were used sustainably.
+            </p>
+        </div>
+
+        <!-- Service Learning -->
+        <div class="column item item-service" data-aos="fade-up">
+            <h3 class="item-title">
+                <span style="color:#8C1D40;">Service Learning</span> – 
+                <span style="color:#FFC627;">Uzbek Students Association & Fulton Ambassador</span>
+            </h3>
+
+            <p>
+            As <span style="color:#8C1D40;">Vice President</span> of this student organization, we successfully secured over 
+            <span style="color:#FFC627; font-weight:700;">$30,000</span> in funding dedicated to the cultural preservation of Uzbekistan. I have volunteered over 
+            <span style="color:#FFC627; font-weight:700;">100+ hours</span> of my time since August 2024.
+            </p>
+
+            <p>
+            I organized large-scale events such as <span style="color:#8C1D40;">Nowruz</span> and participated in tabling at 1001 Nights. I collaborated with over five student organizations and ensured we used eco-friendly food vendors that avoided plastic use. We reused cultural items instead of buying new ones each time and ensured food was not wasted.
+            </p>
+
+            <p>
+            Additionally, as a <span style="color:#8C1D40;">Fulton Ambassador</span> and <span style="color:#8C1D40;">Poly Co-Tour Director</span>, I represented the Fulton Schools of Engineering during campus tours for prospective students and their families.
+            </p>
+        </div>
+
+        <!-- Entrepreneurship -->
+        <div class="column item item-service" data-aos="fade-up">
+            <h3 class="item-title">
+                <span style="color:#8C1D40;">Entrepreneurship</span> – 
+                <span style="color:#FFC627;">FSE 301</span>
+            </h3>
+
+            <p>
+            I am currently taking <span style="color:#FFC627;">FSE 301: Entrepreneurship & Value Creation</span> with Professor Dr. Griffin. I have applied concept-based learning and brainstormed ideas in groups to solve meaningful problems. I learned about customer discovery, value proposition, and business models.
+            </p>
+        </div>
+
+        <!-- Talent -->
+        <div class="column item item-service" data-aos="fade-up">
+            <h3 class="item-title">
+                <span style="color:#8C1D40;">Talent</span> – 
+                <span style="color:#FFC627;">EGR 401 & EGR 402</span>
+            </h3>
+
+            <p>
+            Through <span style="color:#FFC627;">EGR 401</span> and 
+            <span style="color:#FFC627;">EGR 402</span>, I have developed advanced engineering competencies by working on real-world challenges and strengthening my innovation mindset aligned with the Grand Challenges.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+<!-- end s-services -->
+
+    <!-- clients
     ================================================== -->
-    <section id="experience" class="s-services">
+    <div id="clients" class="section s-clients">
 
-        <div class="row">
-            <div class="column large-12">
-                <div class="section-title" data-num="02" data-aos="fade-up">
-                    <h3 class="h6">Work Experience</h3>
-                </div>
-            </div>
-
-            <div class="column large-6 w-900-stack">
-                <h1 class="display-1" data-aos="fade-up">My Positions</h1>
-            </div>
-
-            <div class="column large-6 w-900-stack">
-                <p class="lead" data-aos="fade-up">
-                    Robotics student with experience working on robotic and embedded systems, machining tools, CAD modelling,
-                    circuit design, and microcontroller programming — passionate about advancing robotics and science.
-                </p>
-            </div>
-        </div>
-
-
-        <!-- UGTA / EGR 101 -->
-        <div class="row exp-row block-large-1-2 block-tab-full collapse">
-            <div class="column large-6 w-900-stack exp-text">
-                <h3 class="item-title">Undergraduate Teaching Assistant (UGTA)</h3>
-                <p class="exp-meta">August 2024 – December 2024 · EGR 101 · Fulton Schools of Engineering, ASU</p>
-                <p>
-                    As a <strong>Teaching Assistant</strong> for <strong>EGR 101</strong> at the
-                    <strong>Fulton Schools of Engineering</strong>, I supported Dr. Daniel Frank by assisting students
-                    with foundational engineering coursework and hands-on design projects. I led regular
-                    <strong>office hours</strong> where I guided students in building and testing
-                    <strong>catapult projects</strong> and developing introductory <strong>Arduino</strong> systems.
-                    Through structured guidance, troubleshooting, and iterative design feedback, students demonstrated
-                    strong performance in both their <strong>mid-semester</strong> and <strong>final projects</strong>,
-                    successfully meeting technical requirements and design objectives.
-                </p>
-            </div>
-
-            <div class="column large-6 w-900-stack exp-image">
-                <div class="photo-frame">
-                    <img src="images/portfolio/TA.jpeg" alt="Asadbek teaching EGR 101 office hours at ASU">
-                </div>
-            </div>
-        </div>
-
-        <!-- Senator -->
-        <div class="row exp-row block-large-1-2 block-tab-full collapse">
-            <div class="column large-6 w-900-stack exp-text">
-                <h3 class="item-title">Senator — Government Operations Chair</h3>
-                <p class="exp-meta">Sep 2023 – Apr 2025 · Undergraduate Student Government, ASU</p>
-                <p>
-                    As an elected <strong>Undergraduate Student Government Senator</strong>, I represented the student
-                    body by actively advocating for student needs through <strong>policy development</strong>, governance,
-                    and direct campus engagement. I drafted and supported
-                    <strong>5 bills and 4 resolutions</strong> focused on improving student life, collaborating closely
-                    with university administration and fellow senators to implement sustainable, data-informed solutions.
-                </p>
-                <p>
-                    I served on key committees including <strong>Government Operations</strong> and
-                    <strong>Appropriations</strong>, where I helped oversee and vote on an appropriations
-                    <strong>budget exceeding $125,000</strong> for student clubs and campus events.
-                </p>
-            </div>
-
-            <div class="column large-6 w-900-stack exp-image">
-                <div class="photo-frame">
-                    <img src="images/portfolio/usg.png" alt="ASU Undergraduate Student Government chamber">
-                </div>
-            </div>
-        </div>
-
-        <!-- Fulton Ambassadors -->
-        <div class="row exp-row block-large-1-2 block-tab-full collapse">
-            <div class="column large-6 w-900-stack exp-text">
-                <h3 class="item-title">Ambassador &amp; Co-Tour Director — Fulton Ambassadors</h3>
-                <p class="exp-meta">January 2024 – December 2024 · ASU Fulton Schools of Engineering</p>
-                <p>
-                    Fulton Ambassadors is a para-professional organisation that represents Ira A. Fulton Schools of
-                    Engineering before donors and industry partners. As Co-Tour Director, I collaborated with fellow
-                    members and the Executive Board to plan and execute
-                    <strong>campus tours for prospective students and their families</strong> — coordinating logistics,
-                    organizing tour schedules, and ensuring a seamless and informative visitor experience. I also
-                    represented the Ambassadors at recruitment events, sharing firsthand insights into the Fulton
-                    Engineering experience.
-                </p>
-            </div>
-
-            <div class="column large-6 w-900-stack exp-image">
-                <div class="photo-frame">
-                    <img src="images/portfolio/fulton_ambassadors.jpg" alt="Fulton Ambassadors team photo at ASU">
-                </div>
-            </div>
-        </div>
-
-        <!-- Classroom Support -->
-        <div class="row exp-row block-large-1-2 block-tab-full collapse">
-            <div class="column large-6 w-900-stack exp-text">
-                <h3 class="item-title">Classroom Support — Technology Consultant</h3>
-                <p class="exp-meta">May 2023 – Present · ASU Enterprise Technology</p>
-                <p>
-                    I provide classroom technology support across campus by conducting routine checks of
-                    <strong>Zoom-enabled classrooms</strong> and responding to live support calls to troubleshoot
-                    <strong>audio-visual</strong> and connectivity issues. I assist faculty and staff with real-time
-                    problem resolution, ensuring minimal disruption to instruction and campus operations.
-                </p>
-                <p>
-                    I coordinate <strong>equipment monitoring and maintenance</strong> to support seamless daily
-                    classroom operations, and deliver on-demand training for
-                    <strong>university-endorsed software and hardware</strong>.
-                </p>
-            </div>
-
-            <div class="column large-6 w-900-stack exp-image">
-                <div class="photo-frame photo-frame--portrait">
-                    <img src="images/portfolio/TCjobPoly.jpg" alt="Asadbek at ASU Polytechnic Enterprise Technology">
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-    <!-- projects
-    ================================================== -->
-    <section id="projects" class="s-services">
-
-        <div class="row">
-            <div class="column large-12">
-                <div class="section-title" data-num="03" data-aos="fade-up">
-                    <h3 class="h6">Project Experience</h3>
-                </div>
-            </div>
-
-            <div class="column large-6 w-900-stack">
-                <h1 class="display-1" data-aos="fade-up">Projects &amp; Builds</h1>
-            </div>
-
-            <div class="column large-6 w-900-stack">
-                <p class="lead" data-aos="fade-up">
-                    Robotics student focused on embedded systems, mechatronics integration, and control.
-                    Experienced with CAD modeling, circuit design, microcontrollers, and hands-on prototyping.
-                </p>
-            </div>
-        </div>
-
-        <!-- 1) Electric Skateboard -->
-        <div class="row exp-row block-large-1-2 block-tab-full collapse">
-            <div class="column large-6 w-900-stack exp-text">
-                <h3 class="item-title">Bluetooth-Controlled Electric Skateboard</h3>
-                <p class="exp-meta">Personal Project · Embedded Systems · Motor Control · Wireless Communication</p>
-                <p>
-                    Designed and fabricated a <strong>high-torque electric skateboard</strong> integrating a
-                    <strong>BLDC motor</strong>, <strong>programmable ESC</strong>, and custom
-                    <strong>Bluetooth handheld remote</strong>. Implemented reliable wireless communication and control
-                    logic to deliver smooth, low-latency throttle response across varying speeds and load conditions.
-                </p>
-                <p>
-                    Tuned throttle curves, current limits, and battery configuration through iterative testing;
-                    validated stable operation above <strong>25 km/h</strong>, maintaining consistent power delivery
-                    and thermal reliability in real-world riding conditions.
-                </p>
-                <ul class="disc">
-                    <li><strong>Tech:</strong> BLDC motor, ESC tuning, Bluetooth, control logic, system testing</li>
-                    <li><strong>Focus:</strong> low-latency control, safety limits, thermal stability, reliability</li>
-                </ul>
-            </div>
-
-            <div class="column large-6 w-900-stack exp-image">
-                <div class="photo-frame">
-                    <img src="images/portfolio/skateboard.jpg" alt="Bluetooth-controlled electric skateboard build">
-                </div>
-            </div>
-        </div>
-
-        <!-- 2) EyeMed -->
-        <div class="row exp-row block-large-1-2 block-tab-full collapse">
-            <div class="column large-6 w-900-stack exp-text">
-                <h3 class="item-title">EyeMed — Eye Care &amp; Digital Well-Being</h3>
-                <p class="exp-meta">Personal Project · Mobile App · UX · Digital Wellness</p>
-                <p>
-                    Built <strong>EyeMed</strong>, a digital well-being app designed to reduce eye strain and screen
-                    fatigue through <strong>scheduled breaks</strong> and guided activities. The app prompts users
-                    every <strong>30 minutes</strong> and encourages quick exercises and optional phone-lock breaks
-                    to support healthier screen habits.
-                </p>
-                <ul class="disc">
-                    <li><strong>Focus:</strong> habit-building reminders, user-friendly flows, wellness activities</li>
-                    <li><strong>Outcome:</strong> structured break routine to reduce screen-related eye strain</li>
-                </ul>
-                <p class="link-row">
-                    <a href="https://play.google.com/store/apps/details?id=uz.bestarorg.jaxadev.pomodoro" target="_blank" rel="noopener">Google Play — EyeMed / Pomodoro</a><br>
-                    <a href="https://play.google.com/store/apps/details?id=uz.jaxadev.appdatausagetracker" target="_blank" rel="noopener">Google Play — App Data Usage Tracker</a>
-                </p>
-            </div>
-
-            <div class="column large-6 w-900-stack exp-image">
-                <div class="photo-frame photo-frame--portrait">
-                    <img src="images/portfolio/eyemed.png" alt="EyeMed mobile app preview">
-                </div>
-            </div>
-        </div>
-
-        <!-- 3) Battlebot -->
-        <div class="row exp-row block-large-1-2 block-tab-full collapse">
-            <div class="column large-6 w-900-stack exp-text">
-                <h3 class="item-title">Combat Ready Robotics @ ASU — "Cheese Touch" Battlebot</h3>
-                <p class="exp-meta">Student Org Project · Mechanical Assembly · Rapid Prototyping · Competition</p>
-                <p>
-                    Built a <strong>3-pound battlebot</strong> ("<strong>Cheese Touch</strong>") through Combat Ready
-                    Robotics workshops and team collaboration. Gained experience assembling, preparing, and
-                    troubleshooting the robot in a competition environment with fast iteration under time and budget
-                    constraints.
-                </p>
-                <p>
-                    Earned a <strong>"Best Dressed"</strong> nomination and strengthened practical skills in teamwork,
-                    rapid debugging, and build decision-making.
-                </p>
-                <ul class="disc">
-                    <li><strong>Skills:</strong> build iteration, competition prep, troubleshooting, teamwork</li>
-                </ul>
-            </div>
-
-            <div class="column large-6 w-900-stack exp-image">
-                <div class="photo-frame">
-                    <img src="images/portfolio/cheesetouch.png" alt="Cheese Touch 3-pound battlebot">
-                </div>
-            </div>
-        </div>
-
-        <!-- 4) EPICS Pyrolyzer -->
-        <div class="row exp-row block-large-1-2 block-tab-full collapse">
-            <div class="column large-6 w-900-stack exp-text">
-                <h3 class="item-title">EPICS @ ASU — Nepal Pyrolyzer / Biochar Kiln Improvement</h3>
-                <p class="exp-meta">Community Engineering · Thermal Design · Prototyping · Field Constraints</p>
-                <p>
-                    Contributed to an <strong>EPICS</strong> project supporting communities in Nepal that convert
-                    invasive <strong>Lantana camara</strong> into biochar using kilns. Developed and evaluated design
-                    modifications to increase maximum internal temperature and improve biochar quality.
-                </p>
-                <p>
-                    Focused on concepts to <strong>recirculate heat</strong> and raise kiln performance, targeting at
-                    least <strong>350 °C</strong>. Iterated designs based on prototype testing while keeping solutions
-                    adaptable to local constraints.
-                </p>
-                <ul class="disc">
-                    <li><strong>Focus:</strong> thermal performance, test-driven iteration, real-world constraints</li>
-                    <li><strong>Impact:</strong> higher-quality biochar for water purification and fuel applications</li>
-                </ul>
-            </div>
-
-            <div class="column large-6 w-900-stack exp-image">
-                <div class="photo-frame">
-                    <img src="images/portfolio/Pyrolizer.png" alt="Biochar pyrolyzer prototype for Nepal EPICS project">
-                </div>
-            </div>
-        </div>
-
-        <!-- 5) Sparkyville -->
-        <div class="row exp-row block-large-1-2 block-tab-full collapse">
-            <div class="column large-6 w-900-stack exp-text">
-                <h3 class="item-title">Renewable Energy Producer for Sparkyville (EGR 102)</h3>
-                <p class="exp-meta">Course Project · Mechanical Build · Power Generation · Design Constraints</p>
-                <p>
-                    Designed and built a compact power system for the <strong>Sparkyville</strong> challenge: produce
-                    as much continuous electrical energy as possible while meeting strict size, stability, and cost
-                    constraints. Evaluated wind/solar/hydro options and selected a <strong>wind-based design</strong>
-                    to maximize cost-to-power performance.
-                </p>
-                <p>
-                    Built within a 1 ft × 1 ft base and height/clearance limits, emphasizing structural stability and
-                    reliable output during testing.
-                </p>
-                <ul class="disc">
-                    <li><strong>Focus:</strong> design-to-constraints, prototyping, iterative improvement</li>
-                </ul>
-            </div>
-
-            <div class="column large-6 w-900-stack exp-image">
-                <div class="photo-frame">
-                    <img src="images/portfolio/sparkyville.png" alt="Sparkyville wind-based renewable energy build">
-                </div>
-            </div>
-        </div>
-
-        <!-- 6) Air Devils -->
-        <div class="row exp-row block-large-1-2 block-tab-full collapse">
-            <div class="column large-6 w-900-stack exp-text">
-                <h3 class="item-title">Air Devils @ ASU — AIAA Design / Build / Fly</h3>
-                <p class="exp-meta">Student Team Project · Assembly · Modeling · Engineering Documentation</p>
-                <p>
-                    Member of the <strong>Air Devils</strong> team participating in the
-                    <strong>AIAA Design / Build / Fly</strong> competition. Contributed to assembling the aircraft,
-                    supporting modeling tasks, and assisting with engineering design reports.
-                </p>
-                <ul class="disc">
-                    <li><strong>Contributions:</strong> aircraft assembly, modeling support, design reports</li>
-                    <li><strong>Skills:</strong> teamwork, build quality, documentation, iteration</li>
-                </ul>
-            </div>
-
-            <div class="column large-6 w-900-stack exp-image">
-                <div class="photo-frame">
-                    <img src="images/portfolio/air-devils.jpg" alt="Air Devils AIAA DBF RC aircraft team">
-                </div>
-            </div>
-        </div>
-
-        <!-- 7) Embedded Systems -->
-        <div class="row exp-row block-large-1-2 block-tab-full collapse">
-            <div class="column large-6 w-900-stack exp-text">
-                <h3 class="item-title">Embedded Systems Design (EGR 304 / EGR 314)</h3>
-                <p class="exp-meta">Course Projects · PCB Design · Microcontrollers · Mechatronics</p>
-                <p>
-                    Delivered the <strong>VibeWater</strong> project featuring a custom
-                    <strong>PCB for actuator control</strong> and embedded firmware on a
-                    <strong>PIC18F microcontroller</strong> for reliable mechatronics integration.
-                </p>
-                <p>
-                    Applied the engineering design process from concept to prototyping and iteration; currently working
-                    on <strong>ESP32</strong> integration for a rover system to improve connectivity and modularity.
-                </p>
-                <ul class="disc">
-                    <li><strong>Tech:</strong> PIC18F, ESP32, PCB design, embedded debugging, actuator integration</li>
-                </ul>
-            </div>
-
-            <div class="column large-6 w-900-stack exp-image">
-                <div class="photo-frame">
-                    <img src="images/portfolio/embedded.png" alt="VibeWater embedded PCB project">
-                </div>
-            </div>
-        </div>
-
-        <!-- 8) Manipulator -->
-        <div class="row exp-row block-large-1-2 block-tab-full collapse">
-            <div class="column large-6 w-900-stack exp-text">
-                <h3 class="item-title">3-DOF Manipulator + Machine Vision Pick-and-Place (EGR 455 / 456)</h3>
-                <p class="exp-meta">Course Project · Robotics · Kinematics · Motion Control</p>
-                <p>
-                    Built a <strong>3-DOF robotic manipulator</strong> and a <strong>machine vision</strong> system
-                    capable of locating a nut placed at arbitrary positions, picking it up, and returning it to its
-                    original location.
-                </p>
-                <p>
-                    Implemented forward and inverse kinematics and motion control using
-                    <strong>Python and C++</strong>, and integrated sensors/actuators to improve repeatability and
-                    task accuracy.
-                </p>
-                <ul class="disc">
-                    <li><strong>Tech:</strong> Python, C++, kinematics, motion control, sensors/actuators</li>
-                </ul>
-            </div>
-
-            <div class="column large-6 w-900-stack exp-image">
-                <div class="photo-frame">
-                    <img src="images/portfolio/robot_arm.png" alt="3-DOF robotic manipulator with machine vision">
-                </div>
-            </div>
-        </div>
-
-        <!-- 9) Manual Machining -->
-        <div class="row exp-row block-large-1-2 block-tab-full collapse">
-            <div class="column large-6 w-900-stack exp-image">
-                <div class="photo-frame">
-                    <img src="images/portfolio/EGR294.jpg" alt="Screw jack and milling vise — EGR 294 machining projects">
-                </div>
-            </div>
-
-            <div class="column large-6 w-900-stack exp-text">
-                <h3 class="item-title">Manual Machining — Screw Jack &amp; Milling Vise (EGR 294)</h3>
-                <p class="exp-meta">Course Project · Manual Machining · Manufacturing · GD&amp;T</p>
-                <p>
-                    Designed and fabricated a functional <strong>Screw Jack (Lathe Project)</strong> and
-                    <strong>Milling Vise (Mill Project)</strong> using manual machining processes.
-                </p>
-                <p>
-                    Performed precision turning, threading, knurling, drilling, boring, surfacing, slot cutting, and
-                    tapping operations while maintaining dimensional tolerances and alignment. Applied
-                    <strong>GD&amp;T principles</strong>, measurement techniques, and shop safety practices to ensure
-                    proper fit, smooth motion, and functional assembly.
-                </p>
-                <ul class="disc">
-                    <li><strong>Tech:</strong> Manual Lathe, Manual Mill, Drilling, Thread Cutting, GD&amp;T, Precision Measurement</li>
-                </ul>
-            </div>
-        </div>
-
-    </section>
-
-
-    <!-- GCSP
-    ================================================== -->
-    <section id="gcsp" class="s-services">
-
-        <div class="row">
-            <div class="column large-12">
-                <div class="section-title" data-num="04" data-aos="fade-up">
-                    <h3 class="h6">Grand Challenges Scholars Program</h3>
-                </div>
-            </div>
-            <div class="column large-6 w-900-stack">
+        <div class="row narrower s-clients__top h-text-center">
+            <div class="column">
                 <h1 class="display-1" data-aos="fade-up">
-                    As a <span class="accent-maroon">GCSP Scholar</span>, I have developed competencies through leadership,
-                    service learning, multidisciplinary collaboration, entrepreneurship, and talent development.
+                I have worked with SolidWorks to make many CAD models and assemblies.
                 </h1>
             </div>
-        </div>
+        </div> <!-- s-clients__top -->
 
-        <div class="row block-large-1-2 block-tab-full s-services__services item-list">
-
-            <div class="column item item-service" data-aos="fade-up">
-                <h3 class="item-title">
-                    Multidisciplinary —
-                    <span class="accent-gold">FSE 150 &amp; Student Government</span>
-                </h3>
-                <p>
-                    I enrolled in <strong>FSE 150</strong> in Fall 2024, a course designed for
-                    <strong>Grand Challenges Scholars Program</strong> students. This interdisciplinary course brought
-                    together students from various engineering disciplines to collaborate on projects addressing
-                    challenges set by the National Academy of Engineering.
-                </p>
-                <p>
-                    As a <strong>Senator</strong> and <strong>Government Operations Chair</strong>, I worked across
-                    public policy, communication, ethics, and human behavior, and advocated for at least three students
-                    weekly.
-                </p>
-                <p>
-                    I voted in appropriations committee meetings weekly, ensuring cost-per-student stayed under $25
-                    and university funds were used sustainably.
-                </p>
-            </div>
-
-            <div class="column item item-service" data-aos="fade-up">
-                <h3 class="item-title">
-                    Service Learning —
-                    <span class="accent-gold">Uzbek Students Association &amp; Fulton Ambassador</span>
-                </h3>
-                <p>
-                    As <strong>Vice President</strong>, we successfully secured over
-                    <strong>$30,000</strong> in funding dedicated to the cultural preservation of Uzbekistan. I have
-                    volunteered over <strong>100+ hours</strong> since August 2024.
-                </p>
-                <p>
-                    I organized large-scale events such as <strong>Nowruz</strong> and participated in tabling at
-                    1001 Nights. We collaborated with 5+ student organizations and used eco-friendly food vendors
-                    that avoided plastic, reusing cultural items instead of buying new ones, and ensured food was not
-                    wasted.
-                </p>
-                <p>
-                    Additionally, as a <strong>Fulton Ambassador</strong> and <strong>Poly Co-Tour Director</strong>,
-                    I represented the Fulton Schools of Engineering during campus tours.
-                </p>
-            </div>
-
-            <div class="column item item-service" data-aos="fade-up">
-                <h3 class="item-title">
-                    Entrepreneurship —
-                    <span class="accent-gold">FSE 301</span>
-                </h3>
-                <p>
-                    I'm currently taking <strong>FSE 301: Entrepreneurship &amp; Value Creation</strong> with
-                    Dr. Griffin. I have applied concept-based learning and brainstormed ideas in groups to solve
-                    meaningful problems, learning about customer discovery, value proposition, and business models.
-                </p>
-            </div>
-
-            <div class="column item item-service" data-aos="fade-up">
-                <h3 class="item-title">
-                    Talent —
-                    <span class="accent-gold">EGR 401 &amp; EGR 402</span>
-                </h3>
-                <p>
-                    Through <strong>EGR 401</strong> and <strong>EGR 402</strong>, I have developed advanced
-                    engineering competencies by working on real-world challenges and strengthening my innovation
-                    mindset aligned with the Grand Challenges.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SolidWorks Gallery
-    ================================================== -->
-    <section id="solidworks" class="s-portfolio">
-
-        <div class="row">
-            <div class="column large-12">
-                <div class="section-title" data-num="05" data-aos="fade-up">
-                    <h3 class="h6">SolidWorks Gallery</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="row narrower h-text-center">
+        <div class="row clients-outer">
             <div class="column">
-                <h1 class="display-1" data-aos="fade-up">
-                    A selection of CAD models and assemblies built in SolidWorks.
+                <div class="clients" data-aos="fade-up">
+                    
+                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/dropbox.svg" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/atom.svg" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/github.svg" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/redhat.svg" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/medium.svg" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/messenger.svg" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/steam.svg" /></a>
+                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/spotify.svg" /></a>
+                     
+                </div> <!-- end clients -->
+            </div> <!-- end column -->
+        </div> <!-- end clients-outer -->
+
+
+         <!-- SolidWorks Folio Start -->
+    <div class="row s-portfolio__top">
+        <div class="row">
+            <!-- Reserved space or heading if needed -->
+        </div>
+    </div> <!-- end s-portfolio__top -->
+
+    <div class="row h-add-half-bottom">
+        <h1>Here are some of my SolidWorks Projects</h1>
+
+        <!-- Top Left GIF -->
+        <div class="column large-6 tab-12">
+            <figure>
+                <img src="images/portfolio/bike.png" alt="SolidWorks Project 1" style="width: 100%; height: auto;" />
+                <figcaption style="text-align: center; padding-top: 0.5rem;">Bicycle project and assembly</figcaption>
+            </figure>
+        </div>
+
+        <!-- Top Right GIF -->
+        <div class="column large-6 tab-12">
+            <figure>
+                <img src="images/portfolio/torch.jpg" alt="SolidWorks Project 2" style="width: 100%; height: auto;" />
+                <figcaption style="text-align: center; padding-top: 0.5rem;">Torch assembly</figcaption>
+            </figure>
+        </div>
+
+        <!-- Bottom Left GIF -->
+        <div class="column large-6 tab-12">
+            <figure>
+                <img src="images/portfolio/manipulator.jpg" alt="SolidWorks Project 3" style="width: 100%; height: auto;" />
+                <figcaption style="text-align: center; padding-top: 0.5rem;">Manipulator assembly</figcaption>
+            </figure>
+        </div>
+
+        <!-- Bottom Right GIF -->
+        <div class="column large-6 tab-12">
+            <figure>
+                <img src="images/portfolio/torch.jpg" alt="SolidWorks Project 4" style="width: 100%; height: auto;" />
+                <figcaption style="text-align: center; padding-top: 0.5rem;">Bike parts design</figcaption>
+            </figure>
+        </div>
+
+    </div> <!-- end row -->
+    </section> <!-- end s-portfolio -->
+
+
+
+
+<!--
+        <div class="row testimonials collapse">
+
+            <div class="column large-12">
+
+                <div class="testimonial-slider" data-aos="fade-up">
+
+                    <div class="testimonial-slider__slide">
+                        <p>
+                        Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
+                        Explicabo a quaerat sint autem dolore ducimus ut consequatur neque.  Nisi dolores quaerat fuga rem nihil nostrum.
+                        Laudantium quia consequatur molestias delectus culpa.
+                        </p>
+                        <div class="testimonial-slider__author">
+                            <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonial-slider__avatar">
+                            <cite class="testimonial-slider__cite">
+                                <strong>Tim Cook</strong>
+                                <span>CEO, Apple</span>
+                            </cite>
+                        </div>
+                    </div> 
+    
+                    <div class="testimonial-slider__slide">
+                        <p>
+                        Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
+                        Nisi eaque consequatur. Voluptatem dignissimos ut ducimus accusantium perspiciatis.
+                        Quasi voluptas eius distinctio. Atque eos maxime.
+                        </p>
+                        <div class="testimonial-slider__author">
+                            <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonial-slider__avatar">
+                            <cite class="testimonial-slider__cite">
+                                <strong>Sundar Pichai</strong>
+                                <span>CEO, Google</span>
+                            </cite>
+                        </div>
+                    </div> 
+    
+                    <div class="testimonial-slider__slide">
+                        <p>
+                        Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
+                        Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.
+                        Voluptatem dignissimos ut.
+                        </p>
+                        <div class="testimonial-slider__author">
+                            <img src="images/avatars/user-04.jpg" alt="Author image" class="testimonial-slider__avatar">
+                            <cite class="testimonial-slider__cite">
+                                <strong>Satya Nadella</strong>
+                                <span>CEO, Microsoft</span>
+                            </cite>
+                        </div>
+                    </div> 
+    
+                    <div class="testimonial-slider__slide">
+                        <p>
+                        Nunc interdum lacus sit amet orci. Vestibulum dapibus nunc ac augue. Fusce vel dui. In ac felis 
+                        quis tortor malesuada pretium. Curabitur vestibulum aliquam leo. Qui sed at corrupti expedita voluptas odit. 
+                        Nihil ea quia nesciunt. Ducimus aut sed ipsam.
+                        </p>
+                        <div class="testimonial-slider__author">
+                            <img src="images/avatars/user-05.jpg" alt="Author image" class="testimonial-slider__avatar">
+                            <cite class="testimonial-slider__cite">
+                                <strong>Jeff Bezos</strong>
+                                <span>CEO, Amazon</span>
+                            </cite>
+                        </div>
+                    </div> 
+
+                </div> 
+                
+            </div>
+
+        </div>
+
+
+    </div> 
+
+
+    <section class="s-contact">
+
+        <div class="row narrower s-contact__top h-text-center">
+            <div class="column">
+                <h3 class="h6">Get In Touch</h3>
+                <h1 class="display-1">
+                Have an idea or an epic project in mind? Talk to
+                us. Let us work together and make something great.
+                Shoot us a message at
                 </h1>
             </div>
-        </div>
+        </div> 
 
-        <div class="row block-large-1-2 block-tab-full cad-gallery">
+        <div class="row h-text-center">
             <div class="column">
-                <figure class="cad-figure">
-                    <div class="photo-frame">
-                        <img src="images/portfolio/bike.png" alt="Bicycle CAD assembly in SolidWorks">
-                    </div>
-                    <figcaption>Bicycle project &amp; assembly</figcaption>
-                </figure>
-            </div>
-
-            <div class="column">
-                <figure class="cad-figure">
-                    <div class="photo-frame">
-                        <img src="images/portfolio/torch.jpg" alt="Torch assembly CAD model">
-                    </div>
-                    <figcaption>Torch assembly</figcaption>
-                </figure>
-            </div>
-
-            <div class="column">
-                <figure class="cad-figure">
-                    <div class="photo-frame">
-                        <img src="images/portfolio/manipulator.jpg" alt="Robotic manipulator CAD assembly">
-                    </div>
-                    <figcaption>Manipulator assembly</figcaption>
-                </figure>
-            </div>
-
-            <div class="column">
-                <figure class="cad-figure">
-                    <div class="photo-frame">
-                        <img src="images/portfolio/bike-parts.jpg" alt="Bicycle component parts in SolidWorks" onerror="this.src='images/portfolio/bike.png'">
-                    </div>
-                    <figcaption>Bike parts design</figcaption>
-                </figure>
+                <p class="s-contact__email">
+                    <a href="mailto:#0">hello@flare.com</a>
+                </p>
             </div>
         </div>
 
-    </section>
-
+    </section> 
+-->
 
     <!-- footer
     ================================================== -->
@@ -767,16 +947,19 @@
             <div class="column large-8 medium-12">
                 <div class="row">
                     <div class="column large-7 tab-12 s-footer__block">
-                        <h4 class="h6">Where to find me</h4>
+                        <h4 class="h6">Where to Find me</h4>
+        
                         <p>
-                            ASU Polytechnic <br>
-                            Mesa, Arizona, US <br>
-                            <a href="tel:+14807913254">+1 480 791 ****</a>
+                        ASU Polytechnic <br>
+                        Mesa, Arizona <br>
+                        US <br>
+                        <a href="tel:197-543-2345">+480 791 ****</a>
                         </p>
                     </div>
-
+        
                     <div class="column large-5 tab-12 s-footer__block">
-                        <h4 class="h6">Follow me</h4>
+                        <h4 class="h6">Follow me</h4 class="h6">
+        
                         <ul class="s-footer__list">
                             <li><a href="#0">Facebook</a></li>
                             <li><a href="#0">Twitter</a></li>
@@ -788,21 +971,62 @@
             </div>
 
             <div class="column large-4 medium-12 s-footer__block--end">
-                <a href="https://drive.google.com/file/d/1eB1x6E1O73KvCu9WQ8fLvOEe6pA11BQz/view?usp=sharing"
-                   class="btn h-full-width" target="_blank" rel="noopener">Resume</a>
+                <a href="https://drive.google.com/file/d/1eB1x6E1O73KvCu9WQ8fLvOEe6pA11BQz/view?usp=sharing" class="btn h-full-width">Resume</a>
 
                 <div class="ss-copyright">
-                    <span>© Asadbek Ruziev 2026</span>
-                    <span>Template by <a href="https://www.styleshout.com/">StyleShout</a>, customized for ASU</span>
+                    <span>Copyright Flare 2020</span> 
+                    <span>Design by <a href="https://www.styleshout.com/">StyleShout. I have also have used edits to this template by Deepit Arora and Kushagra Dashora</a></span>
                 </div>
             </div>
 
             <div class="ss-go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top">top</a>
-            </div>
+                <a class="smoothscroll" title="Back to Top" href="#top">
+                    top
+                </a>
+            </div> <!-- end ss-go-top -->
 
         </div>
     </footer>
+    
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
+                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
+                    "Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
+                "Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div> <!-- end photoSwipe background -->
 
 
     <!-- Java Script
