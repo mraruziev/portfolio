@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asadbek Ro'ziyev — Robototexnika muhandisi @ ASU</title>
+<meta name="description" content="Asadbek Ro'ziyev — Arizona Davlat Universitetida robototexnika talabasi. Robotlar quruvchi, jamoalar tashkilotchisi, ish bajaruvchi.">
+
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ====================================================================
+   ASADBEK RUZIEV — PORTFOLIO
+   Single-file build · dark theme · ASU maroon + gold accents
+   Inspired by the structure of shauryamanglik.com (witty section labels,
+   timeline-style project cards, achievement grid).
+   ==================================================================== */
+
+:root {
+    --bg:           #0a0a0c;
+    --bg-elev:      #14141a;
+    --bg-card:      #1a1a22;
+    --bg-card-hi:   #22222c;
+    --border:       rgba(255,255,255,0.08);
+    --border-hi:    rgba(255,255,255,0.18);
+
+    --ink:          #ECECEC;
+    --ink-soft:     #B8B8B8;
+    --ink-mute:     #707078;
+
+    --maroon:       #C73863;       /* slightly brightened ASU maroon for dark bg */
+    --maroon-deep:  #8C1D40;
+    --gold:         #FFC627;
+    --gold-soft:    #FFD767;
+
+    --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+    --font-body:    "Inter", system-ui, sans-serif;
+    --font-mono:    "JetBrains Mono", monospace;
+
+    --max:          74rem;
+    --pad-x:        clamp(1.5rem, 4vw, 4rem);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Soft grid background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 0%, rgba(199, 56, 99, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 100%, rgba(255, 198, 39, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--gold); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--gold-soft); }
+
+/* =========================== NAV =========================== */
+nav.topnav {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(10,10,12,0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 1rem var(--pad-x);
+}
+nav.topnav .nav-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+nav.topnav .brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+}
+nav.topnav .brand span { color: var(--maroon); }
+nav.topnav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+}
+nav.topnav ul a {
+    color: var(--ink-soft);
+    text-transform: lowercase;
+}
+nav.topnav ul a:hover { color: var(--ink); }
+@media (max-width: 700px) {
+    nav.topnav ul { display: none; }
+}
+
+/* =========================== HERO =========================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem var(--pad-x) 4rem;
+    position: relative;
+}
+.hero-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+.hero-text .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.hero-text .eyebrow::before {
+    content: "";
+    width: 2.5rem;
+    height: 1px;
+    background: var(--gold);
+}
+.hero-text h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+}
+.hero-text h1 .accent { color: var(--maroon); }
+.hero-text .tagline {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: var(--ink-soft);
+    line-height: 1.4;
+    max-width: 32rem;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+}
+.hero-text .tagline em { color: var(--gold); font-style: normal; }
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+    transition: all 0.25s;
+    border: 1px solid var(--border);
+}
+.btn-primary {
+    background: var(--maroon);
+    color: white;
+    border-color: var(--maroon);
+}
+.btn-primary:hover {
+    background: var(--maroon-deep);
+    transform: translateY(-2px);
+    color: white;
+}
+.btn-ghost {
+    background: transparent;
+    color: var(--ink);
+}
+.btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+}
+.hero-portrait {
+    position: relative;
+    aspect-ratio: 4/5;
+    max-width: 22rem;
+    margin-left: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.04) inset,
+        0 30px 60px -20px rgba(0,0,0,0.6);
+}
+.hero-portrait::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 3rem; height: 3px;
+    background: var(--gold);
+    z-index: 2;
+}
+.hero-portrait::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 3rem;
+    background: var(--gold);
+    z-index: 2;
+}
+.hero-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.05);
+}
+.hero-stats {
+    grid-column: 1 / -1;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+}
+.hero-stat .num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--gold);
+    line-height: 1;
+}
+.hero-stat .label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-top: 0.5rem;
+}
+@media (max-width: 800px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-portrait { max-width: 16rem; margin: 0; }
+}
+
+/* =========================== SECTION SHELL =========================== */
+section.s {
+    padding: 7rem var(--pad-x);
+    max-width: var(--max);
+    margin: 0 auto;
+    scroll-margin-top: 5rem;
+}
+.s-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--maroon);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.s-eyebrow::before {
+    content: "";
+    width: 2.5rem; height: 1px;
+    background: var(--maroon);
+}
+.s-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    max-width: 32ch;
+}
+.s-sub {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    color: var(--ink-mute);
+    margin-bottom: 4rem;
+}
+.s-sub::before { content: "> "; color: var(--gold); }
+
+/* =========================== ABOUT =========================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+}
+.about-photo {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    aspect-ratio: 4/5;
+    background: var(--bg-card);
+}
+.about-photo img { width: 100%; height: 100%; object-fit: cover; }
+.about-text p {
+    color: var(--ink-soft);
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+}
+.about-text strong { color: var(--ink); font-weight: 600; }
+.about-text em { color: var(--gold); font-style: normal; font-weight: 500; }
+@media (max-width: 800px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-photo { max-width: 18rem; }
+}
+
+/* =========================== PROJECT CARD =========================== */
+.project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--border);
+    align-items: center;
+}
+.project:first-of-type { border-top: none; padding-top: 0; }
+.project-info .date {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+.project-info .org {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--maroon);
+    font-style: italic;
+    margin-bottom: 0.25rem;
+}
+.project-info h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.65rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    color: var(--ink);
+}
+.project-info ul {
+    list-style: none;
+    padding: 0;
+}
+.project-info ul li {
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+    margin-bottom: 0.85rem;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.55;
+}
+.project-info ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--maroon);
+    font-weight: 700;
+}
+.project-info ul li strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+.project-media {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    aspect-ratio: 4/3;
+    position: relative;
+}
+.project-media img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.project:hover .project-media img { transform: scale(1.04); }
+.project.reverse { direction: rtl; }
+.project.reverse > * { direction: ltr; }
+
+@media (max-width: 800px) {
+    .project, .project.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 1.5rem;
+        padding: 2.5rem 0;
+    }
+}
+
+/* =========================== CAREER (timeline-ish) =========================== */
+.career-block {
+    margin-bottom: 4rem;
+}
+.career-block:last-child { margin-bottom: 0; }
+.career-block h3.career-title {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+.role {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px dashed var(--border);
+    align-items: start;
+}
+.role:last-child { border-bottom: none; }
+.role .role-org {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+}
+.role .role-org strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 600;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    margin-top: 0.2rem;
+}
+.role .role-detail {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+}
+.role .role-detail h4 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.role .role-detail h4 .badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    background: var(--gold);
+    color: #1a1a22;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.role .role-detail ul {
+    list-style: none;
+    margin-top: 0.5rem;
+}
+.role .role-detail ul li {
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+.role .role-detail ul li::before {
+    content: "—";
+    color: var(--maroon);
+    position: absolute;
+    left: 0;
+}
+.role .role-detail strong { color: var(--ink); font-weight: 600; }
+.role .role-meta {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--ink-mute);
+    text-align: right;
+    letter-spacing: 0.05em;
+}
+@media (max-width: 800px) {
+    .role {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    .role .role-meta { text-align: left; }
+}
+
+/* =========================== HIGHLIGHTS / ACHIEVEMENTS =========================== */
+.highlight-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2rem;
+    align-items: start;
+}
+.highlight-card:hover {
+    border-color: var(--border-hi);
+    background: var(--bg-card-hi);
+    transform: translateY(-2px);
+}
+.highlight-card.no-media {
+    grid-template-columns: 1fr;
+}
+.highlight-info h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.35rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+}
+.highlight-info .meta {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.highlight-info p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.highlight-media {
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: var(--bg);
+    border: 1px solid var(--border);
+}
+.highlight-media img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 800px) {
+    .highlight-card {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+}
+
+/* Compact list of smaller wins */
+.wins-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.win {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.1rem 1.25rem;
+    transition: all 0.25s;
+}
+.win:hover {
+    border-color: var(--gold);
+    background: var(--bg-card);
+}
+.win h5 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+}
+.win .win-meta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--maroon);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.win .win-rank {
+    display: inline-block;
+    background: var(--gold);
+    color: #1a1a22;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+
+/* =========================== SKILLS =========================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.skill-group h4 {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+}
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+.skill-tag {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem 0.85rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    transition: all 0.2s;
+}
+.skill-tag:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+/* =========================== LANG TOGGLE =========================== */
+nav.topnav .lang-toggle {
+    color: var(--gold) !important;
+    border: 1px solid var(--gold);
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    transition: all 0.2s;
+}
+nav.topnav .lang-toggle:hover {
+    background: var(--gold);
+    color: #1a1a22 !important;
+}
+
+/* =========================== MANIFESTO BLOCK =========================== */
+.manifesto {
+    margin-top: 2rem;
+    padding: 1.75rem 2rem;
+    background: linear-gradient(135deg, rgba(199,56,99,0.08) 0%, rgba(255,198,39,0.04) 100%);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    position: relative;
+}
+.manifesto::before {
+    content: "manifesto";
+    position: absolute;
+    top: -0.7rem;
+    left: 1.5rem;
+    background: var(--bg);
+    color: var(--gold);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 0 0.6rem;
+    font-weight: 600;
+}
+.manifesto p {
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+    line-height: 1.65;
+}
+.manifesto p:last-child { margin-bottom: 0; }
+.manifesto strong { color: var(--ink); font-weight: 700; }
+.manifesto em {
+    color: var(--gold);
+    font-style: normal;
+    font-weight: 500;
+}
+.manifesto-lang {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+
+/* =========================== COURSEWORK =========================== */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+.course-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+.course-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--gold);
+    transition: height 0.4s cubic-bezier(.2,.7,.2,1);
+}
+.course-card:hover {
+    border-color: var(--border-hi);
+    background: var(--bg-card-hi);
+    transform: translateY(-3px);
+}
+.course-card:hover::before { height: 100%; }
+
+.course-card.starred {
+    border-color: rgba(255, 198, 39, 0.25);
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(255,198,39,0.04) 100%);
+}
+.course-card.starred::before { height: 100%; }
+
+.course-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.85rem;
+    gap: 0.5rem;
+}
+.course-code {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--maroon);
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.course-grade {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    background: var(--bg-elev);
+    color: var(--ink-soft);
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+}
+.course-grade.top {
+    background: var(--gold);
+    color: #1a1a22;
+    border-color: var(--gold);
+}
+.course-grade.good {
+    background: rgba(199,56,99,0.15);
+    color: var(--maroon);
+    border-color: rgba(199,56,99,0.3);
+}
+.course-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+}
+.course-desc {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+}
+.course-tag {
+    display: inline-block;
+    margin-top: 0.85rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+}
+.course-tag.fav::before {
+    content: "★ ";
+    color: var(--gold);
+}
+
+/* Group divider */
+.courses-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+}
+.courses-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+.courses-divider:first-child { margin-top: 0; }
+
+
+/* =========================== EDUCATION =========================== */
+.edu-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+}
+.edu-card .edu-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+.edu-card .edu-info p {
+    color: var(--ink-soft);
+    margin-bottom: 0.3rem;
+}
+.edu-card .edu-info em {
+    color: var(--gold);
+    font-style: normal;
+    font-weight: 500;
+}
+.edu-card .edu-side {
+    text-align: right;
+    font-family: var(--font-mono);
+}
+.edu-card .edu-side .gpa {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+.edu-card .edu-side .gpa-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-mute);
+    margin-top: 0.4rem;
+    text-transform: uppercase;
+}
+@media (max-width: 700px) {
+    .edu-card { grid-template-columns: 1fr; }
+    .edu-card .edu-side { text-align: left; }
+}
+
+/* =========================== CONTACT =========================== */
+.contact-section {
+    text-align: center;
+    padding: 8rem var(--pad-x);
+    border-top: 1px solid var(--border);
+    max-width: var(--max);
+    margin: 0 auto;
+}
+.contact-section .s-eyebrow { justify-content: center; }
+.contact-section .s-eyebrow::before { display: none; }
+.contact-section h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+}
+.contact-section h2 .accent { color: var(--maroon); }
+.contact-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.1rem 2rem;
+    background: var(--gold);
+    color: #1a1a22;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    border-radius: 999px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    margin-bottom: 3rem;
+}
+.contact-cta:hover {
+    transform: translateY(-2px);
+    background: white;
+    color: #1a1a22;
+}
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+.contact-links a {
+    color: var(--ink-soft);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.2rem;
+}
+.contact-links a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+}
+
+/* =========================== FOOTER =========================== */
+footer {
+    padding: 2.5rem var(--pad-x);
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--ink-mute);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+}
+footer .built {
+    color: var(--maroon);
+    margin: 0 0.3rem;
+}
+</style>
+</head>
+<body>
+
+<!-- =========================== NAV =========================== -->
+<nav class="topnav">
+    <div class="nav-inner">
+        <a href="#home" class="brand">Asadbek<span>.</span></a>
+        <ul>
+            <li><a href="#about">men haqimda</a></li>
+            <li><a href="#projects">loyihalar</a></li>
+            <li><a href="#career">faoliyat</a></li>
+            <li><a href="#highlights">yutuqlar</a></li>
+            <li><a href="#courses">fanlar</a></li>
+            <li><a href="#contact">aloqa</a></li>
+            <li><a href="index.html" class="lang-toggle">EN</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- =========================== HERO =========================== -->
+<header class="hero" id="home">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <div class="eyebrow">Robototexnika muhandisi · ASU '27</div>
+            <h1>Asadbek<br>Ro'ziyev<span class="accent">.</span></h1>
+            <p class="tagline">
+                Men <em>robotlar</em>, <em>jamoalar</em> va vaqti-vaqti bilan keyinchalik foydali bo'lib chiqadigan <em> innovatsion g'oyalar</em> quraman.
+                Hozirda Arizona Davlat Universitetida g'ildiraklar, motorlar va PCB platalari ustida ishlayapman.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">ishlarni ko'rish →</a>
+                <a href="mailto:aruziev@asu.edu" class="btn btn-ghost">salom yuboring</a>
+            </div>
+        </div>
+        <div class="hero-portrait">
+            <img src="images/profile.png" alt="Asadbek Ro'ziyev">
+        </div>
+
+        <div class="hero-stats">
+            <div class="hero-stat"><div class="num">20+</div><div class="label">musobaqa g'alabalari</div></div>
+            <div class="hero-stat"><div class="num">$50K+</div><div class="label">grant va moliyalashtirish</div></div>
+            <div class="hero-stat"><div class="num">50+</div><div class="label">muhandislik loyihasi</div></div>
+            <div class="hero-stat"><div class="num">2</div><div class="label">yil USG senatori</div></div>
+        </div>
+    </div>
+</header>
+
+
+<!-- =========================== ABOUT =========================== -->
+<section class="s" id="about">
+    <div class="s-eyebrow">Men haqimda</div>
+    <h2 class="s-title">men qanday qilib bu yerga kelganimni tushuntiradigan qism</h2>
+    <p class="s-sub">bularning hammasini mantiqli qilish uchun qisqacha tarix</p>
+
+    <div class="about-grid">
+        <div class="about-photo">
+            <img src="images/about-photo.jpg" alt="Asadbek laboratoriyada ishlamoqda">
+        </div>
+        <div class="about-text">
+            <p>
+                Men quruvchiman — nafaqat mashinalar, balki jamoalar, tizimlar va qo'lingizda ushlab <em>"ha, men buni qildim"</em> deyish mumkin bo'lgan narsalarni quraman.
+            </p>
+            <p>
+                <strong>O'zbekistonda</strong> tug'ilib o'sganman. Olimpiadalar, xakatonlar va O'zbekiston Prezidenti bilan bir necha bor uchrashuvlardan so'ng <strong>robototexnika muhandisligi</strong> bo'yicha o'qish uchun ASU Polytechnic kampusiga keldim. O'sha uchrashuvlardan men <em>jismonan kelishning</em> ishning yarmi ekanini o'rgandim.
+            </p>
+            <p>
+                Bugun men avtonom qishloq xo'jaligi roveri <strong>CropSCOUT</strong>ning g'ildirak-motor quyi tizimini boshqaraman. <strong>Drone Devils</strong> tashkilotining g'aznachisi, <strong>O'zbek talabalar assotsiatsiyasi</strong>ning vitse-prezidentiman va ikki yil <strong>USG senatori</strong> sifatida qonun loyihalarini ishlab chiqib, $125K+ byudjetlarni nazorat qilib, ishlarni bajarib keldim.
+            </p>
+            <p>
+                Laboratoriyadan tashqarida Arduino jang robotlari quraman, 1,000+ yuklab olingan ilovalar chiqaraman, 400+ mehmonli madaniy festivallarni o'tkazaman va ustaxonada narsalarni sindirib qo'ymaslikka <em>harakat qilaman</em>. <em>Harakat.</em>
+            </p>
+            <p>
+                Men eng yaxshi muhandislik eng murakkab emas, eng foydali deb hisoblayman. Men shu yerda shu ishni qilish uchunman.
+            </p>
+
+            <div class="manifesto">
+                <span class="manifesto-lang">o'z so'zlarim bilan</span>
+                <p>
+                    <strong>Robototexnika — mening hayotim.</strong>
+                    Men bularning barchasini El-Yurt Umidi yoki ASU uchun qilmadim. <strong>2019-yildan buyon robototexnika bilan shug'ullanaman</strong> — va bu shunchaki qiziqish emas, bu mening hayotim. Musobaqalar, tungi sessiyalar, buzilgan sxemalar, qayta yig'ilgan robotlar — bularning barchasi ishtiyoqdan tug'ilgan, maqsaddan emas.
+                </p>
+                <p>
+                    El-Yurt Umidi va ASU imkoniyatlarini ko'rganimda, ariza topdim — va qabul bo'ldim. Bu imkoniyatlar menga keldi, men ularni qidirib bormadim. <strong>Robototexnikani yaxshi ko'raman va bir vaqtning o'zida undan nafratlanaman</strong> — u meni bezovta qiladi, uxlatmaydi, boshimni aylantiradi. Lekin aynan shu sabab uni tashlay olmayman. <em>Butun umrim davomida shug'ullanaman.</em>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================== PROJECTS =========================== -->
+<section class="s" id="projects">
+    <div class="s-eyebrow">Loyihalar</div>
+    <h2 class="s-title">men haqiqatan yakunlagan ishlar ro'yxati</h2>
+    <p class="s-sub">lehimlangan, mahkamlangan, ishga tushirilgan — va ba'zida olov ichida</p>
+
+    <!-- CropSCOUT -->
+    <div class="project">
+        <div class="project-info">
+            <div class="date">Yan 2026 – May 2026</div>
+            <div class="org">EGR 314 · Embedded Systems Design Project II</div>
+            <h3>CropSCOUT — Avtonom Qishloq Xo'jaligi Roveri</h3>
+            <ul>
+                <li>7 muhandisdan iborat jamoaning <strong>g'ildirak-motor quyi tizimi</strong>ni boshqardim — yer usti farma maydonlarini monitoring qiluvchi rover.</li>
+                <li>KiCadda maxsus <strong>4 kanalli motor drayveri PCB</strong> yaratdim — ESP32-S3-WROOM-1 to'rtta TLE9201SG1 H-bridge'ni SPI orqali boshqaradi; JLCPCBda ishlab chiqarildi.</li>
+                <li>Metall detektor, harorat/namlik, bosim va IMU sensorlari integratsiyalandi; jonli telemetriya <strong>MQTT/Wi-Fi</strong> orqali uzatiladi.</li>
+                <li>500+ tomoshabin oldida <strong>ASU Fulton Innovation Showcase</strong>'da namoyish etildi.</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/CropScout.png" alt="CropSCOUT roveri va PCB"></div>
+    </div>
+
+    <!-- EduShelf -->
+    <div class="project reverse">
+        <div class="project-info">
+            <div class="date">Bahor 2026 · 2-o'rin</div>
+            <div class="org">FSE 301 Demo Day · Tadbirkorlik va Qiymat Yaratish</div>
+            <h3>EduShelf — Aqlli Ish Stoli Javoni</h3>
+            <ul>
+                <li>60×75×75 sm <strong>aqlli ish stoli javoni</strong> — telefon bloklash docki, harakat sensori, Pomodoro displeyi va uyqu signali.</li>
+                <li>Dr. Griffin rahbarligida FSE 301 Demo Day'da <strong>2-o'rin</strong> — to'liq mijoz tadqiqoti, qiymat taklifi va investorlar oldida jonli pitch.</li>
+                <li>6 kishilik jamoa <strong>Devils Invent</strong> xakatonida ham namoyish etdi.</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/edushelf.jpg" alt="EduShelf prototipi"></div>
+    </div>
+
+    <!-- EyeMed -->
+    <div class="project">
+        <div class="project-info">
+            <div class="date">2021 – Hozirgacha · 1,100+ yuklab olishlar</div>
+            <div class="org">BESTARORG · Google Play, Windows, Web</div>
+            <h3>EyeMed — Ko'z Salomatligi va Ekran Vaqti Ilovasi</h3>
+            <ul>
+                <li>Hammuassis sifatida 3 platformali ilova yaratdim — har 30 daqiqada eslatma yuboradi, ko'z mashqlarini taklif qiladi va ilovalar bo'yicha ekran vaqti statistikasini kuzatadi.</li>
+                <li><strong>Android (Google Play)</strong>, <strong>Windows desktop</strong> va <strong>veb-ilova</strong> sifatida chiqarildi — uchta platforma, bitta umumiy kod baza strategiyasi.</li>
+                <li>Startup Weekend tanlovida <strong>$2,400+</strong> yutib oldim va kengaytirish uchun <strong>USAID</strong> yordamini oldim.</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/eyemed.png" alt="EyeMed Android, Windows va vebda"></div>
+    </div>
+
+    <!-- Cheese Touch Battlebot -->
+    <div class="project reverse">
+        <div class="project-info">
+            <div class="date">Bahor 2025 · "Best Dressed" mukofoti</div>
+            <div class="org">Combat Ready Robotics · Sun Devil Smackdown</div>
+            <h3>Cheese Touch — 1 funt'lik Jangovar Battlebot</h3>
+            <ul>
+                <li>1 funt'lik jangovar robotni dizayn qildim, frezerladim va <strong>ASU Sun Devil Smackdown</strong> hamda <strong>National Havoc Robot League</strong>'da musobaqalashdim.</li>
+                <li><strong>"Best Dressed"</strong> mukofotini uyga olib keldim (muhandis hakamlar ham did bilan ko'rar ekan).</li>
+                <li>To'liq SolidWorks → mill/laser/CNC pipeline'i; bu kichik robot menga ko'plab darslarga qaraganda chuqurroq mas'uliyat zanjirini o'rgatdi.</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/cheesetouch.png" alt="Cheese Touch battlebot"></div>
+    </div>
+
+    <!-- AIAA DBF -->
+    <div class="project">
+        <div class="project-info">
+            <div class="date">Sen 2023 – May 2024</div>
+            <div class="org">Air Devils · AIAA Design/Build/Fly 2024</div>
+            <h3>Air Devils — AIAA DBF uchun RC Samolyot</h3>
+            <ul>
+                <li>ASU jamoasining bugungi kungacha <strong>eng katta va og'ir</strong> AIAA DBF samolyotini qurgan jamoaning loyiha muhandisi.</li>
+                <li>Missiya profili: <strong>Urban Air Mobility</strong> — ham air-taxi yugurishi, ham tibbiy yuk yetkazib berish; tezlik, yuk hajmi va ishonchlilik bo'yicha baholandi.</li>
+                <li>Mamlakat bo'ylab keladigan jamoalar bilan <strong>Wichita, KS</strong>da musobaqalashdik.</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/air-devils.jpg" alt="AIAA DBF samolyoti"></div>
+    </div>
+
+<!-- 3-DOF Manipulator -->
+<div class="project reverse">
+    <div class="project-info">
+        <div class="date">Kuz 2024</div>
+        <div class="org">EGR 455, 456 · Robotic Systems</div>
+        <h3>3-DOF Robototexnika Manipulyatori</h3>
+        <ul>
+            <li>Machine learning yordamida 3 erkinlik darajali <strong>robotik manipulyator</strong> dizayn qilib qurdim.</li>
+            <li><strong>Uchburchak, doira, kvadrat, harflar va turli o'lchamlar/tezliklarni</strong> aniqlab chiza oladigan chizish roboti ishlab chiqdim.</li>
+            <li><strong>Cypress PSoC Creator</strong> yordamida UART aloqasi bilan <strong>gaykalarni olib qo'yish avtomatizatsiyasi</strong>ni implementatsiya qildim.</li>
+            <li><strong>OpenCV</strong>ni <strong>Python va C++</strong> bilan birlashtirib shakl aniqlash va robot boshqaruvini amalga oshirdim.</li>
+            <li>To'liq muhandislik pipeline'ini yakunladim — kinematik chizma, CAD assembly, motor o'lchami, dasturlash va tizim integratsiyasi.</li>
+            <li>Yo'l-yo'lakay <strong>Certified SolidWorks Associate (CSWA)</strong> sertifikatimni oldim.</li>
+        </ul>
+    </div>
+    <div class="project-media">
+        <img src="images/portfolio/manipulator.jpg" alt="3-DOF manipulyator">
+    </div>
+</div>
+
+    <!-- EPICS Pyrolyzer -->
+    <div class="project">
+        <div class="project-info">
+            <div class="date">Bahor 2024</div>
+            <div class="org">EPICS Nepal · Engineering Projects in Community Service</div>
+            <h3>EPICS Nepal Pirolizatori</h3>
+            <ul>
+                <li>Nepalning qishloq joylaridagi hamkor jamoalar uchun <strong>biomassa pirolizatori</strong> dizaynida ishtirok etdim — qishloq xo'jaligi chiqindilarini biochar o'g'iti va toza pishirish yoqilg'isiga aylantiradi.</li>
+                <li>Real dunyo cheklovlari: elektrsiz yig'ish, mahalliy po'lat materiallar, qo'l asboblari bilan ta'mirlanadigan. Yaqin atrofda do'kon yo'q joylarda muhandislik.</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/Pyrolizer.png" alt="EPICS Nepal pirolizatori"></div>
+    </div>
+
+    <!-- Bluetooth Skateboard -->
+    <div class="project reverse">
+        <div class="project-info">
+            <div class="date">2024</div>
+            <div class="org">EGR 202 · Shunchaki zavq uchun</div>
+            <h3>Bluetooth Boshqariladigan Elektr Skeytbord</h3>
+            <ul>
+                <li>Noldan qurdim — BLDC hub motor, dasturlanadigan ESC, maxsus qo'l pultida <strong>Bluetooth gaz boshqaruvi</strong>.</li>
+                <li>Gaz egri chizig'i va batareyalar konfiguratsiyasini shunday sozladimki, issiqlikdan sustlashmasdan <strong>25+ km/soat</strong> doimiy tezlikni tortishi mumkin. (Ko'p marta sinab ko'rdim.)</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/skateboard.jpg" alt="Maxsus elektr skeytbord"></div>
+    </div>
+
+<!-- EGR 294 / machining -->
+<div class="project">
+    <div class="project-info">
+        <div class="date">Bahor 2025</div>
+        <div class="org">EGR 294 · Muhandislik Prototiplash Asoslari</div>
+        <h3>EGR 294 — Aniq Frezerlash va Ishlab Chiqarish Loyihalari</h3>
+        <ul>
+            <li><strong>Qo'l frezerlash</strong>ida amaliy ta'lim oldim — lathe operatsiyalari, milling, drilling, surface grinding, threading, reaming, tapping va aniq o'lchov.</li>
+            <li>Temir va temirsiz materiallar bilan ishladim, <strong>GD&amp;T, tolerancing, tekshiruv va ustaxona xavfsizligi amaliyotlari</strong>ni qo'lladim.</li>
+            <li>Xom materialdan qo'l lathe va mill jarayonlari bilan to'liq ishlaydigan <strong>metall yondirgich</strong> ishlab chiqdim.</li>
+            <li>Aniq <strong>mashina vise siqimi</strong>ni dizayn qilib yig'dim — vise jaw'lari, threaded komponentlar, sirpanma operatsiyalar va tekislash.</li>
+            <li><strong>Qo'l frezeri, lathe, drill press, surface grinder, kaliperlar va aniq tekshiruv asboblari</strong> bilan ishlash tajribasini oldim.</li>
+        </ul>
+    </div>
+    <div class="project-media">
+        <img src="images/portfolio/torch.jpg" alt="Aniq frezerlash loyihalari">
+    </div>
+</div>
+
+    <!-- Adiblar.uz -->
+    <div class="project reverse">
+        <div class="project-info">
+            <div class="date">2022 – 2023</div>
+            <div class="org">BESTARORG · Madaniy Texnologiya</div>
+            <h3>Adiblar.uz — O'zbek Adabiyoti Raqamli Platformasi</h3>
+            <ul>
+                <li>Mustaqillik davri o'zbek yozuvchilari, shoirlari va bastakorlari uchun raqamli arxivni hammuassis sifatida qurdim. Internetda yashaydigan avlod uchun madaniy meros saqlovi.</li>
+                <li>Yo'l xaritasi AI tavsiyalar qatlami va mobil ilovani o'z ichiga oladi — o'zbek merosi keyingi avlod foydalanadigan formatda.</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/adiblar.jpg" alt="Adiblar.uz / madaniy loyiha"></div>
+    </div>
+</section>
+
+
+<!-- =========================== CAREER =========================== -->
+<section class="s" id="career">
+    <div class="s-eyebrow">Faoliyat</div>
+    <h2 class="s-title">qandaydir tarzda kirgan ishlar, lavozimlar va saylangan o'rinlar</h2>
+    <p class="s-sub">yetakchilik, byudjetlar va ba'zan Robert Qoidalari ishtirokida</p>
+
+    <!-- LEADERSHIP -->
+    <div class="career-block">
+        <h3 class="career-title">Yetakchilik</h3>
+
+        <div class="role">
+            <div class="role-org">Drone Devils <strong>G'aznachi va Hammuassis</strong></div>
+            <div class="role-detail">
+                <h4>G'aznachi · ASU Polytechnic</h4>
+                <ul>
+                    <li>Polytechnic kampusda Drone Devils tashkilotini hammuassis sifatida qayta tashkil etdim.</li>
+                    <li>To'g'ridan-to'g'ri <strong>$4,000+</strong> jalb qildim; EMAS stipendiyalari va grantlar orqali jami <strong>$15,000</strong> moliyalashtirish ta'minladim.</li>
+                    <li>Sun Devil Smackdown va National Havoc Robot League tadbirlarida tashkilot ishtirokini ta'minladim.</li>
+                </ul>
+            </div>
+            <div class="role-meta">Avg 2024 – Hozir<br>Mesa, AZ</div>
+        </div>
+
+        <div class="role">
+            <div class="role-org">O'zbek Talabalar Assotsiatsiyasi (UZSA) <strong>Vitse-prezident</strong></div>
+            <div class="role-detail">
+                <h4>Vitse-prezident · ASU</h4>
+                <ul>
+                    <li><strong>7 kishilik exec jamoaga</strong> rahbarlik qilaman; madaniy tadbirlar uchun <strong>$30,000+</strong> jalb qildim.</li>
+                    <li><strong>Navro'z 2025 va 2026</strong> bayramlari (har birida 400+ mehmon) va "1001 Nights" tadbirlari — ikki yil davomida <strong>800+ jami mehmon</strong>.</li>
+                    <li>7+ talaba tashkilotlari bilan qo'shma tadbirlar; O'zbekistondan yangi kelgan talabalarga mentorlik.</li>
+                </ul>
+            </div>
+            <div class="role-meta">Avg 2024 – Hozir<br>Mesa, AZ</div>
+        </div>
+
+        <div class="role">
+            <div class="role-org">Talabalar Hukumati <strong>Senator</strong> <span class="badge" style="background:var(--gold);color:#1a1a22;font-family:var(--font-mono);font-size:0.6rem;padding:0.15rem 0.4rem;border-radius:3px;letter-spacing:0.08em;margin-top:0.4rem;display:inline-block;text-transform:uppercase;font-weight:700;">Champion for Change</span></div>
+            <div class="role-detail">
+                <h4>Senator · Hukumat Ishlari Raisi</h4>
+                <ul>
+                    <li><strong>Ketma-ket ikki muddatga</strong> saylangan; <strong>5 ta qonun loyihasi</strong> va <strong>4 ta rezolyutsiya</strong> tayyorladim.</li>
+                    <li>Hukumat Ishlari Raisi sifatida talabalar tashkilotlari uchun <strong>$125,000+</strong> byudjetini nazorat qildim.</li>
+                    <li>Talabalar uchun real natijalar: Century Hall vending mashinasi, bepul Lyft kodlari, farovonlik buyumlari.</li>
+                    <li>USG Polytechnic'ning eng nufuzli yetakchilik mukofoti <strong>"Champion for Change"</strong> bilan taqdirlandim.</li>
+                </ul>
+            </div>
+            <div class="role-meta">Sen 2023 – May 2025<br>Mesa, AZ</div>
+        </div>
+
+        <div class="role">
+            <div class="role-org">BESTARORG <strong>Hammuassis · Bosh Robototexnika Muhandisi</strong></div>
+            <div class="role-detail">
+                <h4>Hammuassis · Bosh Muhandis</h4>
+                <ul>
+                    <li>Toshkentda <strong>7 muhandisdan iborat jamoaga</strong> rahbarlik qildim — Robot UZ va Future Skills Uzbekistan musobaqalari.</li>
+                    <li>EyeMed'ni Startup Weekend tanlovida <strong>$5,000+</strong> g'alabaga olib bordim; O'zbekiston Prezidenti va Innovatsiyalar vaziri bilan startap masalalari bo'yicha uchrashdim.</li>
+                </ul>
+            </div>
+            <div class="role-meta">Okt 2020 – Iyul 2023<br>Toshkent, UZ</div>
+        </div>
+    </div>
+
+    <!-- ACADEMIC -->
+    <div class="career-block">
+        <h3 class="career-title">Akademik</h3>
+
+        <div class="role">
+            <div class="role-org">Fulton Schools of Engineering <strong>O'qituvchi Yordamchisi</strong></div>
+            <div class="role-detail">
+                <h4>UGTA · EGR 101 — Muhandislikka Kirish</h4>
+                <ul>
+                    <li>Dr. Daniel Frank va <strong>150+ talabaga</strong> yordam ko'rsatdim — Arduino asosidagi katapulta loyihasi va yakuniy dizayn topshiriqlari.</li>
+                </ul>
+            </div>
+            <div class="role-meta">Sen 2024 – Dek 2024</div>
+        </div>
+
+        <div class="role">
+            <div class="role-org">Fulton Ambassadors <strong>Co-Tour Director</strong></div>
+            <div class="role-detail">
+                <h4>Fulton Elchisi · Co-Tour Director</h4>
+                <ul>
+                    <li>Har bir sessiyada <strong>10–30 ta nomzod talaba va oilalari</strong> uchun kampus ekskursiyalarini boshqardim.</li>
+                    <li>Co-Tour Director sifatida keyingi guruh Ambassadors'larni o'qitishda yordam berdim.</li>
+                </ul>
+            </div>
+            <div class="role-meta">Yan 2024 – Dek 2024</div>
+        </div>
+
+        <div class="role">
+            <div class="role-org">FACE Symposium <strong>Fulton Yetakchisi</strong></div>
+            <div class="role-detail">
+                <h4>Fulton Accelerated Community Engagement</h4>
+                <ul>
+                    <li>FACE Symposium 2024'da <strong>Edudoxobot</strong>'ni taqdim etdim — Pomodoro/uyqu kuzatuvchi aqlli ish stoli tizimi.</li>
+                    <li>Starbucks Global Academy kasbiy rivojlanish kurslarini yakunladim.</li>
+                </ul>
+            </div>
+            <div class="role-meta">Okt 2023 – May 2024</div>
+        </div>
+    </div>
+
+    <!-- WORK -->
+    <div class="career-block">
+        <h3 class="career-title">Ish</h3>
+
+        <div class="role">
+            <div class="role-org">ASU Enterprise Technology <strong>Sinf Qo'llab-quvvatlash Texnologi</strong></div>
+            <div class="role-detail">
+                <h4>Sinf Qo'llab-quvvatlash · IT</h4>
+                <ul>
+                    <li>ASU kampuslari bo'ylab o'qituvchilar va sinf AV/IT tizimlari uchun chaqiruv asosida qo'llab-quvvatlash.</li>
+                    <li>Joyida nosozliklarni bartaraf etish; dars boshlanishidan 30 soniya oldin biror narsa yoqmasa, bosim ostida xotirjam ish.</li>
+                </ul>
+            </div>
+            <div class="role-meta">May 2023 – Hozir<br>Tempe / Mesa, AZ</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================== HIGHLIGHTS =========================== -->
+<section class="s" id="highlights">
+    <div class="s-eyebrow">Yutuqlar</div>
+    <h2 class="s-title">yo'lni arziydi qilgan lahzalar</h2>
+    <p class="s-sub">musobaqalar, e'tiroflar va ba'zan yaxshi fotosurat</p>
+
+    <!-- Big highlight cards -->
+    <div class="highlight-card">
+        <div class="highlight-info">
+            <h4>Champion for Change Mukofoti</h4>
+            <div class="meta">USG Polytechnic · 2024</div>
+            <p>
+                ASU Polytechnic kampusining Talabalar Hukumati tomonidan beriladigan eng nufuzli yetakchilik e'tirofi. Doimiy targ'ibot, talabalar uchun real natijaga olib kelgan qonun loyihalari va ikki to'liq muddat davomida ishtirok uchun taqdirlandim.
+            </p>
+        </div>
+        <div class="highlight-media"><img src="images/champion_trophy.jpg" alt="Champion for Change mukofoti"></div>
+    </div>
+
+    <div class="highlight-card">
+        <div class="highlight-info">
+            <h4>"Best Dressed" Mukofoti — Sun Devil Smackdown</h4>
+            <div class="meta">Combat Ready Robotics ASU · 2025</div>
+            <p>
+                "Cheese Touch" — 1 funt'lik jangovar robotni ASU'ning jangovar robototexnika turniriga olib keldim va dizayn va mahorat uchun Best Dressed mukofotini yutib oldim. <strong>National Havoc Robot League</strong>'da ham ishtirok etdim.
+            </p>
+        </div>
+        <div class="highlight-media"><img src="images/portfolio/cheesetouch.png" alt="Cheese Touch battlebot"></div>
+    </div>
+
+    <div class="highlight-card">
+        <div class="highlight-info">
+            <h4>FSE 301 Demo Day — 2-o'rin</h4>
+            <div class="meta">Tadbirkorlik va Qiymat Yaratish · 2026</div>
+            <p>
+                EduShelf — bizning aqlli mahsuldorlik ish stoli javonimiz Dr. Griffin rahbarligida FSE 301 Demo Day'da 2-o'rinni egalladi — mijoz tadqiqoti, biznes modeli va jonli investor pitchi bo'yicha o'nlab 6 kishilik jamoalarni ortda qoldirdi.
+            </p>
+        </div>
+        <div class="highlight-media"><img src="images/portfolio/FSE301.jpg" alt="EduShelf"></div>
+    </div>
+
+    <div class="highlight-card">
+        <div class="highlight-info">
+            <h4>El-Yurt Umidi Jamg'armasi Stipendianti</h4>
+            <div class="meta">O'zbekiston Davlat Stipendiyasi · 2023 – Hozir</div>
+            <p>
+                El-Yurt Umidi Jamg'armasiga tanlandim — O'zbekistonning chet elda tahsil olish uchun milliy iste'dod stipendiyasi — bu mening Arizona Davlat Universitetidagi to'liq Muhandislik (Robototexnika) B.S.E. dasturimni moliyalashtirmoqda.
+            </p>
+        </div>
+        <div class="highlight-media"><img src="images/about-photo.jpg" alt="ASU'da"></div>
+    </div>
+
+    <div class="highlight-card">
+        <div class="highlight-info">
+            <h4>Grand Challenges Scholars Program (GCSP)</h4>
+            <div class="meta">Arizona Davlat Universiteti · 2024 – Hozir</div>
+            <p>
+                ASU'ning Grand Challenges Scholars Program'iga tanlandim — kelajak asr uchun National Academy of Engineering'ning 14 ta katta muammosiga qaratilgan honors yo'nalishi. Mening fokusim: keng miqyosda ishlovchi muhandislik vositalari.
+            </p>
+        </div>
+        <div class="highlight-media"><img src="images/portfolio/fulton_ambassadors.jpg" alt="Fulton GCSP"></div>
+    </div>
+
+    <!-- Smaller wins grid -->
+    <h3 style="margin-top: 4rem; margin-bottom: 1rem; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;">ASU'ga kelishimdan oldingi yutuqlar</h3>
+    <p style="color: var(--ink-mute); font-family: var(--font-mono); font-size: 0.88rem;">> stipendiyani olishga yordam bergan maktab davri rezyumesi</p>
+
+    <div class="wins-list">
+        <div class="win">
+            <h5><span class="win-rank">1-o'rin</span>Xalqaro IT-Planet Olimpiadasi</h5>
+            <div class="win-meta">Rossiya · O'zbekiston nomidan eng yaxshi jamoa</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">Yarim final</span>"Unlimited Possibilities" IT-Planet World</h5>
+            <div class="win-meta">Rossiya · dunyo bosqichi finalisti</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">1-o'rin</span>Technoways Milliy Tanlovi</h5>
+            <div class="win-meta">O'zbekiston · $3,000 + noutbuk yutug'i</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">3-o'rin</span>USAID Xalqaro Startup Weekend</h5>
+            <div class="win-meta">$2,400 · O'zbekistonni finalda namoyon etdim</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">1-o'rin</span>IRC Robototexnika — O'zbek Bosqichi</h5>
+            <div class="win-meta">2019 · dunyoda 8-o'rin</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">2×</span>One Million Uzbek Coders</h5>
+            <div class="win-meta">$1,000 mukofot</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">1-o'rin</span>IT Park Ideathon — Yoshlar Forumi</h5>
+            <div class="win-meta">2021 · noutbuk yutug'i</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">3×</span>National Robot UZ</h5>
+            <div class="win-meta">2020 + 2021 · 3-o'rin natijalari</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">1-o'rin</span>Milliy Intellekt Olimpiadasi</h5>
+            <div class="win-meta">Toshkent Shahar Hokimligi · TV mukofoti</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">1-o'rin</span>'Al-Xorazmiy Avlodi' Tex. Tanlovi</h5>
+            <div class="win-meta">MITC / TUIT · maktab o'quvchisi sifatida universitet talabalari orasida g'olib</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">1-o'rin</span>"Men Yaratuvchiman" Milliy Tanlov</h5>
+            <div class="win-meta">O'zbek millati</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">2×</span>"Mening Armiyam — Mening Faxrim"</h5>
+            <div class="win-meta">$300 · maxsus harbiy rover</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">1-o'rin</span>IT Park Pitchday</h5>
+            <div class="win-meta">IT Tadbirkorlik onlayn kursi 2020</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">Final</span>Open Data Challenge</h5>
+            <div class="win-meta">Onlayn xakaton 2020</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">Final</span>Challenge MeOut Xakatoni</h5>
+            <div class="win-meta">Germaniya · onlayn finalisti</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">✓</span>Udacity Frontend Nanodegree</h5>
+            <div class="win-meta">Yakunlandi · 2020</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================== SKILLS =========================== -->
+<section class="s" id="skills">
+    <div class="s-eyebrow">Ko'nikmalar</div>
+    <h2 class="s-title">Google'dan oldin qila oladigan ishlarim</h2>
+    <p class="s-sub">faqat ma'ruza slaydlarida emas, loyihalarda sinovdan o'tgan</p>
+
+    <div class="skills-grid">
+        <div class="skill-group">
+            <h4>Hardware</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">ESP32 / ESP32-S3</span>
+                <span class="skill-tag">Arduino</span>
+                <span class="skill-tag">Teensy 4.1</span>
+                <span class="skill-tag">KiCad PCB Dizayn</span>
+                <span class="skill-tag">SMT Lehimlash</span>
+                <span class="skill-tag">I²C · SPI · UART</span>
+                <span class="skill-tag">H-Bridge Motor Drayverlar</span>
+                <span class="skill-tag">IMU / Sensor Fusion</span>
+                <span class="skill-tag">Qo'l & CNC Frezerlash</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h4>CAD va Ishlab Chiqarish</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">SolidWorks (CSWA)</span>
+                <span class="skill-tag">Fusion 360</span>
+                <span class="skill-tag">3D Bosib Chiqarish (Cura, Bambu)</span>
+                <span class="skill-tag">Lazer Kesish (Inkscape)</span>
+                <span class="skill-tag">Qo'l Lathe / Mill</span>
+                <span class="skill-tag">FEA Asoslari</span>
+                <span class="skill-tag">DFM / DFA</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h4>Dasturlash</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">C / C++</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Arduino / PlatformIO</span>
+                <span class="skill-tag">MQTT</span>
+                <span class="skill-tag">Git / GitHub</span>
+                <span class="skill-tag">MATLAB</span>
+                <span class="skill-tag">HTML / CSS / JS</span>
+                <span class="skill-tag">React Native</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h4>Tillar va Vositalar</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">O'zbekcha (ona tili)</span>
+                <span class="skill-tag">Inglizcha (yaxshi)</span>
+                <span class="skill-tag">Ruscha (suhbatli)</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Adobe Suite</span>
+                <span class="skill-tag">Microsoft Office</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================== COURSEWORK =========================== -->
+<section class="s" id="courses">
+    <div class="s-eyebrow">Darslar</div>
+    <h2 class="s-title">o'quv reja ichida o'rnini topgan fanlar</h2>
+    <p class="s-sub">muhandislik haqida fikrimni haqiqatan shakllantirgan fanlar</p>
+
+    <div class="courses-divider">Robototexnika va Embedded · asosiy fanlar</div>
+    <div class="courses-grid">
+
+        <div class="course-card starred">
+            <div class="course-head">
+                <span class="course-code">EGR 456</span>
+                <span class="course-grade top">A+</span>
+            </div>
+            <h4 class="course-title">Robotic Systems II</h4>
+            <p class="course-desc">Trayektoriya rejalashtirish, computed-torque boshqaruv, ilg'or manipulyator dinamikasi — kinematika hikoyasining chuqurroq yarmi. To'liq robot boshqaruv tizimlarini quridik va simulyatsiya qildim.</p>
+            <span class="course-tag fav">eng sevimli</span>
+        </div>
+
+        <div class="course-card starred">
+            <div class="course-head">
+                <span class="course-code">EGR 314</span>
+                <span class="course-grade top">A</span>
+            </div>
+            <h4 class="course-title">Embedded Systems Design Project II</h4>
+            <p class="course-desc">Boshidan oxirigacha embedded mahsulot dizayni — sxema, KiCad PCB, JLCPCB ishlab chiqarish. CropSCOUT'ning motor-drayveri shu yerda hayot oldi.</p>
+            <span class="course-tag fav">capstone darajasidagi ish</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 455</span>
+                <span class="course-grade">B-</span>
+            </div>
+            <h4 class="course-title">Robotic Systems I</h4>
+            <p class="course-desc">To'g'ri va teskari kinematika, manipulyator modellashtirish, robot qo'llarini vizual boshqarish. Har bir robot harakati ostidagi matematik asos.</p>
+            <span class="course-tag">asosiy robototexnika</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 304</span>
+                <span class="course-grade">B</span>
+            </div>
+            <h4 class="course-title">Embedded Systems Design Project I</h4>
+            <p class="course-desc">Birinchi embedded kursi — mikrokontroller asoslari, peripheral interfeyslar, stol ustida real vaqtli firmware.</p>
+            <span class="course-tag">embedded</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 334</span>
+                <span class="course-grade good">B+</span>
+            </div>
+            <h4 class="course-title">Analog-Digital Interface</h4>
+            <p class="course-desc">Aralash signal dizayni — sampling, ADC, op-amp front-end'lar va analog sensorlarni raqamli olamga toza kiritish.</p>
+            <span class="course-tag">signallar</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 330</span>
+                <span class="course-grade good">A-</span>
+            </div>
+            <h4 class="course-title">Design of Electrical Systems</h4>
+            <p class="course-desc">Power electronics, motor drayverlari, EMI/EMC va simulyatordan tashqari ham haqiqatan ishlaydigan sxema yaratish san'ati.</p>
+            <span class="course-tag">elektr</span>
+        </div>
+
+    </div>
+
+
+    <div class="courses-divider">Dizayn va ishlab chiqarish</div>
+    <div class="courses-grid">
+
+        <div class="course-card starred">
+            <div class="course-head">
+                <span class="course-code">EGR 380</span>
+                <span class="course-grade top">A+</span>
+            </div>
+            <h4 class="course-title">Advanced CADD &amp; Solid Modeling</h4>
+            <p class="course-desc">Master darajasidagi SolidWorks — assembly'lar, surfacing, sheet metal, FEA, dizayn niyati. Yo'l-yo'lakay CSWA sertifikatimni oldim.</p>
+            <span class="course-tag fav">eng sevimli</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 201</span>
+                <span class="course-grade good">A</span>
+            </div>
+            <h4 class="course-title">Use-Inspired Design Project I</h4>
+            <p class="course-desc">Real foydalanuvchilar uchun muammo-yechish sifatida muhandislik. Jarayon, prototiplash va eng ko'p o'rgatadigan birinchi iteratsiyalar.</p>
+            <span class="course-tag">dizayn</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 202</span>
+                <span class="course-grade good">A</span>
+            </div>
+            <h4 class="course-title">Use-Inspired Design Project II</h4>
+            <p class="course-desc">Ikkinchi yarim — foydalanuvchi tadqiqotidan ishchi prototipgacha to'liq jamoaviy mahsulot ishlab chiqish sikli.</p>
+            <span class="course-tag">dizayn</span>
+        </div>
+
+        <div class="course-card starred">
+            <div class="course-head">
+                <span class="course-code">EGR 294</span>
+                <span class="course-grade">B</span>
+            </div>
+            <h4 class="course-title">Muhandislik Prototiplash Asoslari</h4>
+            <p class="course-desc">Qo'l lathe, mill, drill press, surface grinder, qo'l asboblari — butun ustaxona. Yakuniy ish sifatida qo'lda metall yondirgich frezerladim.</p>
+            <span class="course-tag fav">eng amaliy</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 218</span>
+                <span class="course-grade">C</span>
+            </div>
+            <h4 class="course-title">Materials &amp; Manufacturing Processes</h4>
+            <p class="course-desc">Material tanlash, shakllantirish, quyish, ulash — nima uchun detal po'lat yoki alyuminiy yoki plastik bo'lishini va qanday ishlab chiqarilishini bilish.</p>
+            <span class="course-tag">ishlab chiqarish</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 217</span>
+                <span class="course-grade good">A-</span>
+            </div>
+            <h4 class="course-title">Muhandislik Mexanikasi Asoslari</h4>
+            <p class="course-desc">Statika, dinamika va har qanday mexanik dizayn ortidagi qattiq jism asoslari.</p>
+            <span class="course-tag">mexanika</span>
+        </div>
+
+    </div>
+
+
+    <div class="courses-divider">Matematika va nazariya</div>
+    <div class="courses-grid">
+
+        <div class="course-card starred">
+            <div class="course-head">
+                <span class="course-code">MAT 275</span>
+                <span class="course-grade">B</span>
+            </div>
+            <h4 class="course-title">Modern Differential Equations</h4>
+            <p class="course-desc">ODE, Laplace o'tkazishlari, tenglamalar tizimi — har bir kontroller, har bir dinamik tizim, har bir motor modeli yozilgan til.</p>
+            <span class="course-tag fav">hamma narsa uchun zarur</span>
+        </div>
+
+        <div class="course-card starred">
+            <div class="course-head">
+                <span class="course-code">MAT 343</span>
+                <span class="course-grade">C</span>
+            </div>
+            <h4 class="course-title">Applied Linear Algebra</h4>
+            <p class="course-desc">Matritsalar, xususiy qiymatlar, vektor fazolari — state-space boshqaruv, kompyuter grafikasi va har bir "AI" hisoblash ortidagi matematika.</p>
+            <span class="course-tag fav">qadrsiz tilga olingan zaruriy fan</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 219</span>
+                <span class="course-grade">B</span>
+            </div>
+            <h4 class="course-title">Computational Modeling of Eng Systems</h4>
+            <p class="course-desc">Real muhandislik tizimlarini modellashtirish uchun Python va MATLAB — fizik simulyatsiyalar va son metodlarini real ish jarayoniga olib kelish.</p>
+            <span class="course-tag">simulyatsiya</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">PHY 321</span>
+                <span class="course-grade">B-</span>
+            </div>
+            <h4 class="course-title">Vector Mechanics &amp; Vibration</h4>
+            <p class="course-desc">3D qattiq jism dinamikasi, tebranish, rezonans — nima uchun motorli qo'l (odatda) o'zini sindirib tashlamaydi.</p>
+            <span class="course-tag">fizika</span>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================== EDUCATION =========================== -->
+<section class="s" id="education">
+    <div class="s-eyebrow">Ta'lim</div>
+    <h2 class="s-title">stipendiya to'lov bergan va men o'rganadigan joy</h2>
+    <p class="s-sub">investitsiyaning daromadi: hozircha jarayonda, lekin yuqoriga ko'tarilmoqda</p>
+
+    <div class="edu-card">
+        <div class="edu-info">
+            <h3>B.S.E. Robototexnika Muhandisligi</h3>
+            <p><strong>Arizona Davlat Universiteti</strong> — Ira A. Fulton Schools of Engineering</p>
+            <p>Muhandislik (Robototexnika)</p>
+            <p style="margin-top:1rem;"><em>Grand Challenges Scholar · Dekan ro'yxati · CSWA Sertifikati</em></p>
+        </div>
+        <div class="edu-side">
+            <div class="gpa">3.51</div>
+            <div class="gpa-label">umumiy GPA</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================== CONTACT =========================== -->
+<section class="contact-section" id="contact">
+    <div class="s-eyebrow">Suhbatlashaylik</div>
+    <h2>Menga<br>xabar yuboring<span class="accent">.</span></h2>
+    <a href="mailto:aruziev@asu.edu" class="contact-cta">aruziev@asu.edu →</a>
+    <div class="contact-links">
+        <a href="https://www.linkedin.com/in/aruziev" target="_blank" rel="noopener">linkedin</a>
+        <a href="https://github.com/mraruziev" target="_blank" rel="noopener">github</a>
+        <a href="tel:+14807913***">+1 480 791 3***</a>
+    </div>
+</section>
+
+
+<!-- =========================== FOOTER =========================== -->
+<footer>
+    © 2026 Asadbek Ro'ziyev <span class="built">·</span> maroon, gold va ko'p qahva bilan qurilgan. Shaurya va Kushagra portfoliolaridan ilhomlangan, Claude bilan tahrirlangan.
+</footer>
+
+</body>
+</html>
