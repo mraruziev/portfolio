@@ -659,6 +659,191 @@ section.s {
     color: var(--gold);
 }
 
+/* =========================== LANG TOGGLE =========================== */
+nav.topnav .lang-toggle {
+    color: var(--gold) !important;
+    border: 1px solid var(--gold);
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    transition: all 0.2s;
+}
+nav.topnav .lang-toggle:hover {
+    background: var(--gold);
+    color: #1a1a22 !important;
+}
+
+/* =========================== MANIFESTO BLOCK =========================== */
+.manifesto {
+    margin-top: 2rem;
+    padding: 1.75rem 2rem;
+    background: linear-gradient(135deg, rgba(199,56,99,0.08) 0%, rgba(255,198,39,0.04) 100%);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    position: relative;
+}
+.manifesto::before {
+    content: "manifesto";
+    position: absolute;
+    top: -0.7rem;
+    left: 1.5rem;
+    background: var(--bg);
+    color: var(--gold);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 0 0.6rem;
+    font-weight: 600;
+}
+.manifesto p {
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+    line-height: 1.65;
+}
+.manifesto p:last-child { margin-bottom: 0; }
+.manifesto strong { color: var(--ink); font-weight: 700; }
+.manifesto em {
+    color: var(--gold);
+    font-style: normal;
+    font-weight: 500;
+}
+.manifesto-lang {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+
+/* =========================== COURSEWORK =========================== */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+.course-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+.course-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--gold);
+    transition: height 0.4s cubic-bezier(.2,.7,.2,1);
+}
+.course-card:hover {
+    border-color: var(--border-hi);
+    background: var(--bg-card-hi);
+    transform: translateY(-3px);
+}
+.course-card:hover::before { height: 100%; }
+
+.course-card.starred {
+    border-color: rgba(255, 198, 39, 0.25);
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(255,198,39,0.04) 100%);
+}
+.course-card.starred::before { height: 100%; }
+
+.course-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.85rem;
+    gap: 0.5rem;
+}
+.course-code {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--maroon);
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.course-grade {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    background: var(--bg-elev);
+    color: var(--ink-soft);
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+}
+.course-grade.top {
+    background: var(--gold);
+    color: #1a1a22;
+    border-color: var(--gold);
+}
+.course-grade.good {
+    background: rgba(199,56,99,0.15);
+    color: var(--maroon);
+    border-color: rgba(199,56,99,0.3);
+}
+.course-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+}
+.course-desc {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+}
+.course-tag {
+    display: inline-block;
+    margin-top: 0.85rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+}
+.course-tag.fav::before {
+    content: "★ ";
+    color: var(--gold);
+}
+
+/* Group divider */
+.courses-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+}
+.courses-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+.courses-divider:first-child { margin-top: 0; }
+
+
 /* =========================== EDUCATION =========================== */
 .edu-card {
     background: var(--bg-card);
@@ -791,7 +976,9 @@ footer .built {
             <li><a href="#projects">projects</a></li>
             <li><a href="#career">career</a></li>
             <li><a href="#highlights">highlights</a></li>
+            <li><a href="#courses">courses</a></li>
             <li><a href="#contact">contact</a></li>
+            <li><a href="index-uz.html" class="lang-toggle">UZ</a></li>
         </ul>
     </div>
 </nav>
@@ -804,7 +991,7 @@ footer .built {
             <div class="eyebrow">Robotics Engineer · ASU '27</div>
             <h1>Asadbek<br>Ruziev<span class="accent">.</span></h1>
             <p class="tagline">
-                I build <em>robots</em>, <em>communities</em>, and the occasional bad idea that turns out to be a good one.
+                I build <em>robots</em>, <em>communities</em>, and the occasional idea that turns out to be a really good one.
                 Currently engineering wheels, motors, and PCBs at Arizona State.
             </p>
             <div class="hero-cta">
@@ -852,6 +1039,17 @@ footer .built {
             <p>
                 I believe the best engineering isn't the most complicated — it's the most useful. That's what I'm here to do.
             </p>
+
+<div class="manifesto">
+                <span class="manifesto-lang">in my own words</span>
+                <p>
+                    <strong>Robotics — my life.</strong>
+                    I didn't do any of this for El-Yurt Umidi or for ASU. <strong>I've been doing robotics since 2019</strong> — and it's not just an interest, it's my life. The competitions, the late-night sessions, the broken circuits, the rebuilt robots — all of it came from passion, not from a goal.
+                </p>
+                <p>
+                    When I saw what El-Yurt Umidi and ASU could offer, I applied — and I got in. Those opportunities came to me; I didn't go searching for them. <strong>I love robotics and I hate it at the same time</strong> — it bothers me, keeps me up at night, makes my head spin. But that's exactly why I can't walk away from it. <em>I'll be doing this for the rest of my life.</em>
+                </p>
+            </div>
         </div>
     </div>
 </section>
@@ -1336,6 +1534,191 @@ footer .built {
                 <span class="skill-tag">Microsoft Office</span>
             </div>
         </div>
+    </div>
+</section>
+
+
+<!-- =========================== COURSEWORK =========================== -->
+<section class="s" id="courses">
+    <div class="s-eyebrow">Coursework</div>
+    <h2 class="s-title">classes that earned their seat in the syllabus</h2>
+    <p class="s-sub">the ones that actually shaped how I think about engineering</p>
+
+    <div class="courses-divider">Robotics &amp; embedded · the core</div>
+    <div class="courses-grid">
+
+        <div class="course-card starred">
+            <div class="course-head">
+                <span class="course-code">EGR 456</span>
+                <span class="course-grade top">A+</span>
+            </div>
+            <h4 class="course-title">Robotic Systems II</h4>
+            <p class="course-desc">Trajectory planning, computed-torque control, advanced manipulator dynamics — the deeper half of the kinematics story. Built and simulated full robot control stacks.</p>
+            <span class="course-tag fav">favorite</span>
+        </div>
+
+        <div class="course-card starred">
+            <div class="course-head">
+                <span class="course-code">EGR 314</span>
+                <span class="course-grade top">A</span>
+            </div>
+            <h4 class="course-title">Embedded Systems Design Project II</h4>
+            <p class="course-desc">End-to-end embedded product design — schematic to KiCad PCB to JLCPCB fabrication. Where CropSCOUT's motor-driver board came to life.</p>
+            <span class="course-tag fav">capstone-grade work</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 455</span>
+                <span class="course-grade">B-</span>
+            </div>
+            <h4 class="course-title">Robotic Systems I</h4>
+            <p class="course-desc">Forward and inverse kinematics, manipulator modeling, vision-driven control of robot arms. The mathematical foundation under every robot move.</p>
+            <span class="course-tag">core robotics</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 304</span>
+                <span class="course-grade">B</span>
+            </div>
+            <h4 class="course-title">Embedded Systems Design Project I</h4>
+            <p class="course-desc">First embedded course — microcontroller fundamentals, peripheral interfacing, real-time firmware on the bench.</p>
+            <span class="course-tag">embedded</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 334</span>
+                <span class="course-grade good">B+</span>
+            </div>
+            <h4 class="course-title">Analog-Digital Interface</h4>
+            <p class="course-desc">Mixed-signal design — sampling, ADCs, op-amp front ends, and the messy reality of getting analog sensors into a digital world cleanly.</p>
+            <span class="course-tag">signals</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 330</span>
+                <span class="course-grade good">A-</span>
+            </div>
+            <h4 class="course-title">Design of Electrical Systems</h4>
+            <p class="course-desc">Power electronics, motor drivers, EMI/EMC, and the unglamorous-but-critical art of making a circuit actually work outside a simulator.</p>
+            <span class="course-tag">electrical</span>
+        </div>
+
+    </div>
+
+
+    <div class="courses-divider">Design &amp; making</div>
+    <div class="courses-grid">
+
+        <div class="course-card starred">
+            <div class="course-head">
+                <span class="course-code">EGR 380</span>
+                <span class="course-grade top">A+</span>
+            </div>
+            <h4 class="course-title">Advanced CADD &amp; Solid Modeling</h4>
+            <p class="course-desc">Master-level SolidWorks — assemblies, surfacing, sheet metal, FEA, design intent. Earned my CSWA along the way.</p>
+            <span class="course-tag fav">favorite</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 201</span>
+                <span class="course-grade good">A</span>
+            </div>
+            <h4 class="course-title">Use-Inspired Design Project I</h4>
+            <p class="course-desc">Engineering-as-problem-solving for real users. Process, prototyping, and the messy first iterations that teach the most.</p>
+            <span class="course-tag">design</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 202</span>
+                <span class="course-grade good">A</span>
+            </div>
+            <h4 class="course-title">Use-Inspired Design Project II</h4>
+            <p class="course-desc">The second half — full team-based product development cycle from user research to working prototype.</p>
+            <span class="course-tag">design</span>
+        </div>
+
+        <div class="course-card starred">
+            <div class="course-head">
+                <span class="course-code">EGR 294</span>
+                <span class="course-grade">B</span>
+            </div>
+            <h4 class="course-title">Fundamentals of Engineering Prototyping</h4>
+            <p class="course-desc">Manual lathe, mill, drill press, surface grinder, hand tools — the entire shop. Hand-machined a working brass torch as the final piece.</p>
+            <span class="course-tag fav">most hands-on</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 218</span>
+                <span class="course-grade">C</span>
+            </div>
+            <h4 class="course-title">Materials &amp; Manufacturing Processes</h4>
+            <p class="course-desc">Material selection, forming, casting, joining — knowing why a part is steel vs aluminum vs plastic, and how it'll be made.</p>
+            <span class="course-tag">manufacturing</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 217</span>
+                <span class="course-grade good">A-</span>
+            </div>
+            <h4 class="course-title">Engineering Mechanics Fundamentals</h4>
+            <p class="course-desc">Statics, dynamics, and the rigid-body foundations every mechanical design quietly relies on.</p>
+            <span class="course-tag">mechanics</span>
+        </div>
+
+    </div>
+
+
+    <div class="courses-divider">Math &amp; theory</div>
+    <div class="courses-grid">
+
+        <div class="course-card starred">
+            <div class="course-head">
+                <span class="course-code">MAT 275</span>
+                <span class="course-grade">B</span>
+            </div>
+            <h4 class="course-title">Modern Differential Equations</h4>
+            <p class="course-desc">ODEs, Laplace transforms, systems of equations — the language every controller, every dynamic system, every motor model is written in.</p>
+            <span class="course-tag fav">required for everything</span>
+        </div>
+
+        <div class="course-card starred">
+            <div class="course-head">
+                <span class="course-code">MAT 343</span>
+                <span class="course-grade">C</span>
+            </div>
+            <h4 class="course-title">Applied Linear Algebra</h4>
+            <p class="course-desc">Matrices, eigenvalues, vector spaces — the math beneath state-space control, computer graphics, and every "AI" calculation.</p>
+            <span class="course-tag fav">underrated essential</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 219</span>
+                <span class="course-grade">B</span>
+            </div>
+            <h4 class="course-title">Computational Modeling of Eng Systems</h4>
+            <p class="course-desc">Python and MATLAB for modeling real engineering systems — bringing physics simulations and numerical methods into actual workflows.</p>
+            <span class="course-tag">simulation</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">PHY 321</span>
+                <span class="course-grade">B-</span>
+            </div>
+            <h4 class="course-title">Vector Mechanics &amp; Vibration</h4>
+            <p class="course-desc">3D rigid-body dynamics, oscillation, resonance — why a motor-driven arm doesn't shake itself apart (usually).</p>
+            <span class="course-tag">physics</span>
+        </div>
+
     </div>
 </section>
 
