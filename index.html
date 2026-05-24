@@ -1,1040 +1,1383 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asadbek Ruziev — Robotics Engineer @ ASU</title>
+<meta name="description" content="Asadbek Ruziev — Robotics Engineering student at Arizona State University. Builder of robots, founder of communities, runner of the show.">
 
-    <!--- basic page needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <title>Asadbek</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
 
-    <!-- mobile specific metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/vendor.css">
+<style>
+/* ====================================================================
+   ASADBEK RUZIEV — PORTFOLIO
+   Single-file build · dark theme · ASU maroon + gold accents
+   Inspired by the structure of shauryamanglik.com (witty section labels,
+   timeline-style project cards, achievement grid).
+   ==================================================================== */
 
-    <!-- script
-    ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <script defer src="js/fontawesome/all.min.js"></script>
+:root {
+    --bg:           #0a0a0c;
+    --bg-elev:      #14141a;
+    --bg-card:      #1a1a22;
+    --bg-card-hi:   #22222c;
+    --border:       rgba(255,255,255,0.08);
+    --border-hi:    rgba(255,255,255,0.18);
 
-    <!-- favicons
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
+    --ink:          #ECECEC;
+    --ink-soft:     #B8B8B8;
+    --ink-mute:     #707078;
 
-    <style>
-  [data-aos] {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-    transition: none !important;
-  }
+    --maroon:       #C73863;       /* slightly brightened ASU maroon for dark bg */
+    --maroon-deep:  #8C1D40;
+    --gold:         #FFC627;
+    --gold-soft:    #FFD767;
+
+    --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+    --font-body:    "Inter", system-ui, sans-serif;
+    --font-mono:    "JetBrains Mono", monospace;
+
+    --max:          74rem;
+    --pad-x:        clamp(1.5rem, 4vw, 4rem);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Soft grid background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 0%, rgba(199, 56, 99, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 100%, rgba(255, 198, 39, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--gold); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--gold-soft); }
+
+/* =========================== NAV =========================== */
+nav.topnav {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(10,10,12,0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 1rem var(--pad-x);
+}
+nav.topnav .nav-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+nav.topnav .brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+}
+nav.topnav .brand span { color: var(--maroon); }
+nav.topnav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+}
+nav.topnav ul a {
+    color: var(--ink-soft);
+    text-transform: lowercase;
+}
+nav.topnav ul a:hover { color: var(--ink); }
+@media (max-width: 700px) {
+    nav.topnav ul { display: none; }
+}
+
+/* =========================== HERO =========================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem var(--pad-x) 4rem;
+    position: relative;
+}
+.hero-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+.hero-text .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.hero-text .eyebrow::before {
+    content: "";
+    width: 2.5rem;
+    height: 1px;
+    background: var(--gold);
+}
+.hero-text h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+}
+.hero-text h1 .accent { color: var(--maroon); }
+.hero-text .tagline {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: var(--ink-soft);
+    line-height: 1.4;
+    max-width: 32rem;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+}
+.hero-text .tagline em { color: var(--gold); font-style: normal; }
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+    transition: all 0.25s;
+    border: 1px solid var(--border);
+}
+.btn-primary {
+    background: var(--maroon);
+    color: white;
+    border-color: var(--maroon);
+}
+.btn-primary:hover {
+    background: var(--maroon-deep);
+    transform: translateY(-2px);
+    color: white;
+}
+.btn-ghost {
+    background: transparent;
+    color: var(--ink);
+}
+.btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+}
+.hero-portrait {
+    position: relative;
+    aspect-ratio: 4/5;
+    max-width: 22rem;
+    margin-left: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.04) inset,
+        0 30px 60px -20px rgba(0,0,0,0.6);
+}
+.hero-portrait::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 3rem; height: 3px;
+    background: var(--gold);
+    z-index: 2;
+}
+.hero-portrait::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 3rem;
+    background: var(--gold);
+    z-index: 2;
+}
+.hero-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.05);
+}
+.hero-stats {
+    grid-column: 1 / -1;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+}
+.hero-stat .num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--gold);
+    line-height: 1;
+}
+.hero-stat .label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-top: 0.5rem;
+}
+@media (max-width: 800px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-portrait { max-width: 16rem; margin: 0; }
+}
+
+/* =========================== SECTION SHELL =========================== */
+section.s {
+    padding: 7rem var(--pad-x);
+    max-width: var(--max);
+    margin: 0 auto;
+    scroll-margin-top: 5rem;
+}
+.s-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--maroon);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.s-eyebrow::before {
+    content: "";
+    width: 2.5rem; height: 1px;
+    background: var(--maroon);
+}
+.s-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    max-width: 32ch;
+}
+.s-sub {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    color: var(--ink-mute);
+    margin-bottom: 4rem;
+}
+.s-sub::before { content: "> "; color: var(--gold); }
+
+/* =========================== ABOUT =========================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+}
+.about-photo {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    aspect-ratio: 4/5;
+    background: var(--bg-card);
+}
+.about-photo img { width: 100%; height: 100%; object-fit: cover; }
+.about-text p {
+    color: var(--ink-soft);
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+}
+.about-text strong { color: var(--ink); font-weight: 600; }
+.about-text em { color: var(--gold); font-style: normal; font-weight: 500; }
+@media (max-width: 800px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-photo { max-width: 18rem; }
+}
+
+/* =========================== PROJECT CARD =========================== */
+.project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--border);
+    align-items: center;
+}
+.project:first-of-type { border-top: none; padding-top: 0; }
+.project-info .date {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+.project-info .org {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--maroon);
+    font-style: italic;
+    margin-bottom: 0.25rem;
+}
+.project-info h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.65rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    color: var(--ink);
+}
+.project-info ul {
+    list-style: none;
+    padding: 0;
+}
+.project-info ul li {
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+    margin-bottom: 0.85rem;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.55;
+}
+.project-info ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--maroon);
+    font-weight: 700;
+}
+.project-info ul li strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+.project-media {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    aspect-ratio: 4/3;
+    position: relative;
+}
+.project-media img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.project:hover .project-media img { transform: scale(1.04); }
+.project.reverse { direction: rtl; }
+.project.reverse > * { direction: ltr; }
+
+@media (max-width: 800px) {
+    .project, .project.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 1.5rem;
+        padding: 2.5rem 0;
+    }
+}
+
+/* =========================== CAREER (timeline-ish) =========================== */
+.career-block {
+    margin-bottom: 4rem;
+}
+.career-block:last-child { margin-bottom: 0; }
+.career-block h3.career-title {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+.role {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px dashed var(--border);
+    align-items: start;
+}
+.role:last-child { border-bottom: none; }
+.role .role-org {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+}
+.role .role-org strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 600;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    margin-top: 0.2rem;
+}
+.role .role-detail {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+}
+.role .role-detail h4 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.role .role-detail h4 .badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    background: var(--gold);
+    color: #1a1a22;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.role .role-detail ul {
+    list-style: none;
+    margin-top: 0.5rem;
+}
+.role .role-detail ul li {
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+.role .role-detail ul li::before {
+    content: "—";
+    color: var(--maroon);
+    position: absolute;
+    left: 0;
+}
+.role .role-detail strong { color: var(--ink); font-weight: 600; }
+.role .role-meta {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--ink-mute);
+    text-align: right;
+    letter-spacing: 0.05em;
+}
+@media (max-width: 800px) {
+    .role {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    .role .role-meta { text-align: left; }
+}
+
+/* =========================== HIGHLIGHTS / ACHIEVEMENTS =========================== */
+.highlight-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2rem;
+    align-items: start;
+}
+.highlight-card:hover {
+    border-color: var(--border-hi);
+    background: var(--bg-card-hi);
+    transform: translateY(-2px);
+}
+.highlight-card.no-media {
+    grid-template-columns: 1fr;
+}
+.highlight-info h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.35rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+}
+.highlight-info .meta {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.highlight-info p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.highlight-media {
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: var(--bg);
+    border: 1px solid var(--border);
+}
+.highlight-media img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 800px) {
+    .highlight-card {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+}
+
+/* Compact list of smaller wins */
+.wins-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.win {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.1rem 1.25rem;
+    transition: all 0.25s;
+}
+.win:hover {
+    border-color: var(--gold);
+    background: var(--bg-card);
+}
+.win h5 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+}
+.win .win-meta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--maroon);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.win .win-rank {
+    display: inline-block;
+    background: var(--gold);
+    color: #1a1a22;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+
+/* =========================== SKILLS =========================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.skill-group h4 {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+}
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+.skill-tag {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem 0.85rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    transition: all 0.2s;
+}
+.skill-tag:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+/* =========================== EDUCATION =========================== */
+.edu-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+}
+.edu-card .edu-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+.edu-card .edu-info p {
+    color: var(--ink-soft);
+    margin-bottom: 0.3rem;
+}
+.edu-card .edu-info em {
+    color: var(--gold);
+    font-style: normal;
+    font-weight: 500;
+}
+.edu-card .edu-side {
+    text-align: right;
+    font-family: var(--font-mono);
+}
+.edu-card .edu-side .gpa {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+.edu-card .edu-side .gpa-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-mute);
+    margin-top: 0.4rem;
+    text-transform: uppercase;
+}
+@media (max-width: 700px) {
+    .edu-card { grid-template-columns: 1fr; }
+    .edu-card .edu-side { text-align: left; }
+}
+
+/* =========================== CONTACT =========================== */
+.contact-section {
+    text-align: center;
+    padding: 8rem var(--pad-x);
+    border-top: 1px solid var(--border);
+    max-width: var(--max);
+    margin: 0 auto;
+}
+.contact-section .s-eyebrow { justify-content: center; }
+.contact-section .s-eyebrow::before { display: none; }
+.contact-section h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+}
+.contact-section h2 .accent { color: var(--maroon); }
+.contact-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.1rem 2rem;
+    background: var(--gold);
+    color: #1a1a22;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    border-radius: 999px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    margin-bottom: 3rem;
+}
+.contact-cta:hover {
+    transform: translateY(-2px);
+    background: white;
+    color: #1a1a22;
+}
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+.contact-links a {
+    color: var(--ink-soft);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.2rem;
+}
+.contact-links a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+}
+
+/* =========================== FOOTER =========================== */
+footer {
+    padding: 2.5rem var(--pad-x);
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--ink-mute);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+}
+footer .built {
+    color: var(--maroon);
+    margin: 0 0.3rem;
+}
 </style>
-    
 </head>
+<body>
 
-<body id="top">
-
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader" class="dots-fade">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+<!-- =========================== NAV =========================== -->
+<nav class="topnav">
+    <div class="nav-inner">
+        <a href="#home" class="brand">Asadbek<span>.</span></a>
+        <ul>
+            <li><a href="#about">about</a></li>
+            <li><a href="#projects">projects</a></li>
+            <li><a href="#career">career</a></li>
+            <li><a href="#highlights">highlights</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
     </div>
+</nav>
 
 
-    <!-- header
-    ================================================== -->
-    <header class="s-header">
-
-        <div class="s-header__logo">
-            <a href="index.html">
-                <img src="images/logo.svg" alt="Homepage">
-            </a>
-        </div>
-
-        <div class="s-header__content">
-    
-            <nav class="s-header__nav-wrap">
-                <ul class="s-header__nav">
-                    <li><a class="smoothscroll" href="#hero" title="Intro">Home</a></li>
-                    <li><a class="smoothscroll" href="#about" title="About">About</a></li>
-                    <li><a class="smoothscroll" href="#services" title="Services">Experiences</a></li>
-                    <li><a class="smoothscroll" href="#portfolio" title="Works">Projects</a></li>
-                </ul>
-            </nav> <!-- end s-header__nav-wrap -->
-
-            <a href="https://drive.google.com/file/d/1eFCs0x0Bv4wzjU0PiHy80_BNsl4Z9TmT/view?usp=sharing" class="btn btn--primary btn--small">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
-                Resume
-            </a>
-
-        </div> <!-- end header-content -->
-
-        <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
-
-    </header> <!-- end s-header -->
-
-
-    <!-- hero
-    ================================================== -->
-    <section id="hero" class="s-hero target-section">
-
-        <div class="s-hero__bg">
-            <div class="gradient-overlay"></div>
-        </div>
-
-        <div class="row s-hero__content">
-            <div class="column">
-
-                <h1>Asadbek Ruziev</h1>
-                <div class="s-hero__content-about">
-
-                    <p>
-                    Robotics Engineer <br>
-                    Innovator <br>
-                    Problem Solver
-                    </p>
-    
-                    <footer>
-                        <div class="s-hero__content-social">
-                            <a href="#0"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                            <a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                            <a href="#0"><i class="fab fa-dribbble" aria-hidden="true"></i></a>
-                        </div>
-                    </footer>
-                </div>
-
+<!-- =========================== HERO =========================== -->
+<header class="hero" id="home">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <div class="eyebrow">Robotics Engineer · ASU '27</div>
+            <h1>Asadbek<br>Ruziev<span class="accent">.</span></h1>
+            <p class="tagline">
+                I build <em>robots</em>, <em>communities</em>, and the occasional bad idea that turns out to be a good one.
+                Currently engineering wheels, motors, and PCBs at Arizona State.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">see the work →</a>
+                <a href="mailto:aruziev@asu.edu" class="btn btn-ghost">say hi</a>
             </div>
         </div>
-
-        <div class="s-hero__video">
-            <a class="s-hero__video-link" href="https://player.vimeo.com/video/117310401?color=01aef0&amp;title=0&amp;byline=0&amp;portrait=0" data-lity="">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 12l-18 12v-24z"/></svg>
-                <span class="s-hero__video-text">Play Video</span>
-            </a>
+        <div class="hero-portrait">
+            <img src="images/profile.png" alt="Asadbek Ruziev">
         </div>
 
-        <div class="s-hero__scroll">
-            <a href="#about" class="s-hero__scroll-link smoothscroll">
-                Scroll Down
-            </a>
+        <div class="hero-stats">
+            <div class="hero-stat"><div class="num">20+</div><div class="label">competition wins</div></div>
+            <div class="hero-stat"><div class="num">$50K+</div><div class="label">in grants & funding</div></div>
+            <div class="hero-stat"><div class="num">50+</div><div class="label">engineering projects</div></div>
+            <div class="hero-stat"><div class="num">2</div><div class="label">years as USG senator</div></div>
         </div>
+    </div>
+</header>
 
-    </section> <!-- end s-hero -->
 
+<!-- =========================== ABOUT =========================== -->
+<section class="s" id="about">
+    <div class="s-eyebrow">About me</div>
+    <h2 class="s-title">the part where I explain how I got here</h2>
+    <p class="s-sub">enough backstory to make this make sense</p>
 
-    <!-- about
-    ================================================== -->
-    <section id="about" class="s-about">
-
-        <div class="horizontal-line"></div>
-
-        <div class="row">
-            <div class="column large-12">
-
-                <div class="section-title" data-num="01" data-aos="fade-up">
-                    <h3 class="h6">About me</h3>
-                </div>
-
-            </div>
-
-            <div class="column large-6 w-900-stack s-about__intro-text">
-                <h1 class="display-1" data-aos="fade-up">
-                    Junior Year Robotics Engineering student at Arizona State University.
-                </h1>
-
-                <p class="lead" data-aos="fade-up">
-                   Mechatronics and Robotics Engineer with focus on designing and building robotic systems, embedded systems. As a student at Arizona State University, I have gained hands-on experience in robotics through coursework, projects an engineering clubs. I am passionate about creating innovative solutions that leverage robotics to solve problems that matter.
-                </p>
-            </div>
-
-            <div class="column large-6 w-900-stack s-about__photo-block">
-                <div class="s-about__photo" data-aos="fade-up"></div>
-            </div>
+    <div class="about-grid">
+        <div class="about-photo">
+            <img src="images/about-photo.jpg" alt="Asadbek working in the lab">
         </div>
-
-        <div class="row block-large-1-2 block-tab-full s-about__process item-list">
-            <div class="column item item-process" data-aos="fade-up">
-                <h3 class="item-title">Skills</h3>
-                <p>
-                •	Soft skills: Teamwork & Collaboration, Problem-solving, Organizational skills, Creativity, Entrepreneurial mindset <br>
-                •	Micro-Controller: Arduino IDE, Microchip PIC, ESP32, Infineon PsOC, Raspberry Pi <br>
-                •	Language, Frameworks: Python, C/C++, HTML, MATLAB & Simulink, SOLIDWORKS, Fusion 360, GD&T, schematics and PCBs at KiCad and Cadence. <br>
-                •	Lab instrumentation: Oscilloscopes, soldering, multimeters, waveform generators, laser-cutting, soldering, drilling, vacuum forming, metalworking, milling
-
-                </p>
-            </div>
-            <div class="column item item-process" data-aos="fade-up">
-                <h3 class="item-title">Competitions during school</h3>
-                <p>
-                • 1st Place — international IT-Planet Olympiad - Best representing institution's team from Uzbekistan - hosted in Russia. <br>
-                • Semifinalist — "Unlimited Possibilities" IT-Planet World Olympiad, got a chance for finals in Russia. <br>
-                • 1st Place champion — Technoways all-Uzbek contest, funding of 3000$, laptop. <br>
-                • 3rd Place — International Startup Weekend by USAID - 2400$ represented my country in the final. <br>
-                • 1st Place — in the International Robotics Challenge Uzbekistan stage, 8th place in the world stage - IRC 2019 <br>
-                • 1st Place champion for 2 times — One Million Uzbek Coders contest - $1000 <br>
-                • 1st Place — all-Uzbek IT Ideathon Youth forum 2021 by IT Park Uzbekistan <br>
-                • Finalist — International Challenge MeOut hackathon - Germany company hosted online <br>
-                • 3rd place for 3 times — National Robot Uz 2020, Robot Uz 2021 robotics competition <br>
-                • 3rd Place — the Tech of Youth Republic robotics challenge. <br>
-                • 2nd Place — all-Uzbek robotics Youth forum olympiad <br>
-                • 3rd Place — National Future Skills Uzbekistan IT and Robotics Olympiad by MITC, IT Park, Youth Union <br>
-                • 1st Place — Republic IT Ideathon in the Youth Forum of Uzbekistan by IT Park Uzbekistan - won a laptop <br>
-                • 1st Place — National Intellect Olympiad 2020 by Tashkent city gov. : won TV <br>
-                • 1st Place — 'Al Kharazmi's generation' tech contest by MITC, TUIT (Won among University students as a high school student) <br>
-                • 1st Place winner — national Uzbek "I'm creator" contest <br>
-                • Finalist — Open Data Challenge Online hackathon 2020 <br>
-                • Successfully completed Udacity Frontend development track 2020 <br>
-                • 1st Place — Pitchday of IT Entrepreneurship online course by IT Park Uzbekistan 2020 <br>
-                • 1st Place and 2nd Place — 2 nominations of "My army my proud"  creative makers contest: 300$. Built custom millitary rover <br>
-                • 1st Place — the "8th March — prize for mom" contest, won English/math olympiad among 30+ college students as a middle school student <br>
-                </p>
-            </div>
-            <div class="column item item-process" data-aos="fade-up">
-                <h3 class="item-title">Competitions in college</h3>
-                <p>
-                • AIAA International  Design/Build/Fly contest (DBF 2024) @ Air Devils <br>
-                • "Best dressed" award at Sun Devil Smackdown @ Combat Ready Robotics ASU <br>
-                • Participant @ National Havoc Robot League 
-
-                </p>
-            </div>
-            <div class="column item item-process" data-aos="fade-up">
-                <h3 class="item-title">Launch</h3>
-                <p>
-                Deserunt rerum perspiciatis quaerat quam numquam assumenda neque. 
-                Quis dolores totam voluptatibus molestiae non. Quae exercitationem 
-                cum numquam repudiandae. Beatae eum quae. Ut ex unde rem quod 
-                ipsum consequatur. blanditiis temporibus pariatur voluptatibus molestiae.
-                </p>
-            </div>
+        <div class="about-text">
+            <p>
+                I'm someone who builds — not just machines, but communities, systems, and the kind of things you can hold in your hand and say <em>"yeah, I made that."</em>
+            </p>
+            <p>
+                Born and raised in <strong>Uzbekistan</strong>, I came to ASU's Polytechnic campus to study <strong>Robotics Engineering</strong> after a long road of olympiads, hackathons, and a couple of meetings with the Uzbek President where I learned that <em>showing up</em> is half the work.
+            </p>
+            <p>
+                Today I lead the wheel-motor subsystem on <strong>CropSCOUT</strong>, an autonomous agricultural rover. I serve as the Treasurer of <strong>Drone Devils</strong>, Vice President of the <strong>Uzbek Students Association</strong>, and I've spent two years as a <strong>USG Senator</strong> drafting bills, holding $125K+ in budgets accountable, and getting things done.
+            </p>
+            <p>
+                Outside the lab I make Arduino battle bots, ship apps that hit 1,000+ downloads, run cultural festivals that pull 400+ guests, and try not to break things in the machine shop. <em>Try.</em>
+            </p>
+            <p>
+                I believe the best engineering isn't the most complicated — it's the most useful. That's what I'm here to do.
+            </p>
         </div>
-
-    </section> <!-- end s-about -->
-
-<!-- Work Experience section (fixed, original text fully preserved) -->
-<section id="services" class="s-services">
-
-  <div class="row">
-    <div class="column large-12">
-      <div class="section-title" data-num="02" data-aos="fade-up">
-        <h3 class="h6">Work Experience</h3>
-      </div>
     </div>
-
-    <div class="column large-6 w-900-stack">
-      <h1 class="display-1" data-aos="fade-up">
-        My Positions
-      </h1>
-    </div>
-
-    <div class="column large-6 w-900-stack">
-      <p class="lead" data-aos="fade-up">
-        Robotics Student with experience of working on robotic and embedded systems, machinning tools, Skilled in CAD modelling, circuit design, and programming microcontrollers, passionate about advancing
-        Robotics and science.
-      </p>
-    </div>
-  </div>
-
-
-    <!-- UGTA / EGR 101 -->
-  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
-    <!-- Left Column: Text -->
-    <div class="column large-6 w-900-stack s-about__intro-text">
-      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">Undergraduate Teaching Assistant (UGTA)</h3>
-      <p style="color:#FFC627; font-weight:500;">August 2024 - December 2024 || EGR 101 class - Fulton Schools of Engineering, Arizona State University</p>
-      <p data-aos="fade-up">
-        As a <span style="color:#FFC627; font-weight:600;">Teacher Assistant</span> for 
-        <span style="color:#FFC627; font-weight:600;">EGR 101</span> at the 
-        <span style="color:#FFC627; font-weight:600;">Fulton Schools of Engineering</span>, 
-        I supported Dr. Daniel Frank by assisting students with foundational 
-        engineering coursework and hands-on design projects. I led regular 
-        <span style="color:#FFC627; font-weight:600;">office hours</span> where I guided students 
-        in building and testing <span style="color:#FFC627; font-weight:600;">catapult projects</span> 
-        and developing introductory <span style="color:#FFC627; font-weight:600;">Arduino</span> systems.
-        Through structured guidance, troubleshooting, and iterative design feedback, 
-        students demonstrated strong performance in both their 
-        <span style="color:#FFC627; font-weight:600;">mid-semester</span> and 
-        <span style="color:#FFC627; font-weight:600;">final projects</span>, successfully meeting 
-        technical requirements and design objectives.
-      </p>
-    </div>
-
-    <!-- Right Column: Image -->
-    <div class="column large-6 w-900-stack s-about__photo-block">
-      <figure>
-        <img src="images/portfolio/TA.jpeg" alt="Research setup" style="width: 100%; height: auto;" />
-      </figure>
-    </div>
-  </div>
-
-  <!-- Senator – Government Operations Chair -->
-  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse">
-    <div class="column large-6 w-900-stack s-about__intro-text">
-      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">
-        Senator – Government Operations Chair
-      </h3>
-      <p style="color:#FFC627; font-weight:500;">Sep 2023 – Apr 2025 || Undergraduate Student Government, ASU</p>
-
-      <p data-aos="fade-up">
-        As an elected <span style="color:#FFC627; font-weight:600;">Undergraduate Student Government Senator</span>,
-        I represented the student body by actively advocating for student needs through
-        <span style="color:#FFC627; font-weight:600;">policy development</span>, governance, and direct campus engagement.
-        I drafted and supported <span style="color:#FFC627; font-weight:600;">5 bills and 4 resolutions</span> focused on
-        improving student life, collaborating closely with university administration and fellow senators
-        to implement sustainable, data-informed solutions.
-        <br><br>
-        I served on key committees including
-        <span style="color:#FFC627; font-weight:600;">Government Operations</span> and
-        <span style="color:#FFC627; font-weight:600;">Appropriations</span>, where I helped oversee and vote on an
-        appropriations <span style="color:#FFC627; font-weight:600;">budget exceeding $125,000</span> for student clubs
-        and campus events, contributing to transparent resource allocation and campus-wide initiatives.
-      </p>
-    </div>
-
-    <div class="column large-6 w-900-stack s-about__photo-block">
-      <figure>
-        <img src="images/portfolio/usg.png" alt="Tutoring session image" style="width: 100%; height: auto;" />
-      </figure>
-    </div>
-  </div>
-
-  
-
-
-  <!-- Fulton Ambassadors -->
-  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse">
-    <div class="column large-6 w-900-stack s-about__intro-text">
-      <h3 class="item-title"  data-aos="fade-up" style="color:#8C1D40;">Ambassador and Co-tour Director @ Fulton Ambassadors</h3>
-      <p style="color:#FFC627; font-weight:500;">January 2024 - December 2024 || ASU Fulton Schools of Engineering</p> 
-      <p  data-aos="fade-up">
-        Fulton Ambassadors is para-professional organisation that represents 
-        Ira A. Fulton Schools of Engineering before the donors and industry partners.
-        As a Co-tour director for Fulton Ambassadors, I collaborated closely with fellow members
-        and the Executive Board, I played a key role in planning and executing campus tours
-        for prospective students and their families. This involved <span style="color:#FFC627; font-weight:600;">coordinating logistics, organizing
-        tour schedules, and ensuring a seamless and informative experience for visitors</span>. Additionally,
-        I actively participated in recruitment efforts, representing the Fulton Ambassadors at events and
-        sharing firsthand insights into the college experience at Fulton Engineering.
-      </p>
-    </div>
-
-    <div class="column large-6 w-900-stack s-about__photo-block">
-      <figure>
-        <img src="images/portfolio/fulton_ambassadors.jpg" alt="Eboard image" style="width: 100%; height: auto;" />
-      </figure>
-    </div>
-  </div>
-
-  <!-- Classroom Support – Technology Consultant -->
-  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse">
-    <div class="column large-6 w-900-stack s-about__intro-text">
-      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">
-        Classroom Support – Technology Consultant
-      </h3>
-      <p style="color:#FFC627; font-weight:500;">May 2023 – Present || ASU Enterprise Technology</p>
-
-      <p data-aos="fade-up">
-        I provided classroom technology support across campus by conducting routine checks of
-        <span style="color:#FFC627; font-weight:600;">Zoom-enabled classrooms</span> and responding to live support calls
-        to troubleshoot <span style="color:#FFC627; font-weight:600;">audio-visual</span> and connectivity issues.
-        I assisted faculty and staff with real-time problem resolution, ensuring minimal disruption
-        to instruction and campus operations.
-        <br><br>
-        I coordinated <span style="color:#FFC627; font-weight:600;">equipment monitoring and maintenance</span> to support
-        seamless daily classroom operations, and delivered on-demand training for
-        <span style="color:#FFC627; font-weight:600;">university-endorsed software and hardware</span>, improving user
-        proficiency and reliability of instructional technology.
-      </p>
-    </div>
-
-    <div class="column large-6 w-900-stack s-about__photo-block">
-      <figure>
-        <img src="images/portfolio/TCjobPoly.jpg" alt="Passport Pic" style="width: 100%; height: auto;" />
-      </figure>
-    </div>
-  </div>
-
 </section>
 
 
-<!-- Project Experience section (ALL projects combined) -->
-<section id="projects" class="s-services">
+<!-- =========================== PROJECTS =========================== -->
+<section class="s" id="projects">
+    <div class="s-eyebrow">Projects</div>
+    <h2 class="s-title">a curated lineup of things I actually finished</h2>
+    <p class="s-sub">soldered, screwed, shipped — and occasionally on fire</p>
 
-  <div class="row">
-    <div class="column large-12">
-      <div class="section-title" data-num="02" data-aos="fade-up">
-        <h3 class="h6"><span style="color:#8C1D40;">Project Experience</span></h3>
-      </div>
+    <!-- CropSCOUT -->
+    <div class="project">
+        <div class="project-info">
+            <div class="date">Jan 2026 – May 2026</div>
+            <div class="org">EGR 314 · Embedded Systems Design Project II</div>
+            <h3>CropSCOUT — Autonomous Agricultural Rover</h3>
+            <ul>
+                <li>Led the <strong>wheel-motor subsystem</strong> on a 7-engineer team building a ground-based monitoring rover for farm fields.</li>
+                <li>Designed a custom <strong>4-channel motor-driver PCB</strong> in KiCad — ESP32-S3-WROOM-1 commanding four TLE9201SG1 H-bridges over SPI; manufactured at JLCPCB.</li>
+                <li>Integrated metal detection, temp/humidity, pressure, and IMU sensing; live telemetry streamed over <strong>MQTT/Wi-Fi</strong>.</li>
+                <li>Demoed at the <strong>ASU Fulton Innovation Showcase</strong> in front of 500+ people.</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/CropScout.png" alt="CropSCOUT rover and PCB"></div>
     </div>
 
-    <div class="column large-6 w-900-stack">
-      <h1 class="display-1" data-aos="fade-up" style="color:#8C1D40;">
-        Projects & Builds
-      </h1>
+    <!-- EduShelf -->
+    <div class="project reverse">
+        <div class="project-info">
+            <div class="date">Spring 2026 · 2nd Place</div>
+            <div class="org">FSE 301 Demo Day · Entrepreneurship & Value Creation</div>
+            <h3>EduShelf — Smart Productivity Desk Shelf</h3>
+            <ul>
+                <li>A 60×75×75 cm <strong>Smart desktop shelf</strong> — phone-blocking dock, motion-sensing presence detection, Pomodoro display, and a sleep-buzzer to keep students honest.</li>
+                <li><strong>2nd Place</strong> at FSE 301 Demo Day under Dr. Griffin — full customer-discovery cycle, value proposition, and live pitch in front of an investor panel.</li>
+                <li>Six-person team also showcased at the <strong>Devils Invent</strong> hackathon.</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/edushelf.jpg" alt="EduShelf prototype"></div>
     </div>
 
-    <div class="column large-6 w-900-stack">
-      <p class="lead" data-aos="fade-up">
-        Robotics student focused on embedded systems, mechatronics integration, and control.
-        Experienced with CAD modeling, circuit design, microcontrollers, and hands-on prototyping.
-      </p>
-    </div>
-  </div>
-
-  <!-- 1) Bluetooth-Controlled Electric Skateboard -->
-  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
-    <div class="column large-6 w-900-stack s-about__intro-text">
-      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">Bluetooth-Controlled Electric Skateboard</h3>
-      <p style="color:#FFC627; font-weight:500;">Personal Project || Embedded Systems, Motor Control, Wireless Communication</p>
-
-      <p data-aos="fade-up">
-        Designed and fabricated a <span style="color:#FFC627; font-weight:600;">high-torque electric skateboard</span>
-        integrating a <span style="color:#FFC627; font-weight:600;">BLDC motor</span>, <span style="color:#FFC627; font-weight:600;">programmable ESC</span>,
-        and custom <span style="color:#FFC627; font-weight:600;">Bluetooth handheld remote</span>.
-        Implemented reliable wireless communication and control logic to deliver smooth, low-latency throttle response
-        across varying speeds and load conditions.
-        <br><br>
-        Tuned throttle curves, current limits, and battery configuration through iterative testing; validated stable
-        operation above <span style="color:#FFC627; font-weight:600;">25 km/h</span>, maintaining consistent power delivery and thermal
-        reliability in real-world riding conditions.
-      </p>
-
-      <ul class="disc" data-aos="fade-up">
-        <li><strong>Tech:</strong> BLDC motor, ESC tuning, Bluetooth, control logic, system testing</li>
-        <li><strong>Focus:</strong> low-latency control, safety limits, thermal stability, reliability</li>
-      </ul>
+    <!-- EyeMed -->
+    <div class="project">
+        <div class="project-info">
+            <div class="date">2021 – Present · 1,100+ downloads</div>
+            <div class="org">BESTARORG · Google Play, Windows, Web</div>
+            <h3>EyeMed — Eye Health & Screen-Time App</h3>
+            <ul>
+                <li>Co-founded a cross-platform app that fires gentle reminders every 30 min, suggests eye exercises, and tracks per-app screen-time statistics.</li>
+                <li>Shipped on <strong>Android (Google Play)</strong>, <strong>Windows desktop</strong>, and as a <strong>web app</strong> — three platforms, one shared codebase strategy.</li>
+                <li>Won <strong>$2,400+</strong> at Startup Weekend, plus <strong>USAID</strong> support to scale.</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/eyemed.png" alt="EyeMed app on Android, Windows, and web"></div>
     </div>
 
-    <div class="column large-6 w-900-stack s-about__photo-block">
-      <figure>
-        <img src="images/portfolio/skateboard.jpg" alt="Bluetooth-Controlled Electric Skateboard" style="width: 100%; height: auto;" />
-      </figure>
-    </div>
-  </div>
-
-  <!-- 2) EyeMed App -->
-  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
-    <div class="column large-6 w-900-stack s-about__intro-text">
-      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">EyeMed App — Eye Care & Digital Well-Being</h3>
-      <p style="color:#FFC627; font-weight:500;">Personal Project || Mobile App, User Experience, Digital Wellness</p>
-
-      <p data-aos="fade-up">
-        Built <span style="color:#FFC627; font-weight:600;">EyeMed</span>, a digital well-being app designed to reduce eye strain and
-        screen fatigue through <span style="color:#FFC627; font-weight:600;">scheduled breaks</span> and guided activities.
-        The app prompts users every <span style="color:#FFC627; font-weight:600;">30 minutes</span> and encourages quick exercises and
-        optional phone-lock breaks to support healthier screen habits.
-        <br><br>
-        Focused on a simple, motivating user experience that helps users follow a consistent routine and improve comfort
-        during prolonged screen use.
-      </p>
-
-      <ul class="disc" data-aos="fade-up">
-        <li><strong>Focus:</strong> habit-building reminders, user-friendly flows, wellness activities</li>
-        <li><strong>Outcome:</strong> structured break routine to reduce screen-related eye strain</li>
-      </ul>
-
-      <p data-aos="fade-up">
-        <a href="https://play.google.com/store/apps/details?id=uz.bestarorg.jaxadev.pomodoro" target="_blank" rel="noopener" style="color:#FFC627;">Google Play — EyeMed / Pomodoro</a><br />
-        <a href="https://play.google.com/store/apps/details?id=uz.jaxadev.appdatausagetracker" target="_blank" rel="noopener" style="color:#FFC627;">Google Play — App Data Usage Tracker</a>
-      </p>
+    <!-- Cheese Touch Battlebot -->
+    <div class="project reverse">
+        <div class="project-info">
+            <div class="date">Spring 2025 · Best Dressed Award</div>
+            <div class="org">Combat Ready Robotics · Sun Devil Smackdown</div>
+            <h3>Cheese Touch — 1lb Combat Battlebot</h3>
+            <ul>
+                <li>Designed, machined, and competed a 1lb combat robot in the <strong>ASU Sun Devil Smackdown</strong> — and the <strong>National Havoc Robot League</strong>.</li>
+                <li>Took home the <strong>"Best Dressed"</strong> award (turns out engineering judges have taste).</li>
+                <li>Full SolidWorks → mill/laser/CNC pipeline; learned more about chain-of-responsibility from this little robot than most lectures.</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/cheesetouch.png" alt="Cheese Touch battlebot"></div>
     </div>
 
-    <div class="column large-6 w-900-stack s-about__photo-block">
-      <figure>
-        <img src="images/portfolio/eyemed.png" alt="EyeMed app preview" style="width: 100%; height: auto;" />
-      </figure>
-    </div>
-  </div>
-
-  <!-- 3) Combat Ready Robotics Battlebot -->
-  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
-    <div class="column large-6 w-900-stack s-about__intro-text">
-      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">Combat Ready Robotics @ ASU — “Cheese Touch” Battlebot</h3>
-      <p style="color:#FFC627; font-weight:500;">Student Organization Project || Mechanical Assembly, Rapid Prototyping, Competition</p>
-
-      <p data-aos="fade-up">
-        Built a <span style="color:#FFC627; font-weight:600;">3-pound battlebot</span> (“<span style="color:#FFC627; font-weight:600;">Cheese Touch</span>”)
-        through Combat Ready Robotics workshops and team collaboration. Gained experience assembling, preparing, and
-        troubleshooting the robot in a competition environment with fast iteration under time and budget constraints.
-        <br><br>
-        Earned a <span style="color:#FFC627; font-weight:600;">“Best Dressed”</span> nomination and strengthened practical skills in
-        teamwork, rapid debugging, and build decision-making.
-      </p>
-
-      <ul class="disc" data-aos="fade-up">
-        <li><strong>Skills:</strong> build iteration, competition prep, troubleshooting, teamwork</li>
-        <li><strong>Experience:</strong> hands-on mechanical/electrical assembly in a fast-paced environment</li>
-      </ul>
+    <!-- AIAA DBF -->
+    <div class="project">
+        <div class="project-info">
+            <div class="date">Sep 2023 – May 2024</div>
+            <div class="org">Air Devils · AIAA Design/Build/Fly 2024</div>
+            <h3>Air Devils — RC Aircraft for AIAA DBF</h3>
+            <ul>
+                <li>Project Engineer on a team that built ASU's <strong>largest and heaviest</strong> AIAA DBF aircraft to date.</li>
+                <li>Mission profile: <strong>Urban Air Mobility</strong> — both an air-taxi run and a medical-payload run, judged on speed, payload, and reliability.</li>
+                <li>Competed in <strong>Wichita, KS</strong> against teams from across the country.</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/air-devils.jpg" alt="AIAA DBF aircraft"></div>
     </div>
 
-    <div class="column large-6 w-900-stack s-about__photo-block">
-      <figure>
-        <img src="images/portfolio/cheesetouch.png" alt="Cheese Touch battlebot" style="width: 100%; height: auto;" />
-      </figure>
+<!-- 3-DOF Manipulator -->
+<div class="project reverse">
+    <div class="project-info">
+        <div class="date">Fall 2024</div>
+        <div class="org">EGR 455, 456 · Robotic Systems</div>
+        <h3>3-DOF Robotic Manipulator</h3>
+        <ul>
+            <li>Designed and built a 3-degree-of-freedom <strong>robotic manipulator</strong> using machine learning.</li>
+            <li>Developed a drawing robot capable of recognizing and sketching <strong>triangles, circles, squares, letters, and different sizes/speeds</strong>.</li>
+            <li>Implemented <strong>nut pick-and-place automation</strong> with UART communication using <strong>Cypress PSoC Creator</strong>.</li>
+            <li>Integrated <strong>OpenCV</strong> with <strong>Python and C++</strong> for shape detection and robot control.</li>
+            <li>Completed the full engineering pipeline — kinematic sketching, CAD assembly, motor sizing, programming, and system integration.</li>
+            <li>Earned my <strong>Certified SolidWorks Associate (CSWA)</strong> certification along the way.</li>
+        </ul>
     </div>
-  </div>
-
-  <!-- 4) EPICS Nepal Pyrolyzer -->
-  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
-    <div class="column large-6 w-900-stack s-about__intro-text">
-      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">EPICS at ASU — Nepal Pyrolyzer / Biochar Kiln Improvement</h3>
-      <p style="color:#FFC627; font-weight:500;">Community Engineering Project || Thermal Design, Prototyping, Field Constraints</p>
-
-      <p data-aos="fade-up">
-        Contributed to an <span style="color:#FFC627; font-weight:600;">EPICS</span> project supporting communities in Nepal that convert
-        invasive <span style="color:#FFC627; font-weight:600;">Lantana camara</span> into biochar using kilns.
-        Developed and evaluated design modifications to increase maximum internal temperature and improve biochar quality.
-        <br><br>
-        Focused on concepts to <span style="color:#FFC627; font-weight:600;">recirculate heat</span> and raise kiln performance, targeting
-        at least <span style="color:#FFC627; font-weight:600;">350°C</span>. Iterated designs based on prototype testing while keeping
-        solutions adaptable to local constraints.
-      </p>
-
-      <ul class="disc" data-aos="fade-up">
-        <li><strong>Focus:</strong> thermal performance, test-driven iteration, real-world constraints</li>
-        <li><strong>Impact:</strong> higher-quality biochar for water purification and fuel applications</li>
-      </ul>
+    <div class="project-media">
+        <img src="images/portfolio/manipulator.jpg" alt="3-DOF manipulator render">
     </div>
-
-    <div class="column large-6 w-900-stack s-about__photo-block">
-      <figure>
-        <img src="images/portfolio/Pyrolizer.png" alt="EPICS Nepal pyrolyzer prototype" style="width: 100%; height: auto;" />
-      </figure>
-    </div>
-  </div>
-
-  <!-- 5) Sparkyville Renewable Energy Producer -->
-  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
-    <div class="column large-6 w-900-stack s-about__intro-text">
-      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">Renewable Energy Producer for Sparkyville (EGR 102)</h3>
-      <p style="color:#FFC627; font-weight:500;">Course Project || Mechanical Build, Power Generation, Design Constraints</p>
-
-      <p data-aos="fade-up">
-        Designed and built a compact power system for the <span style="color:#FFC627; font-weight:600;">Sparkyville</span> challenge:
-        produce as much continuous electrical energy as possible while meeting strict size, stability, and cost constraints.
-        Evaluated wind/solar/hydro options and selected a <span style="color:#FFC627; font-weight:600;">wind-based design</span> to maximize
-        cost-to-power performance.
-        <br><br>
-        Built within a 1 ft × 1 ft base and height/clearance limits, emphasizing structural stability and reliable output
-        during testing.
-      </p>
-
-      <ul class="disc" data-aos="fade-up">
-        <li><strong>Focus:</strong> design-to-constraints, prototyping, iterative improvement</li>
-        <li><strong>System:</strong> wind-based power generation with practical tradeoffs</li>
-      </ul>
-    </div>
-
-    <div class="column large-6 w-900-stack s-about__photo-block">
-      <figure>
-        <img src="images/portfolio/sparkyville.png" alt="Sparkyville renewable energy project" style="width: 100%; height: auto;" />
-      </figure>
-    </div>
-  </div>
-
-  <!-- 6) Air Devils — AIAA DBF RC Plane -->
-  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
-    <div class="column large-6 w-900-stack s-about__intro-text">
-      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">Air Devils @ ASU — AIAA Design/Build/Fly (DBF) RC Aircraft</h3>
-      <p style="color:#FFC627; font-weight:500;">Student Team Project || Assembly, Modeling, Engineering Documentation</p>
-
-      <p data-aos="fade-up">
-        Member of the <span style="color:#FFC627; font-weight:600;">Air Devils</span> team participating in the
-        <span style="color:#FFC627; font-weight:600;">AIAA Design/Build/Fly</span> competition.
-        Contributed to assembling the aircraft, supporting modeling tasks, and assisting with engineering design reports.
-        <br><br>
-        Gained experience in large-scale RC aircraft build processes, build quality, and structured documentation
-        for a competitive design environment.
-      </p>
-
-      <ul class="disc" data-aos="fade-up">
-        <li><strong>Contributions:</strong> aircraft assembly, modeling support, design reports</li>
-        <li><strong>Skills:</strong> teamwork, build quality, documentation, iteration</li>
-      </ul>
-    </div>
-
-    <div class="column large-6 w-900-stack s-about__photo-block">
-      <figure>
-        <img src="images/portfolio/air-devils.jpg" alt="Air Devils DBF RC plane" style="width: 100%; height: auto;" />
-      </figure>
-    </div>
-  </div>
-
-  <!-- 7) Embedded Systems Design (VibeWater / PCB / PIC18F / ESP32) -->
-  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
-    <div class="column large-6 w-900-stack s-about__intro-text">
-      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">Embedded Systems Design (EGR 304 / EGR 314)</h3>
-      <p style="color:#FFC627; font-weight:500;">Course Projects || PCB Design, Microcontrollers, Mechatronics Integration</p>
-
-      <p data-aos="fade-up">
-        Delivered the <span style="color:#FFC627; font-weight:600;">VibeWater</span> project featuring a custom
-        <span style="color:#FFC627; font-weight:600;">PCB for actuator control</span> and embedded firmware on a
-        <span style="color:#FFC627; font-weight:600;">PIC18F microcontroller</span> for reliable mechatronics integration.
-        <br><br>
-        Applied the engineering design process from concept to prototyping and iteration; currently working on
-        <span style="color:#FFC627; font-weight:600;">ESP32</span> integration for a rover system to improve connectivity and modularity.
-      </p>
-
-      <ul class="disc" data-aos="fade-up">
-        <li><strong>Tech:</strong> PIC18F, ESP32, PCB design, embedded debugging, actuator integration</li>
-      </ul>
-    </div>
-
-    <div class="column large-6 w-900-stack s-about__photo-block">
-      <figure>
-        <img src="images/portfolio/embedded.png" alt="Embedded systems project" style="width: 100%; height: auto;" />
-      </figure>
-    </div>
-  </div>
-
-  <!-- 8) 3-DOF Manipulator + Vision Pick-and-Place -->
-  <div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
-    <div class="column large-6 w-900-stack s-about__intro-text">
-      <h3 class="item-title" data-aos="fade-up" style="color:#8C1D40;">3-DOF Manipulator + Machine Vision Pick-and-Place (EGR 455 / EGR 456)</h3>
-      <p style="color:#FFC627; font-weight:500;">Course Project || Robotics, Kinematics, Motion Control</p>
-
-      <p data-aos="fade-up">
-        Built a <span style="color:#FFC627; font-weight:600;">3-DOF robotic manipulator</span> and a
-        <span style="color:#FFC627; font-weight:600;">machine vision</span> system capable of locating a nut placed at arbitrary
-        positions, picking it up, and returning it to its original location.
-        <br><br>
-        Implemented forward and inverse kinematics and motion control using
-        <span style="color:#FFC627; font-weight:600;">Python and C++</span>, and integrated sensors/actuators to improve repeatability
-        and task accuracy.
-      </p>
-
-      <ul class="disc" data-aos="fade-up">
-        <li><strong>Tech:</strong> Python, C++, kinematics, motion control, sensors/actuators</li>
-      </ul>
-    </div>
-
-    <div class="column large-6 w-900-stack s-about__photo-block">
-      <figure>
-        <img src="images/portfolio/robot_arm.png" alt="3-DOF manipulator project" style="width: 100%; height: auto;" />
-      </figure>
-    </div>
-  </div>
-
-<!-- EGR 294 Manual Machining Projects -->
-<div class="row s-portfolio__list block-large-1-2 block-tab-full collapse" style="align-items: flex-start;">
-
-  <!-- Image Column -->
-  <div class="column large-6 w-900-stack" data-aos="fade-up">
-    <img src="images/portfolio/EGR294.jpg" alt="Screw Jack and Milling Vise Project" class="img-fluid">
-  </div>
-
-  <!-- Text Column -->
-  <div class="column large-6 w-900-stack s-about__intro-text">
-    <h3 class="item-title" style="color:#8C1D40;">Manual Machining Projects – Screw Jack & Milling Vise (EGR 294)</h3>
-    <p style="color:#FFC627; font-weight:500;">Course Project || Manual Machining, Manufacturing Processes, GD&T</p>
-
-    <p>
-      Designed and fabricated a functional <span style="color:#FFC627; font-weight:600;">Screw Jack (Lathe Project)</span> and 
-      <span style="color:#FFC627; font-weight:600;">Milling Vise (Mill Project)</span> using manual machining processes.
-      <br><br>
-      Performed precision turning, threading, knurling, drilling, boring, surfacing, slot cutting, and tapping operations 
-      while maintaining dimensional tolerances and alignment. Applied 
-      <span style="color:#FFC627; font-weight:600;">GD&T principles</span>, measurement techniques, and shop safety practices 
-      to ensure proper fit, smooth motion, and functional assembly.
-    </p>
-
-    <ul class="disc">
-      <li><strong>Tech:</strong> Manual Lathe, Manual Mill, Drilling, Thread Cutting, GD&T, Precision Measurement Tools</li>
-    </ul>
-  </div>
-
 </div>
 
-
-
-</section> 
-
-<!-- services
-================================================== -->
-<section id="services" class="s-services">
-
-    <div class="row">
-        <div class="column large-12">
-            <div class="section-title" data-num="02" data-aos="fade-up">
-                <h3 class="h6">
-                    <span style="color:#8C1D40;">Grand Challenges Scholars Program: GCSP</span>
-                </h3>
-            </div>
+    <!-- EPICS Pyrolyzer -->
+    <div class="project">
+        <div class="project-info">
+            <div class="date">Spring 2024</div>
+            <div class="org">EPICS Nepal · Engineering Projects in Community Service</div>
+            <h3>EPICS Nepal Pyrolyzer</h3>
+            <ul>
+                <li>Helped design a <strong>biomass pyrolyzer</strong> for partner communities in rural Nepal — turning agricultural waste into biochar fertilizer and clean cooking fuel.</li>
+                <li>Real-world constraints: zero-electricity assembly, locally sourced steel, repairable with hand tools. Engineering for places that don't have a hardware store down the street.</li>
+            </ul>
         </div>
-        <div class="column large-6 w-900-stack">
-            <h1 class="display-1" data-aos="fade-up">
-                As a <span style="color:#8C1D40;">GCSP Scholar</span>, 
-                I have developed competencies through leadership, service learning, multidisciplinary collaboration, entrepreneurship, and talent development.
-            </h1>
-        </div>
+        <div class="project-media"><img src="images/portfolio/Pyrolizer.png" alt="EPICS Nepal pyrolyzer"></div>
     </div>
 
-    <div class="row block-large-1-2 block-tab-full s-services__services item-list">
-
-        <!-- Multidisciplinary -->
-        <div class="column item item-service" data-aos="fade-up">
-            <h3 class="item-title">
-                <span style="color:#8C1D40;">Multidisciplinary</span> – 
-                <span style="color:#FFC627;">FSE 150 & Undergraduate Student Government</span>
-            </h3>
-
-            <p>
-            I had the opportunity to enroll in <span style="color:#FFC627;">FSE 150</span> in Fall 2024, a course designed for 
-            <span style="color:#8C1D40;">Grand Challenges Scholars Program (GCSP)</span> students. This interdisciplinary course brought together students from various engineering disciplines to collaborate on projects that address challenges set by the National Academy of Engineering's GCSP.
-            </p>
-
-            <p>
-            As a <span style="color:#8C1D40;">Senator</span> and 
-            <span style="color:#8C1D40;">Government Operations Chair</span>, I have been part of a multidisciplinary team of many other students. I worked in areas such as public policy, communication and narrative framing, ethics, and human behavior. I advocated for students by talking with at least three of them weekly and hearing about their problems on campus.
-            </p>
-
-            <p>
-            I voted in appropriations committee meetings weekly, ensuring cost per student did not go over $25 and that university funds were used sustainably.
-            </p>
+    <!-- Bluetooth Skateboard -->
+    <div class="project reverse">
+        <div class="project-info">
+            <div class="date">2024</div>
+            <div class="org">EGR 202 · Just for the joy of it</div>
+            <h3>Bluetooth-Controlled Electric Skateboard</h3>
+            <ul>
+                <li>Built from scratch — BLDC hub motor, programmable ESC, custom-based handheld remote with <strong>Bluetooth throttle control</strong>.</li>
+                <li>Tuned the throttle curve and battery configuration until it could pull <strong>25+ km/h</strong> sustained without thermally giving up. (I tested. Many times.)</li>
+            </ul>
         </div>
-
-        <!-- Service Learning -->
-        <div class="column item item-service" data-aos="fade-up">
-            <h3 class="item-title">
-                <span style="color:#8C1D40;">Service Learning</span> – 
-                <span style="color:#FFC627;">Uzbek Students Association & Fulton Ambassador</span>
-            </h3>
-
-            <p>
-            As <span style="color:#8C1D40;">Vice President</span> of this student organization, we successfully secured over 
-            <span style="color:#FFC627; font-weight:700;">$30,000</span> in funding dedicated to the cultural preservation of Uzbekistan. I have volunteered over 
-            <span style="color:#FFC627; font-weight:700;">100+ hours</span> of my time since August 2024.
-            </p>
-
-            <p>
-            I organized large-scale events such as <span style="color:#8C1D40;">Nowruz</span> and participated in tabling at 1001 Nights. I collaborated with over five student organizations and ensured we used eco-friendly food vendors that avoided plastic use. We reused cultural items instead of buying new ones each time and ensured food was not wasted.
-            </p>
-
-            <p>
-            Additionally, as a <span style="color:#8C1D40;">Fulton Ambassador</span> and <span style="color:#8C1D40;">Poly Co-Tour Director</span>, I represented the Fulton Schools of Engineering during campus tours for prospective students and their families.
-            </p>
-        </div>
-
-        <!-- Entrepreneurship -->
-        <div class="column item item-service" data-aos="fade-up">
-            <h3 class="item-title">
-                <span style="color:#8C1D40;">Entrepreneurship</span> – 
-                <span style="color:#FFC627;">FSE 301</span>
-            </h3>
-
-            <p>
-            I am currently taking <span style="color:#FFC627;">FSE 301: Entrepreneurship & Value Creation</span> with Professor Dr. Griffin. I have applied concept-based learning and brainstormed ideas in groups to solve meaningful problems. I learned about customer discovery, value proposition, and business models.
-            </p>
-        </div>
-
-        <!-- Talent -->
-        <div class="column item item-service" data-aos="fade-up">
-            <h3 class="item-title">
-                <span style="color:#8C1D40;">Talent</span> – 
-                <span style="color:#FFC627;">EGR 401 & EGR 402</span>
-            </h3>
-
-            <p>
-            Through <span style="color:#FFC627;">EGR 401</span> and 
-            <span style="color:#FFC627;">EGR 402</span>, I have developed advanced engineering competencies by working on real-world challenges and strengthening my innovation mindset aligned with the Grand Challenges.
-            </p>
-        </div>
-
+        <div class="project-media"><img src="images/portfolio/skateboard.jpg" alt="Custom electric skateboard"></div>
     </div>
 
+<!-- EGR 294 / machining -->
+<div class="project">
+    <div class="project-info">
+        <div class="date">Spring 2025</div>
+        <div class="org">EGR 294 · Fundamentals of Engineering Prototyping</div>
+        <h3>EGR 294 — Precision Machining & Manufacturing Projects</h3>
+        <ul>
+            <li>Completed hands-on training in <strong>manual machining</strong>, including lathe operations, milling, drilling, surface grinding, threading, reaming, tapping, and precision measurement.</li>
+            <li>Worked with ferrous and non-ferrous materials while applying <strong>GD&amp;T, tolerancing, inspection, and shop safety practices</strong>.</li>
+            <li>Manufactured a fully functional <strong>machined metal torch</strong> from raw stock using manual lathe and mill processes.</li>
+            <li>Designed and assembled a precision <strong>machine vise clamp</strong>, including vise jaws, threaded components, slide operations, and alignment features.</li>
+            <li>Gained experience using engineering equipment such as <strong>manual mills, lathes, drill presses, surface grinders, calipers, and precision inspection tools</strong>.</li>
+        </ul>
+    </div>
+    <div class="project-media">
+        <img src="images/portfolio/torch.jpg" alt="Precision machining projects">
+    </div>
+</div>
+
+    <!-- Adiblar.uz -->
+    <div class="project reverse">
+        <div class="project-info">
+            <div class="date">2022 – 2023</div>
+            <div class="org">BESTARORG · Cultural Tech</div>
+            <h3>Adiblar.uz — Uzbek Literature Digital Platform</h3>
+            <ul>
+                <li>Co-built a digital archive for Uzbek writers, poets, and composers of the independence era. Cultural preservation for a generation that lives online.</li>
+                <li>Roadmap includes an AI-powered recommendation layer and a mobile app — Uzbek heritage in the format the next generation will actually use.</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/adiblar.jpg" alt="Adiblar.uz / cultural project"></div>
+    </div>
 </section>
-<!-- end s-services -->
 
-    <!-- clients
-    ================================================== -->
-    <div id="clients" class="section s-clients">
 
-        <div class="row narrower s-clients__top h-text-center">
-            <div class="column">
-                <h1 class="display-1" data-aos="fade-up">
-                I have worked with SolidWorks to make many CAD models and assemblies.
-                </h1>
+<!-- =========================== CAREER =========================== -->
+<section class="s" id="career">
+    <div class="s-eyebrow">Career</div>
+    <h2 class="s-title">jobs, roles, and elected positions I somehow got into</h2>
+    <p class="s-sub">featuring leadership, budgets, and the occasional Robert's Rules of Order</p>
+
+    <!-- LEADERSHIP -->
+    <div class="career-block">
+        <h3 class="career-title">Leadership</h3>
+
+        <div class="role">
+            <div class="role-org">Drone Devils <strong>Treasurer & Co-founder</strong></div>
+            <div class="role-detail">
+                <h4>Treasurer · ASU Polytechnic</h4>
+                <ul>
+                    <li>Co-founded and restructured Drone Devils on the Polytechnic campus.</li>
+                    <li>Raised <strong>$4,000+</strong> directly; secured <strong>$15,000 total</strong> in funding via EMAS scholarships and grants.</li>
+                    <li>Built the org's competition presence at Sun Devil Smackdown + National Havoc Robot League.</li>
+                </ul>
             </div>
-        </div> <!-- s-clients__top -->
-
-        <div class="row clients-outer">
-            <div class="column">
-                <div class="clients" data-aos="fade-up">
-                    
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/dropbox.svg" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/atom.svg" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/github.svg" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/redhat.svg" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/medium.svg" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/messenger.svg" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/steam.svg" /></a>
-                    <a href="#0" title="" class="clients__slide"><img src="images/icons/clients/spotify.svg" /></a>
-                     
-                </div> <!-- end clients -->
-            </div> <!-- end column -->
-        </div> <!-- end clients-outer -->
-
-
-         <!-- SolidWorks Folio Start -->
-    <div class="row s-portfolio__top">
-        <div class="row">
-            <!-- Reserved space or heading if needed -->
-        </div>
-    </div> <!-- end s-portfolio__top -->
-
-    <div class="row h-add-half-bottom">
-        <h1>Here are some of my SolidWorks Projects</h1>
-
-        <!-- Top Left GIF -->
-        <div class="column large-6 tab-12">
-            <figure>
-                <img src="images/portfolio/bike.png" alt="SolidWorks Project 1" style="width: 100%; height: auto;" />
-                <figcaption style="text-align: center; padding-top: 0.5rem;">Bicycle project and assembly</figcaption>
-            </figure>
+            <div class="role-meta">Aug 2024 – Present<br>Mesa, AZ</div>
         </div>
 
-        <!-- Top Right GIF -->
-        <div class="column large-6 tab-12">
-            <figure>
-                <img src="images/portfolio/torch.jpg" alt="SolidWorks Project 2" style="width: 100%; height: auto;" />
-                <figcaption style="text-align: center; padding-top: 0.5rem;">Torch assembly</figcaption>
-            </figure>
-        </div>
-
-        <!-- Bottom Left GIF -->
-        <div class="column large-6 tab-12">
-            <figure>
-                <img src="images/portfolio/manipulator.jpg" alt="SolidWorks Project 3" style="width: 100%; height: auto;" />
-                <figcaption style="text-align: center; padding-top: 0.5rem;">Manipulator assembly</figcaption>
-            </figure>
-        </div>
-
-        <!-- Bottom Right GIF -->
-        <div class="column large-6 tab-12">
-            <figure>
-                <img src="images/portfolio/torch.jpg" alt="SolidWorks Project 4" style="width: 100%; height: auto;" />
-                <figcaption style="text-align: center; padding-top: 0.5rem;">Bike parts design</figcaption>
-            </figure>
-        </div>
-
-    </div> <!-- end row -->
-    </section> <!-- end s-portfolio -->
-
-
-
-
-<!--
-        <div class="row testimonials collapse">
-
-            <div class="column large-12">
-
-                <div class="testimonial-slider" data-aos="fade-up">
-
-                    <div class="testimonial-slider__slide">
-                        <p>
-                        Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
-                        Explicabo a quaerat sint autem dolore ducimus ut consequatur neque.  Nisi dolores quaerat fuga rem nihil nostrum.
-                        Laudantium quia consequatur molestias delectus culpa.
-                        </p>
-                        <div class="testimonial-slider__author">
-                            <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonial-slider__avatar">
-                            <cite class="testimonial-slider__cite">
-                                <strong>Tim Cook</strong>
-                                <span>CEO, Apple</span>
-                            </cite>
-                        </div>
-                    </div> 
-    
-                    <div class="testimonial-slider__slide">
-                        <p>
-                        Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                        Nisi eaque consequatur. Voluptatem dignissimos ut ducimus accusantium perspiciatis.
-                        Quasi voluptas eius distinctio. Atque eos maxime.
-                        </p>
-                        <div class="testimonial-slider__author">
-                            <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonial-slider__avatar">
-                            <cite class="testimonial-slider__cite">
-                                <strong>Sundar Pichai</strong>
-                                <span>CEO, Google</span>
-                            </cite>
-                        </div>
-                    </div> 
-    
-                    <div class="testimonial-slider__slide">
-                        <p>
-                        Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
-                        Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.
-                        Voluptatem dignissimos ut.
-                        </p>
-                        <div class="testimonial-slider__author">
-                            <img src="images/avatars/user-04.jpg" alt="Author image" class="testimonial-slider__avatar">
-                            <cite class="testimonial-slider__cite">
-                                <strong>Satya Nadella</strong>
-                                <span>CEO, Microsoft</span>
-                            </cite>
-                        </div>
-                    </div> 
-    
-                    <div class="testimonial-slider__slide">
-                        <p>
-                        Nunc interdum lacus sit amet orci. Vestibulum dapibus nunc ac augue. Fusce vel dui. In ac felis 
-                        quis tortor malesuada pretium. Curabitur vestibulum aliquam leo. Qui sed at corrupti expedita voluptas odit. 
-                        Nihil ea quia nesciunt. Ducimus aut sed ipsam.
-                        </p>
-                        <div class="testimonial-slider__author">
-                            <img src="images/avatars/user-05.jpg" alt="Author image" class="testimonial-slider__avatar">
-                            <cite class="testimonial-slider__cite">
-                                <strong>Jeff Bezos</strong>
-                                <span>CEO, Amazon</span>
-                            </cite>
-                        </div>
-                    </div> 
-
-                </div> 
-                
+        <div class="role">
+            <div class="role-org">Uzbek Students Association (UZSA) <strong>Vice President</strong></div>
+            <div class="role-detail">
+                <h4>Vice President · ASU</h4>
+                <ul>
+                    <li>Lead a <strong>7-person exec board</strong>; raised <strong>$30,000+</strong> for cultural programming.</li>
+                    <li>Ran <strong>Navruz 2025 & 2026</strong> festivals (400+ guests each) and the "1001 Nights" event series — <strong>800+ total attendees</strong> across two years.</li>
+                    <li>Built co-events with 7+ other student orgs; mentor newly arrived Uzbek students.</li>
+                </ul>
             </div>
-
+            <div class="role-meta">Aug 2024 – Present<br>Mesa, AZ</div>
         </div>
 
-
-    </div> 
-
-
-    <section class="s-contact">
-
-        <div class="row narrower s-contact__top h-text-center">
-            <div class="column">
-                <h3 class="h6">Get In Touch</h3>
-                <h1 class="display-1">
-                Have an idea or an epic project in mind? Talk to
-                us. Let us work together and make something great.
-                Shoot us a message at
-                </h1>
+        <div class="role">
+            <div class="role-org">Undergraduate Student Government <strong>Senator</strong> <span class="badge" style="background:var(--gold);color:#1a1a22;font-family:var(--font-mono);font-size:0.6rem;padding:0.15rem 0.4rem;border-radius:3px;letter-spacing:0.08em;margin-top:0.4rem;display:inline-block;text-transform:uppercase;font-weight:700;">Champion for Change</span></div>
+            <div class="role-detail">
+                <h4>Senator · Government Operations Chair</h4>
+                <ul>
+                    <li>Elected for <strong>two consecutive terms</strong>; drafted <strong>5 bills</strong> and <strong>4 resolutions</strong>.</li>
+                    <li>Oversight on <strong>$125,000+</strong> in student-org budgets as Government Operations Chair.</li>
+                    <li>Tangible wins for students: Century Hall vending machine, free Lyft codes, wellness supplies.</li>
+                    <li>Awarded the <strong>"Champion for Change"</strong> — USG Polytechnic's most prestigious leadership honor.</li>
+                </ul>
             </div>
-        </div> 
-
-        <div class="row h-text-center">
-            <div class="column">
-                <p class="s-contact__email">
-                    <a href="mailto:#0">hello@flare.com</a>
-                </p>
-            </div>
+            <div class="role-meta">Sep 2023 – May 2025<br>Mesa, AZ</div>
         </div>
 
-    </section> 
--->
-
-    <!-- footer
-    ================================================== -->
-    <footer class="s-footer">
-        <div class="row row-y-top">
-
-            <div class="column large-8 medium-12">
-                <div class="row">
-                    <div class="column large-7 tab-12 s-footer__block">
-                        <h4 class="h6">Where to Find me</h4>
-        
-                        <p>
-                        ASU Polytechnic <br>
-                        Mesa, Arizona <br>
-                        US <br>
-                        <a href="tel:197-543-2345">+480 791 ****</a>
-                        </p>
-                    </div>
-        
-                    <div class="column large-5 tab-12 s-footer__block">
-                        <h4 class="h6">Follow me</h4 class="h6">
-        
-                        <ul class="s-footer__list">
-                            <li><a href="#0">Facebook</a></li>
-                            <li><a href="#0">Twitter</a></li>
-                            <li><a href="#0">Instagram</a></li>
-                            <li><a href="#0">Dribbble</a></li>
-                        </ul>
-                    </div>
-                </div>
+        <div class="role">
+            <div class="role-org">BESTARORG <strong>Co-founder · Lead Robotics Engineer</strong></div>
+            <div class="role-detail">
+                <h4>Co-founder · Lead Engineer</h4>
+                <ul>
+                    <li>Led a <strong>7-engineer team</strong> in Tashkent across Robot UZ and Future Skills Uzbekistan competitions.</li>
+                    <li>Took EyeMed to <strong>$5,000+</strong> at Startup Weekend, met with the President of Uzbekistan and the Minister of Innovations on startup matters.</li>
+                </ul>
             </div>
-
-            <div class="column large-4 medium-12 s-footer__block--end">
-                <a href="https://drive.google.com/file/d/1eB1x6E1O73KvCu9WQ8fLvOEe6pA11BQz/view?usp=sharing" class="btn h-full-width">Resume</a>
-
-                <div class="ss-copyright">
-                    <span>Copyright Flare 2020</span> 
-                    <span>Design by <a href="https://www.styleshout.com/">StyleShout. I have also have used edits to this template by Deepit Arora and Kushagra Dashora</a></span>
-                </div>
-            </div>
-
-            <div class="ss-go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top">
-                    top
-                </a>
-            </div> <!-- end ss-go-top -->
-
+            <div class="role-meta">Oct 2020 – Jul 2023<br>Tashkent, UZ</div>
         </div>
-    </footer>
-    
+    </div>
 
-    <!-- photoswipe background
-    ================================================== -->
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+    <!-- ACADEMIC -->
+    <div class="career-block">
+        <h3 class="career-title">Academic</h3>
 
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
+        <div class="role">
+            <div class="role-org">Fulton Schools of Engineering <strong>Undergraduate Teaching Assistant</strong></div>
+            <div class="role-detail">
+                <h4>UGTA · EGR 101 — Introduction to Engineering</h4>
+                <ul>
+                    <li>Supported Dr. Daniel Frank and <strong>150+ students</strong> across an Arduino-based catapult project and final design challenges.</li>
+                </ul>
             </div>
-
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
-                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
-                    "Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
-                "Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-
+            <div class="role-meta">Sep 2024 – Dec 2024</div>
         </div>
 
-    </div> <!-- end photoSwipe background -->
+        <div class="role">
+            <div class="role-org">Fulton Ambassadors <strong>Co-Tour Director</strong></div>
+            <div class="role-detail">
+                <h4>Fulton Ambassador · Co-Tour Director</h4>
+                <ul>
+                    <li>Ran campus tours for <strong>10–30 prospective student & family visitors</strong> per session.</li>
+                    <li>Helped train the next round of Ambassadors as Co-Tour Director.</li>
+                </ul>
+            </div>
+            <div class="role-meta">Jan 2024 – Dec 2024</div>
+        </div>
+
+        <div class="role">
+            <div class="role-org">FACE Symposium <strong>Fulton Leader</strong></div>
+            <div class="role-detail">
+                <h4>Fulton Accelerated Community Engagement</h4>
+                <ul>
+                    <li>Presented <strong>Edudoxobot</strong> at the FACE Symposium 2024 — a Pomodoro/sleep-tracking smart desk system.</li>
+                    <li>Completed Starbucks Global Academy professional development curriculum.</li>
+                </ul>
+            </div>
+            <div class="role-meta">Oct 2023 – May 2024</div>
+        </div>
+    </div>
+
+    <!-- WORK -->
+    <div class="career-block">
+        <h3 class="career-title">Work</h3>
+
+        <div class="role">
+            <div class="role-org">ASU Enterprise Technology <strong>Classroom Support Tech</strong></div>
+            <div class="role-detail">
+                <h4>Classroom Support · IT</h4>
+                <ul>
+                    <li>On-call support for instructors and classroom AV/IT systems across ASU campuses.</li>
+                    <li>Field troubleshooting, on-the-spot calm under pressure when something doesn't power on 30 seconds before a lecture.</li>
+                </ul>
+            </div>
+            <div class="role-meta">May 2023 – Present<br>Tempe / Mesa, AZ</div>
+        </div>
+    </div>
+</section>
 
 
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+<!-- =========================== HIGHLIGHTS =========================== -->
+<section class="s" id="highlights">
+    <div class="s-eyebrow">Highlights</div>
+    <h2 class="s-title">moments that made the trip worth it</h2>
+    <p class="s-sub">competitions, recognitions, and the occasional good photograph</p>
+
+    <!-- Big highlight cards -->
+    <div class="highlight-card">
+        <div class="highlight-info">
+            <h4>Champion for Change Award</h4>
+            <div class="meta">USG Polytechnic · 2024</div>
+            <p>
+                The most prestigious leadership recognition awarded by ASU's Undergraduate Student Government at the Polytechnic campus. Awarded for sustained advocacy, drafted policy that became real student wins, and showing up for two full terms.
+            </p>
+        </div>
+        <div class="highlight-media"><img src="images/champion_trophy.jpg" alt="Champion for Change trophy"></div>
+    </div>
+
+    <div class="highlight-card">
+        <div class="highlight-info">
+            <h4>"Best Dressed" Award — Sun Devil Smackdown</h4>
+            <div class="meta">Combat Ready Robotics ASU · 2025</div>
+            <p>
+                Brought "Cheese Touch" — a 1-pound combat robot — to ASU's combat robotics tournament and won Best Dressed for design and craftsmanship. Also competed in the <strong>National Havoc Robot League</strong>.
+            </p>
+        </div>
+        <div class="highlight-media"><img src="images/portfolio/cheesetouch.png" alt="Cheese Touch battlebot"></div>
+    </div>
+
+    <div class="highlight-card">
+        <div class="highlight-info">
+            <h4>FSE 301 Demo Day — 2nd Place</h4>
+            <div class="meta">Entrepreneurship & Value Creation · 2026</div>
+            <p>
+                EduShelf, our smart productivity desk shelf, took 2nd place at the FSE 301 Demo Day under Dr. Griffin — beating dozens of other six-person teams across customer-discovery, business model, and live investor pitch.
+            </p>
+        </div>
+        <div class="highlight-media"><img src="images/portfolio/FSE301.jpg" alt="EduShelf"></div>
+    </div>
+
+    <div class="highlight-card">
+        <div class="highlight-info">
+            <h4>El-Yurt Umidi Foundation Scholar</h4>
+            <div class="meta">Uzbekistan State Scholarship · 2023 – Present</div>
+            <p>
+                Selected for the El-Yurt Umidi Foundation — Uzbekistan's national talent scholarship for studying abroad — which is funding my full B.S.E. in Engineering (Robotics) at Arizona State University.
+            </p>
+        </div>
+        <div class="highlight-media"><img src="images/about-photo.jpg" alt="At ASU"></div>
+    </div>
+
+    <div class="highlight-card">
+        <div class="highlight-info">
+            <h4>Grand Challenges Scholars Program (GCSP)</h4>
+            <div class="meta">Arizona State University · 2024 – Present</div>
+            <p>
+                Selected for ASU's Grand Challenges Scholars Program, an honors track focused on the National Academy of Engineering's 14 challenges for the next century. My focus: engineering tools that scale.
+            </p>
+        </div>
+        <div class="highlight-media"><img src="images/portfolio/fulton_ambassadors.jpg" alt="Fulton GCSP"></div>
+    </div>
+
+    <!-- Smaller wins grid -->
+    <h3 style="margin-top: 4rem; margin-bottom: 1rem; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;">A few more from before I got here</h3>
+    <p style="color: var(--ink-mute); font-family: var(--font-mono); font-size: 0.88rem;">> the school-years résumé that helped get scholarship</p>
+
+    <div class="wins-list">
+        <div class="win">
+            <h5><span class="win-rank">1st</span>International IT-Planet Olympiad</h5>
+            <div class="win-meta">Russia · best team representing Uzbekistan</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">Semi</span>"Unlimited Possibilities" IT-Planet World</h5>
+            <div class="win-meta">Russia · world-stage finalist</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">1st</span>Technoways National Competition</h5>
+            <div class="win-meta">Uzbekistan · $3,000 + laptop prize</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">3rd</span>USAID International Startup Weekend</h5>
+            <div class="win-meta">$2,400 · represented Uzbekistan in finals</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">1st</span>IRC Robotics — Uzbek Stage</h5>
+            <div class="win-meta">2019 · 8th in the world</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">2×</span>One Million Uzbek Coders</h5>
+            <div class="win-meta">$1,000 prize</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">1st</span>IT Park Ideathon — Youth Forum</h5>
+            <div class="win-meta">2021 · laptop prize</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">3×</span>National Robot UZ</h5>
+            <div class="win-meta">2020 + 2021 · 3rd place finishes</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">1st</span>National Intellectual Olympiad</h5>
+            <div class="win-meta">Tashkent City Hall · TV prize</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">1st</span>'Al-Khorazmiy Avlodi' Tech Contest</h5>
+            <div class="win-meta">MITC / TUIT · won as a high-school student among university entries</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">1st</span>"Men Yaratuvchiman" National Contest</h5>
+            <div class="win-meta">Uzbek nationals</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">2×</span>"My Army — My Pride" Contest</h5>
+            <div class="win-meta">$300 · custom military rover</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">1st</span>IT Park Pitchday</h5>
+            <div class="win-meta">IT Entrepreneurship online course 2020</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">Final</span>Open Data Challenge</h5>
+            <div class="win-meta">Online hackathon 2020</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">Final</span>Challenge MeOut Hackathon</h5>
+            <div class="win-meta">Germany · online finalist</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">✓</span>Udacity Frontend Nanodegree</h5>
+            <div class="win-meta">Completed · 2020</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================== SKILLS =========================== -->
+<section class="s" id="skills">
+    <div class="s-eyebrow">Skills</div>
+    <h2 class="s-title">things I do without Googling first</h2>
+    <p class="s-sub">tested in projects, not just in lecture slides</p>
+
+    <div class="skills-grid">
+        <div class="skill-group">
+            <h4>Hardware</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">ESP32 / ESP32-S3</span>
+                <span class="skill-tag">Arduino</span>
+                <span class="skill-tag">Teensy 4.1</span>
+                <span class="skill-tag">KiCad PCB Design</span>
+                <span class="skill-tag">SMT Soldering</span>
+                <span class="skill-tag">I²C · SPI · UART</span>
+                <span class="skill-tag">H-Bridge Motor Drivers</span>
+                <span class="skill-tag">IMU / Sensor Fusion</span>
+                <span class="skill-tag">Hand & CNC Machining</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h4>CAD &amp; Manufacturing</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">SolidWorks (CSWA)</span>
+                <span class="skill-tag">Fusion 360</span>
+                <span class="skill-tag">3D Printing (Cura, Bambu)</span>
+                <span class="skill-tag">Laser Cutting (Inkscape)</span>
+                <span class="skill-tag">Manual Lathe / Mill</span>
+                <span class="skill-tag">FEA Basics</span>
+                <span class="skill-tag">DFM / DFA</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h4>Software</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">C / C++</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Arduino / PlatformIO</span>
+                <span class="skill-tag">MQTT</span>
+                <span class="skill-tag">Git / GitHub</span>
+                <span class="skill-tag">MATLAB</span>
+                <span class="skill-tag">HTML / CSS / JS</span>
+                <span class="skill-tag">React Native</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h4>Languages &amp; Tools</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">Uzbek (native)</span>
+                <span class="skill-tag">English (fluent)</span>
+                <span class="skill-tag">Russian (conversational)</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Adobe Suite</span>
+                <span class="skill-tag">Microsoft Office</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================== EDUCATION =========================== -->
+<section class="s" id="education">
+    <div class="s-eyebrow">Education</div>
+    <h2 class="s-title">where scholarship paid tuition and I learn things</h2>
+    <p class="s-sub">return on investment: pending, but trending up</p>
+
+    <div class="edu-card">
+        <div class="edu-info">
+            <h3>B.S.E. Robotics Engineering</h3>
+            <p><strong>Arizona State University</strong> — Ira A. Fulton Schools of Engineering</p>
+            <p>Engineering(Robotics)</p>
+            <p style="margin-top:1rem;"><em>Grand Challenges Scholar · Dean's List · CSWA Certified</em></p>
+        </div>
+        <div class="edu-side">
+            <div class="gpa">3.51</div>
+            <div class="gpa-label">cumulative GPA</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================== CONTACT =========================== -->
+<section class="contact-section" id="contact">
+    <div class="s-eyebrow">Let's talk</div>
+    <h2>Send me<br>a message<span class="accent">.</span></h2>
+    <a href="mailto:aruziev@asu.edu" class="contact-cta">aruziev@asu.edu →</a>
+    <div class="contact-links">
+        <a href="https://www.linkedin.com/in/aruziev" target="_blank" rel="noopener">linkedin</a>
+        <a href="https://github.com/mraruziev" target="_blank" rel="noopener">github</a>
+        <a href="tel:+14807913***">+1 480 791 3***</a>
+    </div>
+</section>
+
+
+<!-- =========================== FOOTER =========================== -->
+<footer>
+    © 2026 Asadbek Ruziev <span class="built">·</span> built with maroon, gold, and a lot of coffee. Inspired by Shaurya and Kushagra portfolio and edited with Claude.
+</footer>
 
 </body>
-
 </html>
