@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Asadbek Ro'ziyev — Robototexnika muhandisi @ ASU</title>
-<meta name="description" content="Asadbek Ro'ziyev — Arizona Davlat Universitetida robototexnika talabasi. Robotlar quruvchi, jamoalar tashkilotchisi, ish bajaruvchi.">
+<meta name="description" content="Asadbek Ro'ziyev — Arizona Davlat Universitetida robototexnika talabasi; qishloq xo'jaligi uchun fizik sun'iy intellekt quradi: dehqonlarning vaqti, puli va kimyoviy xarajatlarini tejaydigan mashinalar.">
 
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -75,6 +75,8 @@ body::before {
 img { display: block; max-width: 100%; height: auto; }
 a { color: var(--gold); text-decoration: none; transition: color .2s; }
 a:hover { color: var(--gold-soft); }
+a.orglink { border-bottom: 1px dashed rgba(232,185,59,0.5); }
+a.orglink:hover { border-bottom-color: currentColor; }
 
 /* =========================== NAV =========================== */
 nav.topnav {
@@ -116,7 +118,10 @@ nav.topnav ul a {
 }
 nav.topnav ul a:hover { color: var(--ink); }
 @media (max-width: 700px) {
-    nav.topnav ul { display: none; }
+    nav.topnav ul li:not(.nav-keep):not(.keep-mobile) { display: none; }
+    nav.topnav ul { gap: 0.9rem; }
+    nav.topnav .nav-inner { gap: 0.8rem; }
+    nav.topnav ul a { font-size: 0.72rem; white-space: nowrap; }
 }
 
 /* =========================== HERO =========================== */
@@ -963,6 +968,79 @@ footer .built {
     color: var(--maroon);
     margin: 0 0.3rem;
 }
+
+/* ---------- awards gallery ---------- */
+.awards-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.2rem;}
+@media(max-width:900px){.awards-gallery{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.awards-gallery{grid-template-columns:1fr;}}
+.ag-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;}
+.ag-card img{width:100%;height:230px;object-fit:cover;display:block;}
+.ag-card.tall img{height:320px;object-fit:cover;object-position:top;}
+.ag-cap{padding:0.85rem 1rem 1rem;}
+.ag-cap b{display:block;font-size:0.92rem;margin-bottom:0.25rem;}
+.ag-cap span{font-family:var(--font-mono);font-size:0.74rem;color:var(--ink-mute);line-height:1.5;display:block;}
+.ag-cap a{font-family:var(--font-mono);font-size:0.74rem;}
+
+/* ---------- social archive ---------- */
+.ig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.4rem;
+  align-items:start;margin-top:2rem;}
+@media(max-width:720px){.ig-grid{grid-template-columns:1fr;}}
+.ig-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;}
+.ig-item .cap{padding:0.85rem 1rem 0.7rem;}
+.ig-item .cap b{display:block;font-size:0.92rem;margin-bottom:0.18rem;}
+.ig-item .cap span{font-family:var(--font-mono);font-size:0.73rem;color:var(--ink-mute);line-height:1.5;display:block;}
+.ig-item .instagram-media{margin:0 !important;min-width:0 !important;max-width:100% !important;
+  width:100% !important;border:0 !important;border-radius:0 0 12px 12px !important;box-shadow:none !important;}
+
+.li-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.4rem;
+  align-items:start;margin-top:1.4rem;}
+@media(max-width:720px){.li-grid{grid-template-columns:1fr;}}
+.li-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;}
+.li-item .cap{padding:0.85rem 1rem 0.7rem;}
+.li-item .cap b{display:block;font-size:0.92rem;margin-bottom:0.18rem;}
+.li-item .cap span{font-family:var(--font-mono);font-size:0.73rem;color:var(--ink-mute);line-height:1.5;display:block;}
+.li-item iframe{width:100%;height:600px;border:0;display:block;background:#f3f2ef;}
+.li-item .fallback{padding:0.75rem 1rem 0.9rem;font-family:var(--font-mono);font-size:0.75rem;}
+
+.vid-row{margin-top:1.4rem;}
+.vid-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;max-width:760px;}
+.vid-frame{position:relative;padding-bottom:56.25%;height:0;background:#000;}
+.vid-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.vid-card .cap{padding:0.9rem 1.1rem 1rem;}
+.vid-card .cap b{display:block;font-size:0.94rem;margin-bottom:0.2rem;}
+.vid-card .cap span{font-family:var(--font-mono);font-size:0.74rem;color:var(--ink-mute);line-height:1.55;display:block;}
+
+.social-row{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.1rem;}
+.social-chip{display:inline-flex;align-items:center;gap:0.45rem;text-decoration:none;
+  font-family:var(--font-mono);font-size:0.76rem;letter-spacing:0.04em;
+  color:var(--gold);border:1px solid rgba(232,185,59,0.35);border-radius:999px;
+  padding:0.4rem 0.9rem;transition:background .18s ease,border-color .18s ease;}
+.social-chip:hover{background:rgba(232,185,59,0.10);border-color:rgba(232,185,59,0.7);}
+.social-chip svg{width:14px;height:14px;fill:currentColor;flex:none;}
+
+/* ---------- video + press ---------- */
+.media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:1.4rem;margin-top:1.4rem;align-items:start;}
+@media(max-width:760px){.media-grid{grid-template-columns:1fr;}}
+.media-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;}
+.media-card .frame{position:relative;padding-bottom:56.25%;height:0;background:#000;}
+.media-card .frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.media-card .cap{padding:0.9rem 1.1rem 1rem;}
+.media-card .cap b{display:block;font-size:0.94rem;margin-bottom:0.2rem;}
+.media-card .cap span{font-family:var(--font-mono);font-size:0.74rem;color:var(--ink-mute);line-height:1.55;display:block;}
+
+.press-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.4rem;margin-top:1.5rem;align-items:stretch;}
+@media(max-width:720px){.press-grid{grid-template-columns:1fr;}}
+.press-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;
+  padding:1rem;display:flex;flex-direction:column;}
+.press-card img{width:100%;height:190px;object-fit:cover;border-radius:9px;display:block;}
+.press-card h4{font-size:1.06rem;font-weight:700;line-height:1.35;margin:1rem 0 0.7rem;color:var(--ink);}
+.press-meta{display:flex;justify-content:space-between;align-items:baseline;gap:0.8rem;
+  font-family:var(--font-mono);font-size:0.76rem;color:var(--ink-mute);margin-bottom:1rem;}
+.press-card .go{margin-top:auto;display:block;text-align:center;text-decoration:none;
+  font-family:var(--font-mono);font-size:0.82rem;font-weight:600;letter-spacing:0.04em;
+  background:rgba(232,185,59,0.12);border:1px solid rgba(232,185,59,0.4);color:var(--gold,#E8B93B);
+  border-radius:9px;padding:0.7rem 1rem;transition:background .18s ease;}
+.press-card .go:hover{background:rgba(232,185,59,0.22);}
 </style>
 </head>
 <body>
@@ -978,7 +1056,8 @@ footer .built {
             <li><a href="#highlights">yutuqlar</a></li>
             <li><a href="#courses">fanlar</a></li>
             <li><a href="#contact">aloqa</a></li>
-            <li><a href="index.html" class="lang-toggle">EN</a></li>
+            <li class="nav-keep"><a href="index.html" class="lang-toggle">EN</a></li>
+            <li><a href="https://bestarorg.uz/index-uz.html" class="lang-toggle" style="margin-left:.2rem;">← BESTARORG</a></li>
         </ul>
     </div>
 </nav>
@@ -991,7 +1070,7 @@ footer .built {
             <div class="eyebrow">Robototexnika muhandisi · ASU '27</div>
             <h1>Asadbek<br>Ro'ziyev<span class="accent">.</span></h1>
             <p class="tagline">
-                Men <em>robotlar</em>, <em>jamoalar</em> va vaqti-vaqti bilan keyinchalik foydali bo'lib chiqadigan <em> innovatsion g'oyalar</em> quraman.
+                Men qishloq xo'jaligi uchun <em>fizik sun'iy intellekt</em> quraman — dehqonlarning vaqti va pulini tejaydigan, kimyoviy moddalarga sarfini keskin kamaytiradigan mashinalar.
                 Hozirda Arizona Davlat Universitetida g'ildiraklar, motorlar va PCB platalari ustida ishlayapman.
             </p>
             <div class="hero-cta">
@@ -1031,7 +1110,7 @@ footer .built {
                 <strong>O'zbekistonda</strong> tug'ilib o'sganman. Olimpiadalar, xakatonlar va O'zbekiston Prezidenti bilan bir necha bor uchrashuvlardan so'ng <strong>robototexnika muhandisligi</strong> bo'yicha o'qish uchun ASU Polytechnic kampusiga keldim. O'sha uchrashuvlardan men <em>jismonan kelishning</em> ishning yarmi ekanini o'rgandim.
             </p>
             <p>
-                Bugun men avtonom qishloq xo'jaligi roveri <strong>CropSCOUT</strong>ning g'ildirak-motor quyi tizimini boshqaraman. <strong>Drone Devils</strong> tashkilotining g'aznachisi, <strong>O'zbek talabalar assotsiatsiyasi</strong>ning vitse-prezidentiman va ikki yil <strong>USG senatori</strong> sifatida qonun loyihalarini ishlab chiqib, $125K+ byudjetlarni nazorat qilib, ishlarni bajarib keldim.
+                Bugun men avtonom qishloq xo'jaligi roveri <strong>CropSCOUT</strong>ning g'ildirak-motor quyi tizimini boshqaraman — bu <strong>fizik sun'iy intellekt</strong>: dehqon kamroq vaqt, kamroq pul va ancha kam kimyoviy modda sarflaydi. <a class="orglink" href="https://asudronedevils.com" target="_blank" rel="noopener"><strong>Drone Devils</strong></a> tashkilotining g'aznachisi, <a class="orglink" href="https://joinuzsa.com" target="_blank" rel="noopener"><strong>O'zbek talabalar assotsiatsiyasi</strong></a>ning vitse-prezidentiman va ikki yil <strong>USG senatori</strong> sifatida qonun loyihalarini ishlab chiqib, $125K+ byudjetlarni nazorat qilib, ishlarni bajarib keldim.
             </p>
             <p>
                 Laboratoriyadan tashqarida Arduino jang robotlari quraman, 1,000+ yuklab olingan ilovalar chiqaraman, 400+ mehmonli madaniy festivallarni o'tkazaman va ustaxonada narsalarni sindirib qo'ymaslikka <em>harakat qilaman</em>. <em>Harakat.</em>
@@ -1157,6 +1236,22 @@ footer .built {
     </div>
 </div>
 
+    <!-- EGR 240 Velosiped Assembly -->
+    <div class="project">
+        <div class="project-info">
+            <div class="date">Bahor 2026</div>
+            <div class="org">EGR 240 · SolidWorks Assembly Loyihasi</div>
+            <h3>SolidWorks'da To'liq Velosiped Assembly</h3>
+            <ul>
+                <li>To'liq velosipedni <strong>SolidWorks assembly</strong> sifatida modellashtirdim — rama, old vilka, o'rindiq trubasi, o'rindiq qisqichi, rul assembly, egar, old g'ildirak assembly, orqa vtulka assembly va pedallarni qamrab olgan 13 ta komponent.</li>
+                <li>Uzatma tizimini <strong>pattern bilan yasalgan zanjir</strong> orqali qurdim — har birida 63 bo'g'indan ikkita zanjir guruhi, jami 126 bo'g'in, 60.5&nbsp;dyuymli yopiq yo'l bo'ylab.</li>
+                <li>Modelni <strong>EGR240-<em>xxx</em> detal raqamlash tizimi</strong> ostida tashkil qildim, qayta ishlatiladigan sub-assembly'lar bilan — komponentni almashtirishda barcha mate'larni qaytadan qurish shart emas.</li>
+                <li>To'liq <strong>assembly chizmasi</strong>ni tayyorladim: ortografik va izometrik ko'rinishlar, ballon belgilar va 13 elementli spetsifikatsiya (BOM).</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/bike.png" alt="SolidWorks'da modellashtirilgan velosiped assembly"></div>
+    </div>
+
     <!-- EPICS Pyrolyzer -->
     <div class="project">
         <div class="project-info">
@@ -1231,7 +1326,7 @@ footer .built {
         <h3 class="career-title">Yetakchilik</h3>
 
         <div class="role">
-            <div class="role-org">Drone Devils <strong>G'aznachi va Hammuassis</strong></div>
+            <div class="role-org"><a class="orglink" href="https://asudronedevils.com" target="_blank" rel="noopener">Drone Devils</a> <strong>G'aznachi va Hammuassis</strong></div>
             <div class="role-detail">
                 <h4>G'aznachi · ASU Polytechnic</h4>
                 <ul>
@@ -1239,12 +1334,13 @@ footer .built {
                     <li>To'g'ridan-to'g'ri <strong>$4,000+</strong> jalb qildim; EMAS stipendiyalari va grantlar orqali jami <strong>$15,000</strong> moliyalashtirish ta'minladim.</li>
                     <li>Sun Devil Smackdown va National Havoc Robot League tadbirlarida tashkilot ishtirokini ta'minladim.</li>
                 </ul>
+                <a class="social-chip" style="margin-top:0.8rem" href="https://asudronedevils.com" target="_blank" rel="noopener">asudronedevils.com &rarr;</a>
             </div>
             <div class="role-meta">Avg 2024 – Hozir<br>Mesa, AZ</div>
         </div>
 
         <div class="role">
-            <div class="role-org">O'zbek Talabalar Assotsiatsiyasi (UZSA) <strong>Vitse-prezident</strong></div>
+            <div class="role-org"><a class="orglink" href="https://joinuzsa.com" target="_blank" rel="noopener">O'zbek Talabalar Assotsiatsiyasi (UZSA)</a> <strong>Vitse-prezident</strong></div>
             <div class="role-detail">
                 <h4>Vitse-prezident · ASU</h4>
                 <ul>
@@ -1252,6 +1348,7 @@ footer .built {
                     <li><strong>Navro'z 2025 va 2026</strong> bayramlari (har birida 400+ mehmon) va "1001 Nights" tadbirlari — ikki yil davomida <strong>800+ jami mehmon</strong>.</li>
                     <li>7+ talaba tashkilotlari bilan qo'shma tadbirlar; O'zbekistondan yangi kelgan talabalarga mentorlik.</li>
                 </ul>
+                <a class="social-chip" style="margin-top:0.8rem" href="https://joinuzsa.com" target="_blank" rel="noopener">joinuzsa.com &rarr;</a>
             </div>
             <div class="role-meta">Avg 2024 – Hozir<br>Mesa, AZ</div>
         </div>
@@ -1328,6 +1425,45 @@ footer .built {
         <h3 class="career-title">Ko'proq</h3>
 
         <div class="role">
+            <div class="role-org">Pathstrider Mobility <strong>Bitiruv loyihasi muhandisi · Sanoat hamkori loyihasi</strong></div>
+            <div class="role-detail">
+                <h4>Bitiruv loyihasi (Senior Capstone) · EGR 401/402</h4>
+                <ul>
+                    <li>Sanoat hamkori <strong>Pathstrider Mobility</strong> bilan ikki semestrlik bitiruv loyihasi — haqiqiy talablar, dizayn ko'riklari va mijoz uchun ishlashi shart bo'lgan natijalar asosida olib boriladi.</li>
+                    <li>Pathstrider jamoasi va bitiruv jamoam bilan birga hamkorning ehtiyojlarini texnik topshiriqqa, so'ng sinovdan o'tgan apparat va hujjatlarga aylantiraman.</li>
+                    <li>So'nggi yillarda to'plagan robototexnika tajribamni — SolidWorks'da mexanik dizayn, o'rnatilgan elektronika va boshqaruv — laboratoriyadan tashqarida ishlashi kerak bo'lgan mahsulotga qo'llayman.</li>
+                </ul>
+            </div>
+            <div class="role-meta">2026-yil avgust – hozirgacha<br>Mesa, AZ</div>
+        </div>
+
+        <div class="role">
+            <div class="role-org">ASU EcoRobotics Lab <strong>Talaba-tadqiqotchi</strong></div>
+            <div class="role-detail">
+                <h4>Talaba-tadqiqotchi · Robotli qazish</h4>
+                <ul>
+                    <li>Mobil platformaga o'rnatilgan <strong>robotli qazish qo'li</strong> uchun elektronika va boshqaruv tizimini quraman — motor drayverlar va stepper motorlar o'rtasida CAN bus aloqasi (Teensy 4.1, TJA1051T/3).</li>
+                    <li><strong>Bo'g'im momenti va qazish yuklamasi</strong> ma'lumotlarini yig'uvchi sinov maydonchasiga hissa qo'shaman — ifloslanishni xaritalab, hududni qazib, natijani qayta o'lchaydigan yopiq siklli avtonom tuproq tozalash tizimi uchun.</li>
+                    <li>Professor Vivek Thangavelu rahbarligida, magistrant tadqiqotchilar bilan birgalikda apparat, dasturiy ta'minot va ma'lumot yig'ishni integratsiya qilaman.</li>
+                </ul>
+            </div>
+            <div class="role-meta">2026-yil iyun – hozirgacha<br>Mesa, AZ</div>
+        </div>
+
+        <div class="role">
+            <div class="role-org">INNO Technopark <strong>Robototexnika muhandisi amaliyotchi</strong></div>
+            <div class="role-detail">
+                <h4>Amaliyotchi muhandis · Toshkent</h4>
+                <ul>
+                    <li>Talabalar jamoalari uchun <strong>mobil robot platformalari</strong>ni ishlab chiqdim va dasturladim — bir oylik muddatda ishlaydigan qurilmalar topshirildi.</li>
+                    <li><strong>RoboWar musobaqa maydoni</strong>ni SolidWorks'da loyihalab, to'liq hujjatlar to'plamini — texnik chizmalar va yig'uv spetsifikatsiyalarini tayyorladim.</li>
+                    <li>Mexanik detallarni frezalab tayyorladim, ustaxona xodimlari bilan CAD'dan tayyor qurilmagacha bo'lgan jarayonni muvofiqlashtirdim.</li>
+                </ul>
+            </div>
+            <div class="role-meta">2026-yil may – iyun<br>Toshkent, UZ</div>
+        </div>
+
+        <div class="role">
             <div class="role-org">ASU Enterprise Technology <strong>Sinf Qo'llab-quvvatlash Texnologi</strong></div>
             <div class="role-detail">
                 <h4>Sinf Qo'llab-quvvatlash · IT</h4>
@@ -1338,6 +1474,19 @@ footer .built {
             </div>
             <div class="role-meta">May 2024 – Hozir<br>Tempe / Mesa, AZ</div>
         </div>
+        <div class="role">
+            <div class="role-org">Air Devils <strong>Loyiha muhandisi</strong></div>
+            <div class="role-detail">
+                <h4>Loyiha muhandisi · AIAA Design/Build/Fly 2024</h4>
+                <ul>
+                    <li><strong>28-an'anaviy AIAA Design/Build/Fly</strong> musobaqasi uchun RC samolyot loyihalab qurdim — ASU'ning eng katta va eng og'ir samolyoti.</li>
+                    <li>Qat'iy musobaqa talablari va unumdorlik cheklovlari doirasida ko'p tarmoqli jamoada ishladim.</li>
+                    <li>Samolyotning ishonchliligi va unumdorligini oshirgan loyihalash, sinov va takomillashtirish sikllariga hissa qo'shdim.</li>
+                </ul>
+            </div>
+            <div class="role-meta">2023-yil sen. – 2024-yil may<br>Mesa, AZ</div>
+        </div>
+
     </div>
 </section>
 
@@ -1473,6 +1622,123 @@ footer .built {
             <h5><span class="win-rank">✓</span>Udacity Frontend Nanodegree</h5>
             <div class="win-meta">Yakunlandi · 2020</div>
         </div>
+        <div class="win">
+            <h5><span class="win-rank">3-o'rin</span>"Ilhom" mukofoti — Adiblar.uz</h5>
+            <div class="win-meta">15 000 000 so'm · respublika bo'yicha 105 ishtirokchi orasida</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">2-o'rin</span>IT Park × MITC Robototexnika tanlovi</h5>
+            <div class="win-meta">G'olib sertifikati + Arduino muhandislik to'plami</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">3-o'rin</span>FutureSkills Uzbekistan — Robototexnika</h5>
+            <div class="win-meta">Chiqindi saralovchi robot · IT Park</div>
+        </div>
+    </div>
+
+    <!-- Social archive -->
+    <h3 style="margin-top: 4rem; margin-bottom: 1rem; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;">Vaqt muhri bilan</h3>
+    <p style="color: var(--ink-mute); font-family: var(--font-mono); font-size: 0.88rem;">&gt; hech narsa keyin to'qilmagan — o'sha kuni joylangan, 2020-yildan bugungacha</p>
+    <div class="social-row">
+      <a class="social-chip" href="https://www.instagram.com/bestarorg/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.93 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>Instagram'da @bestarorg &rarr;</a>
+      <a class="social-chip" href="https://www.linkedin.com/in/aruziev/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 2.06-2.06 2.06 2.06 0 0 1-2.06 2.06zM7.12 20.45H3.55V9h3.57zM22.22 0H1.77A1.76 1.76 0 0 0 0 1.73v20.54A1.76 1.76 0 0 0 1.77 24h20.45A1.77 1.77 0 0 0 24 22.27V1.73A1.77 1.77 0 0 0 22.22 0z"/></svg>LinkedIn &rarr;</a>
+      <a class="social-chip" href="https://github.com/mraruziev" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3z"/></svg>GitHub &rarr;</a>
+    </div>
+
+
+    <div class="ig-grid">
+      <div class="ig-item">
+        <div class="cap"><b>Dastlabki kunlar</b><span>Hali hech narsaning nomi yo'q edi.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/B8qEhw7H6R6/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="ig-item">
+        <div class="cap"><b>Birinchi gumanoid robot</b><span>2020-yilda loyihalab, yig'ilgan.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/B_z24cdHm-G/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="ig-item">
+        <div class="cap"><b>Birinchi sumo robot</b><span>15 yoshda qurilgan — Robot-UZ'da 3-o'rin.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CMGs719He80/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="ig-item">
+        <div class="cap"><b>Robot-UZ 2020</b><span>Respublika bo'ylab yuzlab ishtirokchi orasida jamoaviy g'alaba.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CMGtFcDHHx-/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="ig-item">
+        <div class="cap"><b>Adiblar.uz efirda</b><span>O'zbek adabiyoti platformasi haqida intervyu.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CL8yq_OHw4s/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="ig-item">
+        <div class="cap"><b>2021-yildan beri hakatonlar</b><span>O'shandan buyon vaqtga qarshi quramiz.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CPXx0m4HD6d/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="ig-item">
+        <div class="cap"><b>Jamoa, 2021</b><span>Robotlardan oldingi BESTARORG.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CPmyzCuH257/" data-instgrm-version="14"></blockquote>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 3.4rem; margin-bottom: 0.4rem; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;">Videoda</h3>
+    <p style="color: var(--ink-mute); font-family: var(--font-mono); font-size: 0.88rem;">&gt; izohga muhtoj bo'lmagan ikki lavha</p>
+
+    <div class="media-grid">
+      <div class="media-card">
+        <div class="frame"><iframe src="https://www.youtube.com/embed/gOBiet8Y5_8?si=e28Bikl2sO9zq93I&amp;start=17701" title="CheeseTouch — NHRL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+        <div class="cap"><b>CheeseTouch NHRL'da</b><span>ASU Sun Devil Smackdown uchun qurilgan — o'sha yerda Best Dressed, so'ng National Havoc Robot League. Video to'g'ridan-to'g'ri jangdan boshlanadi. <a href="https://youtu.be/gOBiet8Y5_8?t=17701" target="_blank" rel="noopener">YouTube'da ko'rish →</a></span></div>
+      </div>
+      <div class="media-card">
+        <div class="frame"><iframe src="https://www.youtube.com/embed/5ni-51168_0?si=ugRAEc--FuC96CW3&amp;start=2795" title="One Million Uzbek Coders ceremony" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+        <div class="cap"><b>One Million Uzbek Coders — yillik marosim</b><span>Loyihaning respublika marosimi sahnasida. Video kerakli qismdan boshlanadi. <a href="https://www.youtube.com/live/5ni-51168_0?t=2795" target="_blank" rel="noopener">YouTube'da ko'rish →</a></span></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 3.4rem; margin-bottom: 0.4rem; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;">LinkedIn'da</h3>
+
+    <div class="li-grid">
+      <div class="li-item">
+        <div class="cap"><b>Arizona State'da boshlanish</b><span>El-Yurt Umidi stipendiati, Robototexnika muhandisligi.</span></div>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7096361652920446976?collapsed=1" frameborder="0" allowfullscreen="" loading="lazy" title="Arizona State'da boshlanish"></iframe>
+        <div class="fallback"><a href="https://www.linkedin.com/feed/update/urn:li:share:7096361652920446976/" target="_blank" rel="noopener">LinkedIn'da ochish →</a></div>
+      </div>
+      <div class="li-item">
+        <div class="cap"><b>So'nggi yangilik</b><span>BESTARORG lentasidan.</span></div>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7464386145548820482?collapsed=1" frameborder="0" allowfullscreen="" loading="lazy" title="So'nggi yangilik"></iframe>
+        <div class="fallback"><a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7464386145548820482/" target="_blank" rel="noopener">LinkedIn'da ochish →</a></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 3.4rem; margin-bottom: 0.4rem; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;">Matbuotda</h3>
+    <p style="color: var(--ink-mute); font-family: var(--font-mono); font-size: 0.88rem;">&gt; boshqalar yozgan maqolalar</p>
+
+    <div class="press-grid">
+      <div class="press-card">
+        <h4>The story of a 17-year-old robotics specialist</h4>
+        <div class="press-meta"><span>IT Park Uzbekistan</span><span>Mar 2023</span></div>
+        <a class="go" href="https://www.it-park.uz/en/itpark/news/the-story-of-a-17-year-old-robotics-specialist" target="_blank" rel="noopener">Maqolani o'qish ↗</a>
+      </div>
+      <div class="press-card">
+        <h4>From a passion for robotics to a 100% scholarship at Arizona State University</h4>
+        <div class="press-meta"><span>Borderless</span><span></span></div>
+        <a class="go" href="https://borderless.so/stories/from-a-passion-for-robotics-to-a-100-scholarship-for-a-bsc-robotics-engineering-degree-at-arizona-state-university-the-1-university-for-innovation" target="_blank" rel="noopener">Maqolani o'qish ↗</a>
+      </div>
+      <div class="press-card">
+        <h4>One Million Uzbek Coders — contest results announced</h4>
+        <div class="press-meta"><span>IT Park Uzbekistan</span><span>Feb 2021</span></div>
+        <a class="go" href="https://www.it-park.uz/en/itpark/news/we-announce-the-results-of-the-contests-for-teachers-and-active-participants-of-the-one-million-uzbek-coders-project" target="_blank" rel="noopener">Maqolani o'qish ↗</a>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 3.4rem; margin-bottom: 0.4rem; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;">Boshqa joylarda</h3>
+    <p style="color: var(--ink-mute); font-family: var(--font-mono); font-size: 0.88rem;">&gt; laboratoriya, tashkilotlar va muhandislik portfoliosi</p>
+    <div class="social-row">
+      <a class="social-chip" href="https://ecoroboticslab.com/" target="_blank" rel="noopener">EcoRobotics Lab &rarr;</a>
+      <a class="social-chip" href="https://mraruziev.github.io/portfolio" target="_blank" rel="noopener">Engineering portfolio &rarr;</a>
+      <a class="social-chip" href="https://sundevilcentral.eoss.asu.edu/dronedevils/home/" target="_blank" rel="noopener">Drone Devils · Sun Devil Central &rarr;</a>
+      <a class="social-chip" href="https://joinuzsa.com" target="_blank" rel="noopener">Uzbek Students Association · joinuzsa.com &rarr;</a>
+      <a class="social-chip" href="https://asudronedevils.com" target="_blank" rel="noopener">Drone Devils · asudronedevils.com &rarr;</a>
+      <a class="social-chip" href="https://bestarorg.uz" target="_blank" rel="noopener">BESTARORG · bestarorg.uz &rarr;</a>
+    </div>
+
+    <div style="display:none">
     </div>
 </section>
 
@@ -1546,6 +1812,24 @@ footer .built {
     <div class="courses-divider">Robototexnika va Embedded · asosiy fanlar</div>
     <div class="courses-grid">
 
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 494</span>
+            </div>
+            <h4 class="course-title">Robotic Systems Integration</h4>
+            <p class="course-desc">Sanoat robotlarini integratsiya qilish — PLC boshqaruv mantig'i, ladder dasturlash va FANUC manipulyatorlarini butun ish yacheykasida ishlatish.</p>
+            <span class="course-tag">sanoat robototexnikasi</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">RAS 585</span>
+            </div>
+            <h4 class="course-title">Machine Learning &amp; Artificial Intelligence</h4>
+            <p class="course-desc">Magistratura darajasidagi mashinali o'qitish va sun'iy intellekt — modelni o'qitish, baholash va robot tizimida o'rganish qayerda kerakligini aniqlash. Men quradigan fizik sun'iy intellektning model qismi.</p>
+            <span class="course-tag">magistratura darajasi</span>
+        </div>
+
         <div class="course-card starred">
             <div class="course-head">
                 <span class="course-code">EGR 456</span>
@@ -1605,6 +1889,15 @@ footer .built {
 
     <div class="courses-divider">Dizayn va ishlab chiqarish</div>
     <div class="courses-grid">
+
+        <div class="course-card starred">
+            <div class="course-head">
+                <span class="course-code">EGR 401</span>
+            </div>
+            <h4 class="course-title">Professional Design Project I</h4>
+            <p class="course-desc">Bitiruv capstone loyihasi — sanoatdagidek olib boriladigan to'liq loyiha: talablar, dizayn ko'riklari va faqat baho uchun emas, mijoz uchun ishlashi shart bo'lgan qurilma.</p>
+            <span class="course-tag">capstone</span>
+        </div>
 
         <div class="course-card starred">
             <div class="course-head">
@@ -1744,5 +2037,6 @@ footer .built {
     © 2026 Asadbek Ro'ziyev <span class="built">·</span> maroon, gold va ko'p qahva bilan qurilgan. Shaurya va Kushagra portfoliolaridan ilhomlangan, Claude bilan tahrirlangan.
 </footer>
 
+<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>

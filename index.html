@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Asadbek Ruziev — Robotics Engineer @ ASU</title>
-<meta name="description" content="Asadbek Ruziev — Robotics Engineering student at Arizona State University. Builder of robots, founder of communities, runner of the show.">
+<meta name="description" content="Asadbek Ruziev — Robotics Engineering student at Arizona State University, building physical AI for agriculture: machines that save farmers time and money and reduce their chemical costs.">
 
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -75,6 +75,8 @@ body::before {
 img { display: block; max-width: 100%; height: auto; }
 a { color: var(--gold); text-decoration: none; transition: color .2s; }
 a:hover { color: var(--gold-soft); }
+a.orglink { border-bottom: 1px dashed rgba(232,185,59,0.5); }
+a.orglink:hover { border-bottom-color: currentColor; }
 
 /* =========================== NAV =========================== */
 nav.topnav {
@@ -116,7 +118,10 @@ nav.topnav ul a {
 }
 nav.topnav ul a:hover { color: var(--ink); }
 @media (max-width: 700px) {
-    nav.topnav ul { display: none; }
+    nav.topnav ul li:not(.nav-keep):not(.keep-mobile) { display: none; }
+    nav.topnav ul { gap: 0.9rem; }
+    nav.topnav .nav-inner { gap: 0.8rem; }
+    nav.topnav ul a { font-size: 0.72rem; white-space: nowrap; }
 }
 
 /* =========================== HERO =========================== */
@@ -963,6 +968,103 @@ footer .built {
     color: var(--maroon);
     margin: 0 0.3rem;
 }
+
+/* ---------- awards gallery ---------- */
+.awards-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.2rem;}
+@media(max-width:900px){.awards-gallery{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.awards-gallery{grid-template-columns:1fr;}}
+.ag-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;}
+.ag-card img{width:100%;height:230px;object-fit:cover;display:block;}
+.ag-card.tall img{height:320px;object-fit:cover;object-position:top;}
+.ag-cap{padding:0.85rem 1rem 1rem;}
+.ag-cap b{display:block;font-size:0.92rem;margin-bottom:0.25rem;}
+.ag-cap span{font-family:var(--font-mono);font-size:0.74rem;color:var(--ink-mute);line-height:1.5;display:block;}
+.ag-cap a{font-family:var(--font-mono);font-size:0.74rem;}
+
+/* ---------- social archive ---------- */
+/* Masonry, for the same reason as the Telegram grid below: posts with long
+   captions were forcing every card in their row to match, leaving holes. */
+.ig-grid{columns:3 340px;column-gap:1.4rem;margin-top:2rem;}
+@media(max-width:720px){.ig-grid{columns:1;}}
+.ig-grid .ig-item{margin:0 0 1.4rem;width:100%;display:inline-block;
+  break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;}
+.ig-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;}
+.ig-item .cap{padding:0.85rem 1rem 0.7rem;}
+.ig-item .cap b{display:block;font-size:0.92rem;margin-bottom:0.18rem;}
+.ig-item .cap span{font-family:var(--font-mono);font-size:0.73rem;color:var(--ink-mute);line-height:1.5;display:block;}
+.ig-item .instagram-media{margin:0 !important;min-width:0 !important;max-width:100% !important;
+  width:100% !important;border:0 !important;border-radius:0 0 12px 12px !important;box-shadow:none !important;}
+/* The flight stands on its own, ahead of the grid — it is the one post here
+   that is not about work. */
+.ig-solo{max-width:420px;margin:2rem 0 0;}
+.ig-solo .ig-item{border-color:rgba(232,185,59,0.34);}
+.ig-solo .cap b{color:var(--gold);}
+
+.li-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.4rem;
+  align-items:start;margin-top:1.4rem;}
+@media(max-width:720px){.li-grid{grid-template-columns:1fr;}}
+.li-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;}
+.li-item .cap{padding:0.85rem 1rem 0.7rem;}
+.li-item .cap b{display:block;font-size:0.92rem;margin-bottom:0.18rem;}
+.li-item .cap span{font-family:var(--font-mono);font-size:0.73rem;color:var(--ink-mute);line-height:1.5;display:block;}
+.li-item iframe{width:100%;height:600px;border:0;display:block;background:#f3f2ef;}
+.li-item .fallback{padding:0.75rem 1rem 0.9rem;font-family:var(--font-mono);font-size:0.75rem;}
+
+.vid-row{margin-top:1.4rem;}
+.vid-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;max-width:760px;}
+.vid-frame{position:relative;padding-bottom:56.25%;height:0;background:#000;}
+.vid-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.vid-card .cap{padding:0.9rem 1.1rem 1rem;}
+.vid-card .cap b{display:block;font-size:0.94rem;margin-bottom:0.2rem;}
+.vid-card .cap span{font-family:var(--font-mono);font-size:0.74rem;color:var(--ink-mute);line-height:1.55;display:block;}
+
+.social-row{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.1rem;}
+.social-chip{display:inline-flex;align-items:center;gap:0.45rem;text-decoration:none;
+  font-family:var(--font-mono);font-size:0.76rem;letter-spacing:0.04em;
+  color:var(--gold);border:1px solid rgba(232,185,59,0.35);border-radius:999px;
+  padding:0.4rem 0.9rem;transition:background .18s ease,border-color .18s ease;}
+.social-chip:hover{background:rgba(232,185,59,0.10);border-color:rgba(232,185,59,0.7);}
+.social-chip svg{width:14px;height:14px;fill:currentColor;flex:none;}
+
+/* ---------- video + press ---------- */
+.media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:1.4rem;margin-top:1.4rem;align-items:start;}
+@media(max-width:760px){.media-grid{grid-template-columns:1fr;}}
+.media-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;}
+.media-card .frame{position:relative;padding-bottom:56.25%;height:0;background:#000;}
+.media-card .frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+/* Telegram + Instagram embeds.
+   Masonry rather than a grid: these posts differ wildly in height — a photo
+   caption next to a full essay — and in a grid every row is as tall as its
+   tallest card, which left the short ones sitting over a hole. Flowing them
+   down columns lets a long post carry on into the next column instead. */
+.social-embed-grid{columns:3 340px;column-gap:1.4rem;margin-top:1.4rem}
+@media(max-width:760px){.social-embed-grid{columns:1}}
+.social-embed-grid .li-item{padding-bottom:0;margin:0 0 1.4rem;width:100%;
+  display:inline-block;break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid}
+.tg-wrap,.ig-wrap{padding:10px 10px 4px;background:#fff;border-radius:0 0 12px 12px;min-height:120px}
+/* One post is a whole essay; without a ceiling it would set the height of the
+   entire column. Scroll the overflow instead. */
+.tg-wrap{max-height:720px;overflow-y:auto}
+.tg-wrap iframe{width:100%!important;border:0;display:block}
+.ig-wrap .instagram-media{margin:0 auto!important}
+
+.media-card .cap{padding:0.9rem 1.1rem 1rem;}
+.media-card .cap b{display:block;font-size:0.94rem;margin-bottom:0.2rem;}
+.media-card .cap span{font-family:var(--font-mono);font-size:0.74rem;color:var(--ink-mute);line-height:1.55;display:block;}
+
+.press-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.4rem;margin-top:1.5rem;align-items:stretch;}
+@media(max-width:720px){.press-grid{grid-template-columns:1fr;}}
+.press-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;
+  padding:1rem;display:flex;flex-direction:column;}
+.press-card img{width:100%;height:190px;object-fit:cover;border-radius:9px;display:block;}
+.press-card h4{font-size:1.06rem;font-weight:700;line-height:1.35;margin:1rem 0 0.7rem;color:var(--ink);}
+.press-meta{display:flex;justify-content:space-between;align-items:baseline;gap:0.8rem;
+  font-family:var(--font-mono);font-size:0.76rem;color:var(--ink-mute);margin-bottom:1rem;}
+.press-card .go{margin-top:auto;display:block;text-align:center;text-decoration:none;
+  font-family:var(--font-mono);font-size:0.82rem;font-weight:600;letter-spacing:0.04em;
+  background:rgba(232,185,59,0.12);border:1px solid rgba(232,185,59,0.4);color:var(--gold,#E8B93B);
+  border-radius:9px;padding:0.7rem 1rem;transition:background .18s ease;}
+.press-card .go:hover{background:rgba(232,185,59,0.22);}
 </style>
 </head>
 <body>
@@ -976,9 +1078,11 @@ footer .built {
             <li><a href="#projects">projects</a></li>
             <li><a href="#career">career</a></li>
             <li><a href="#highlights">highlights</a></li>
+            <li><a href="#awards">awards</a></li>
             <li><a href="#courses">courses</a></li>
             <li><a href="#contact">contact</a></li>
-            <li><a href="index-uz.html" class="lang-toggle">UZ</a></li>
+            <li class="nav-keep"><a href="index-uz.html" class="lang-toggle">UZ</a></li>
+            <li class="nav-keep"><a href="https://bestarorg.uz/" class="lang-toggle" style="margin-left:.2rem;">← BESTARORG</a></li>
         </ul>
     </div>
 </nav>
@@ -991,7 +1095,7 @@ footer .built {
             <div class="eyebrow">Robotics Engineer · ASU '27</div>
             <h1>Asadbek<br>Ruziev<span class="accent">.</span></h1>
             <p class="tagline">
-                I build <em>robots</em>, <em>communities</em>, and the occasional idea that turns out to be a really good one.
+                I build <em>physical AI</em> for agriculture — machines that save farmers time and money, and cut what they spend on chemicals.
                 Currently engineering wheels, motors, and PCBs at Arizona State.
             </p>
             <div class="hero-cta">
@@ -1031,7 +1135,7 @@ footer .built {
                 Born and raised in <strong>Uzbekistan</strong>, I came to ASU's Polytechnic campus to study <strong>Robotics Engineering</strong> after a long road of olympiads, hackathons, and a couple of meetings with the Uzbek President where I learned that <em>showing up</em> is half the work.
             </p>
             <p>
-                Today I lead the wheel-motor subsystem on <strong>CropSCOUT</strong>, an autonomous agricultural rover. I serve as the Treasurer of <strong>Drone Devils</strong>, Vice President of the <strong>Uzbek Students Association</strong>, and I've spent two years as a <strong>USG Senator</strong> drafting bills, holding $125K+ in budgets accountable, and getting things done.
+                Today I lead the wheel-motor subsystem on <strong>CropSCOUT</strong>, an autonomous agricultural rover — <strong>physical AI</strong> built so farmers spend less time, less money, and far less on chemicals. I serve as the Treasurer of <a class="orglink" href="https://asudronedevils.com" target="_blank" rel="noopener"><strong>Drone Devils</strong></a>, Vice President of the <a class="orglink" href="https://joinuzsa.com" target="_blank" rel="noopener"><strong>Uzbek Students Association</strong></a>, and I've spent two years as a <strong>USG Senator</strong> drafting bills, holding $125K+ in budgets accountable, and getting things done.
             </p>
             <p>
                 Outside the lab I make Arduino battle bots, ship apps that hit 1,000+ downloads, run cultural festivals that pull 400+ guests, and try not to break things in the machine shop. <em>Try.</em>
@@ -1157,6 +1261,22 @@ footer .built {
     </div>
 </div>
 
+    <!-- EGR 240 Bicycle Assembly -->
+    <div class="project">
+        <div class="project-info">
+            <div class="date">Spring 2026</div>
+            <div class="org">EGR 240 · SolidWorks Assembly Project</div>
+            <h3>Full Bicycle Assembly in SolidWorks</h3>
+            <ul>
+                <li>Modeled a complete bicycle as a bottom-up <strong>SolidWorks assembly</strong> — 13 unique components covering the frame, front fork, seat tube, seat post clamp, handlebar assembly, saddle, front wheel assembly, rear hub assembly and pedals.</li>
+                <li>Built the drivetrain with a <strong>patterned chain</strong> — two chain groups of 63 links each, 126 links total, mated along a 60.5&nbsp;in closed path.</li>
+                <li>Organised the model under an <strong>EGR240-<em>xxx</em> part-numbering scheme</strong> with reusable sub-assemblies, so a component could be swapped without rebuilding every mate downstream.</li>
+                <li>Produced the full <strong>assembly drawing</strong>: orthographic and isometric views, ballooned callouts, and a 13-item bill of materials.</li>
+            </ul>
+        </div>
+        <div class="project-media"><img src="images/portfolio/bike.png" alt="Bicycle assembly modeled in SolidWorks"></div>
+    </div>
+
     <!-- EPICS Pyrolyzer -->
     <div class="project">
         <div class="project-info">
@@ -1231,27 +1351,31 @@ footer .built {
         <h3 class="career-title">Leadership</h3>
 
         <div class="role">
-            <div class="role-org">Drone Devils <strong>Treasurer & Co-founder</strong></div>
+            <div class="role-org"><a class="orglink" href="https://asudronedevils.com" target="_blank" rel="noopener">Drone Devils</a> <strong>Treasurer & Co-founder</strong></div>
             <div class="role-detail">
                 <h4>Treasurer · ASU Polytechnic</h4>
                 <ul>
                     <li>Co-founded and restructured Drone Devils on the Polytechnic campus.</li>
                     <li>Raised <strong>$4,000+</strong> directly; secured <strong>$15,000 total</strong> in funding via EMAS scholarships and grants.</li>
                     <li>Built the org's competition presence at Sun Devil Smackdown + National Havoc Robot League.</li>
+                    <li>Coordinate drone operations — maintenance, flight scheduling, and safety training for new members.</li>
                 </ul>
+                <a class="social-chip" style="margin-top:0.8rem" href="https://asudronedevils.com" target="_blank" rel="noopener">asudronedevils.com &rarr;</a>
             </div>
             <div class="role-meta">Aug 2024 – Present<br>Mesa, AZ</div>
         </div>
 
         <div class="role">
-            <div class="role-org">Uzbek Students Association (UZSA) <strong>Vice President</strong></div>
+            <div class="role-org"><a class="orglink" href="https://joinuzsa.com" target="_blank" rel="noopener">Uzbek Students Association (UZSA)</a> <strong>Vice President</strong></div>
             <div class="role-detail">
                 <h4>Vice President · ASU</h4>
                 <ul>
                     <li>Lead a <strong>7-person exec board</strong>; raised <strong>$30,000+</strong> for cultural programming.</li>
                     <li>Ran <strong>Navruz 2025 & 2026</strong> festivals (400+ guests each) and the "1001 Nights" event series — <strong>800+ total attendees</strong> across two years.</li>
-                    <li>Built co-events with 7+ other student orgs; mentor newly arrived Uzbek students.</li>
+                    <li>Built co-events with 7+ other student orgs.</li>
+                    <li>Contributed <strong>200+ hours</strong> mentoring incoming students from Uzbekistan through the move to the U.S. — housing, banking, transport, campus resources.</li>
                 </ul>
+                <a class="social-chip" style="margin-top:0.8rem" href="https://joinuzsa.com" target="_blank" rel="noopener">joinuzsa.com &rarr;</a>
             </div>
             <div class="role-meta">Aug 2024 – Present<br>Mesa, AZ</div>
         </div>
@@ -1264,6 +1388,8 @@ footer .built {
                     <li>Elected for <strong>two consecutive terms</strong>; drafted <strong>5 bills</strong> and <strong>4 resolutions</strong>.</li>
                     <li>Oversight on <strong>$125,000+</strong> in student-org budgets as Government Operations Chair.</li>
                     <li>Tangible wins for students: Century Hall vending machine, free Lyft codes, wellness supplies.</li>
+                    <li>Drafted and supported <strong>5 bills and 4 resolutions</strong> aimed at improving student life with data-informed, sustainable solutions.</li>
+                    <li>Evaluated competing funding requests and communicated decisions — including denials — while keeping working relationships intact.</li>
                     <li>Awarded the <strong>"Champion for Change"</strong> — USG Polytechnic's most prestigious leadership honor.</li>
                 </ul>
             </div>
@@ -1277,9 +1403,11 @@ footer .built {
                 <ul>
                     <li>Led a <strong>7-engineer team</strong> in Tashkent across Robot UZ and Future Skills Uzbekistan competitions.</li>
                     <li>Took EyeMed to <strong>$5,000+</strong> at Startup Weekend, met with the President of Uzbekistan and the Minister of Innovations on startup matters.</li>
+                    <li>Built <strong>Adiblar.uz</strong>, an educational platform digitizing Uzbek literature.</li>
+                    <li>Taught robotics and engineering fundamentals to high school students, mentoring newer team members through their first competition builds.</li>
                 </ul>
             </div>
-            <div class="role-meta">Oct 2020 – Jul 2023<br>Tashkent, UZ</div>
+            <div class="role-meta">Oct 2020 – Present<br>Tashkent, UZ</div>
         </div>
     </div>
 
@@ -1293,6 +1421,7 @@ footer .built {
                 <h4>UGTA · EGR 101 — Introduction to Engineering</h4>
                 <ul>
                     <li>Supported Dr. Daniel Frank and <strong>150+ students</strong> across an Arduino-based catapult project and final design challenges.</li>
+                    <li>Coached students through setbacks and frustration, adapting explanations to each student's starting point instead of repeating the same one.</li>
                 </ul>
             </div>
             <div class="role-meta">Sep 2024 – Dec 2024</div>
@@ -1327,15 +1456,69 @@ footer .built {
         <h3 class="career-title">Experience</h3>
 
         <div class="role">
-            <div class="role-org">ASU Enterprise Technology <strong>Technology Consultant/strong></div>
+            <div class="role-org">Pathstrider Mobility <strong>Senior Capstone Engineer · Industry Partner Project</strong></div>
+            <div class="role-detail">
+                <h4>Senior Capstone · EGR 401/402 Professional Design Project</h4>
+                <ul>
+                    <li>Industry-sponsored senior capstone with <strong>Pathstrider Mobility</strong> as the partner company — a two-semester design project run on real requirements, design reviews and deliverables for a client, not a grader.</li>
+                    <li>Work with the Pathstrider team and my capstone team to turn the partner's needs into a specification, then into tested hardware and documentation.</li>
+                    <li>Apply the robotics stack I've built over the last few years — mechanical design in SolidWorks, embedded electronics and control — to a product that has to work outside the lab.</li>
+                </ul>
+            </div>
+            <div class="role-meta">Aug 2026 – Present<br>Mesa, AZ</div>
+        </div>
+
+        <div class="role">
+            <div class="role-org">ASU EcoRobotics Lab <strong>Undergraduate Researcher</strong></div>
+            <div class="role-detail">
+                <h4>Undergraduate Researcher · Robotic Excavation</h4>
+                <ul>
+                    <li>Build the electronics and control stack for a <strong>robotic excavation arm</strong> on a mobile platform — CAN bus communication (Teensy 4.1, TJA1051T/3 transceivers) between motor drivers and stepper motors for coordinated joint control.</li>
+                    <li>Contribute to a sandbox testbed capturing <strong>joint torque and digging-load data</strong>, supporting a closed-loop autonomous soil remediation system that maps contamination, excavates the target area, and re-measures the result.</li>
+                    <li>Work under Prof. Vivek Thangavelu, coordinating with graduate researchers to integrate hardware, firmware, and data collection across the platform.</li>
+                </ul>
+            </div>
+            <div class="role-meta">Jun 2026 – Present<br>Mesa, AZ</div>
+        </div>
+
+        <div class="role">
+            <div class="role-org">INNO Technopark <strong>Robotics Engineering Intern</strong></div>
+            <div class="role-detail">
+                <h4>Robotics Engineering Intern · Tashkent</h4>
+                <ul>
+                    <li>Developed and programmed <strong>mobile robot platforms</strong> for student engineering teams, delivering functional builds on a one-month timeline.</li>
+                    <li>Designed the <strong>RoboWar competition arena</strong> in SolidWorks and produced the full contest documentation package — technical drawings and assembly specifications.</li>
+                    <li>Machined and fabricated mechanical components, coordinating with shop staff to move designs from CAD to finished hardware.</li>
+                </ul>
+            </div>
+            <div class="role-meta">May 2026 – Jun 2026<br>Tashkent, UZ</div>
+        </div>
+
+        <div class="role">
+            <div class="role-org">ASU Enterprise Technology <strong>Technology Consultant</strong></div>
             <div class="role-detail">
                 <h4>Classroom Support · IT</h4>
                 <ul>
-                    <li>On-call support for instructors and classroom AV/IT systems across ASU campuses.</li>
-                    <li>Troubleshooting, on-the-spot calm under pressure.</li>
+                    <li>Front-line technical support for <strong>5,000+ students, faculty and staff</strong> — classroom, Zoom and AV issues, with a high first-contact resolution rate.</li>
+                    <li>Inspect and maintain A/V and computing systems across <strong>100+ classrooms</strong>, keeping daily downtime near zero.</li>
+                    <li>De-escalate time-sensitive problems for users under pressure; train people on university software at whatever level they're starting from.</li>
+                    <li>Work with IT engineers and academic departments to improve support workflows and classroom technology performance.</li>
                 </ul>
             </div>
-            <div class="role-meta">May 2024 – Present<br> Mesa, AZ</div>
+            <div class="role-meta">May 2024 – Present<br>Mesa, AZ</div>
+        </div>
+
+        <div class="role">
+            <div class="role-org">Air Devils <strong>Project Engineer</strong></div>
+            <div class="role-detail">
+                <h4>Project Engineer · AIAA Design/Build/Fly 2024</h4>
+                <ul>
+                    <li>Designed and built RC aircraft for the <strong>28th Annual AIAA Design/Build/Fly</strong> competition — ASU's largest and heaviest aircraft entry.</li>
+                    <li>Worked on a multidisciplinary team against strict competition requirements and performance constraints.</li>
+                    <li>Contributed to the design, testing and iteration cycles that improved aircraft performance and reliability.</li>
+                </ul>
+            </div>
+            <div class="role-meta">Sep 2023 – May 2024<br>Mesa, AZ</div>
         </div>
     </div>
 </section>
@@ -1469,9 +1652,206 @@ footer .built {
             <div class="win-meta">Germany · online finalist</div>
         </div>
         <div class="win">
+            <h5><span class="win-rank">3rd</span>"Ilhom" Award — Adiblar.uz</h5>
+            <div class="win-meta">15,000,000 so'm · 3rd among 105 entries nationwide</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">2nd</span>IT Park × MITC Robotics Contest</h5>
+            <div class="win-meta">Winner certificate + Arduino engineering kit</div>
+        </div>
+        <div class="win">
+            <h5><span class="win-rank">3rd</span>FutureSkills Uzbekistan — Robotics</h5>
+            <div class="win-meta">Waste-sorting robot · IT Park</div>
+        </div>
+        <div class="win">
             <h5><span class="win-rank">✓</span>Udacity Frontend Nanodegree</h5>
             <div class="win-meta">Completed · 2020</div>
         </div>
+    </div>
+
+    <!-- Social archive -->
+    <h3 style="margin-top: 4rem; margin-bottom: 1rem; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;">Timestamped</h3>
+    <p style="color: var(--ink-mute); font-family: var(--font-mono); font-size: 0.88rem;">&gt; nothing reconstructed — posted the day it happened, 2020 to today</p>
+    <div class="social-row">
+      <a class="social-chip" href="https://www.instagram.com/bestarorg/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.93 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>@bestarorg on Instagram &rarr;</a>
+      <a class="social-chip" href="https://www.linkedin.com/in/aruziev/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 2.06-2.06 2.06 2.06 0 0 1-2.06 2.06zM7.12 20.45H3.55V9h3.57zM22.22 0H1.77A1.76 1.76 0 0 0 0 1.73v20.54A1.76 1.76 0 0 0 1.77 24h20.45A1.77 1.77 0 0 0 24 22.27V1.73A1.77 1.77 0 0 0 22.22 0z"/></svg>LinkedIn &rarr;</a>
+      <a class="social-chip" href="https://github.com/mraruziev" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3z"/></svg>GitHub &rarr;</a>
+    </div>
+
+
+    <div class="ig-solo">
+      <div class="ig-item">
+        <div class="cap"><b>A dream that came true</b><span>Flying an airplane &mdash; some things you only get to do once.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cxqc65RJ-dL/" data-instgrm-version="14"></blockquote>
+      </div>
+    </div>
+
+    <div class="ig-grid">
+      <div class="ig-item">
+        <div class="cap"><b>Early days</b><span>Before any of it had a name.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/B8qEhw7H6R6/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="ig-item">
+        <div class="cap"><b>First humanoid robot</b><span>Designed and built in 2020.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/B_z24cdHm-G/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="ig-item">
+        <div class="cap"><b>First sumo robot</b><span>Built at 15 — took 3rd place at Robot-UZ.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CMGs719He80/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="ig-item">
+        <div class="cap"><b>Robot-UZ 2020</b><span>The team win, out of hundreds of entrants nationwide.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CMGtFcDHHx-/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="ig-item">
+        <div class="cap"><b>Adiblar.uz on air</b><span>Interview about the Uzbek literature platform.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CL8yq_OHw4s/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="ig-item">
+        <div class="cap"><b>Hackathons since 2021</b><span>Building on the clock, ever since.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CPXx0m4HD6d/" data-instgrm-version="14"></blockquote>
+      </div>
+      <div class="ig-item">
+        <div class="cap"><b>The team, 2021</b><span>BESTARORG before the robots.</span></div>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CPmyzCuH257/" data-instgrm-version="14"></blockquote>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 3.4rem; margin-bottom: 0.4rem; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;">On video</h3>
+    <p style="color: var(--ink-mute); font-family: var(--font-mono); font-size: 0.88rem;">&gt; four clips that need no explanation</p>
+
+    <div class="media-grid">
+      <div class="media-card">
+        <div class="frame"><iframe src="https://www.youtube.com/embed/unDzZKoSBWA?si=25s_cGSjixtFtbE2&amp;start=6" title="Kun.uz at the Urban.Tech Uzbekistan hackathon" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+        <div class="cap"><b>Urban.Tech Uzbekistan &mdash; Kun.uz report</b><span>Age 16, still at school. A team of four built an app that blocks distracting apps for a while and prompts you to rest your eyes. <a href="https://youtu.be/unDzZKoSBWA?t=6" target="_blank" rel="noopener">watch on YouTube →</a></span></div>
+      </div>
+      <div class="media-card">
+        <div class="frame"><iframe src="https://www.youtube.com/embed/KaoAATowC00?si=H73ohlJ2tobn1VmX" title="Asadbek Ruziev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+        <div class="cap"><b>Asadbek Ruziev</b><span>Filmed by Islomov Baxtiyor. <a href="https://youtu.be/KaoAATowC00" target="_blank" rel="noopener">watch on YouTube →</a></span></div>
+      </div>
+      <div class="media-card">
+        <div class="frame"><iframe src="https://www.youtube.com/embed/gOBiet8Y5_8?si=e28Bikl2sO9zq93I&amp;start=17701" title="CheeseTouch — NHRL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+        <div class="cap"><b>CheeseTouch at NHRL</b><span>Designed and built for ASU's Sun Devil Smackdown, where it took Best Dressed, then went to the National Havoc Robot League. Jumps straight to the match. <a href="https://youtu.be/gOBiet8Y5_8?t=17701" target="_blank" rel="noopener">watch on YouTube →</a></span></div>
+      </div>
+      <div class="media-card">
+        <div class="frame"><iframe src="https://www.youtube.com/embed/5ni-51168_0?si=ugRAEc--FuC96CW3&amp;start=2795" title="One Million Uzbek Coders ceremony" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+        <div class="cap"><b>One Million Uzbek Coders — annual ceremony</b><span>On stage at the national ceremony for the project. Jumps to the segment. <a href="https://www.youtube.com/live/5ni-51168_0?t=2795" target="_blank" rel="noopener">watch on YouTube →</a></span></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 3.4rem; margin-bottom: 0.4rem; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;">On LinkedIn</h3>
+
+    <div class="li-grid">
+      <div class="li-item">
+        <div class="cap"><b>Starting at Arizona State</b><span>El-Yurt Umidi scholar, Robotics Engineering.</span></div>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7096361652920446976?collapsed=1" frameborder="0" allowfullscreen="" loading="lazy" title="Starting at Arizona State"></iframe>
+        <div class="fallback"><a href="https://www.linkedin.com/feed/update/urn:li:share:7096361652920446976/" target="_blank" rel="noopener">open on LinkedIn →</a></div>
+      </div>
+      <div class="li-item">
+        <div class="cap"><b>Recent update</b><span>From the BESTARORG feed.</span></div>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7464386145548820482?collapsed=1" frameborder="0" allowfullscreen="" loading="lazy" title="Recent update"></iframe>
+        <div class="fallback"><a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7464386145548820482/" target="_blank" rel="noopener">open on LinkedIn →</a></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 3.4rem; margin-bottom: 0.4rem; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;">On Telegram</h3>
+    <p style="color: var(--ink-mute); font-family: var(--font-mono); font-size: 0.88rem;">&gt; posted by the channels that were in the room</p>
+
+    <div class="social-embed-grid">
+      <div class="li-item">
+        <div class="cap"><b>Youth and Students Forum</b><span>President Shavkat Mirziyoyev went round the projects on show and talked with the people behind them. Posted by the presidential press secretary.</span></div>
+        <div class="tg-wrap">
+          <script async src="https://telegram.org/js/telegram-widget.js?24"
+                  data-telegram-post="Press_Secretary_Uz/239" data-width="100%"></script>
+        </div>
+        <div class="fallback"><a href="https://t.me/Press_Secretary_Uz/239" target="_blank" rel="noopener">Open in Telegram &rarr;</a></div>
+      </div>
+
+      <div class="li-item">
+        <div class="cap"><b>Youth and Students Forum &mdash; video digest</b><span>The forum on film, from the presidential press secretary.</span></div>
+        <div class="tg-wrap">
+          <script async src="https://telegram.org/js/telegram-widget.js?24"
+                  data-telegram-post="Press_Secretary_Uz/257" data-width="100%"></script>
+        </div>
+        <div class="fallback"><a href="https://t.me/Press_Secretary_Uz/257" target="_blank" rel="noopener">Open in Telegram &rarr;</a></div>
+      </div>
+
+      <div class="li-item">
+        <div class="cap"><b>&ldquo;From No Scholarships to a Full-Ride&rdquo;</b><span>Written for EducationUSA Tashkent &mdash; the first round brought no funded offers, the second one did.</span></div>
+        <div class="tg-wrap">
+          <script async src="https://telegram.org/js/telegram-widget.js?24"
+                  data-telegram-post="EducationUSA_Tashkent/2994" data-width="100%"></script>
+        </div>
+        <div class="fallback"><a href="https://t.me/EducationUSA_Tashkent/2994" target="_blank" rel="noopener">Open in Telegram &rarr;</a></div>
+      </div>
+
+      <div class="li-item">
+        <div class="cap"><b>Second place &mdash; &ldquo;Yangi O&lsquo;zbekiston &mdash; mening nigohimda&rdquo;</b><span>The essay competition the El-Yurt Umidi Foundation ran after the President met its scholars in the US.</span></div>
+        <div class="tg-wrap">
+          <script async src="https://telegram.org/js/telegram-widget.js?24"
+                  data-telegram-post="elyurtumidifoundation/11178" data-width="100%"></script>
+        </div>
+        <div class="fallback"><a href="https://t.me/elyurtumidifoundation/11178" target="_blank" rel="noopener">Open in Telegram &rarr;</a></div>
+      </div>
+
+      <div class="li-item">
+        <div class="cap"><b>One Million Uzbek Coders</b><span>From the project's Telegram channel.</span></div>
+        <div class="tg-wrap">
+          <script async src="https://telegram.org/js/telegram-widget.js?24"
+                  data-telegram-post="millionuzbekcoders/54" data-width="100%"></script>
+        </div>
+        <div class="fallback"><a href="https://t.me/millionuzbekcoders/54" target="_blank" rel="noopener">Open in Telegram &rarr;</a></div>
+      </div>
+
+      <div class="li-item">
+        <div class="cap"><b>Third place &mdash; &ldquo;Ilhom&rdquo; national award, 2023</b><span>For Adiblar.uz: Navoiy, Bobur and Qodiriy in four languages. Third among 105 entries.</span></div>
+        <div class="fallback"><a href="https://www.youtube.com/watch?v=P5fmEaOS9sQ&amp;list=PL_8deBhB2hsMFEKC07n6TfplY-lh8SHxD" target="_blank" rel="noopener">Watch the ceremony &rarr;</a></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 3.4rem; margin-bottom: 0.4rem; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;">In the press</h3>
+    <p style="color: var(--ink-mute); font-family: var(--font-mono); font-size: 0.88rem;">&gt; written about by other people</p>
+
+    <div class="press-grid">
+      <div class="press-card">
+        <h4>Protecting eyesight, watching over pupils &mdash; the apps young Uzbeks are building</h4>
+        <div class="press-meta"><span>Kun.uz</span><span>May 2021</span></div>
+        <a class="go" href="https://kun.uz/news/2021/05/21/koz-nurini-asrash-maktabda-oquvchilar-nazorati-ozbekiston-yoshlari-yaratayotgan-dasturlar" target="_blank" rel="noopener">Read the story ↗</a>
+      </div>
+      <div class="press-card">
+        <h4>Full grants to four US universities &mdash; the story of a 17-year-old robotics specialist</h4>
+        <div class="press-meta"><span>Daryo.uz</span><span>Mar 2023</span></div>
+        <a class="go" href="https://daryo.uz/2023/03/14/aqshning-4-ta-universitetiga-toliq-grant-yutganman-17-yoshli-robototexnika-mutaxassisi-hikoyasi/" target="_blank" rel="noopener">Read the story ↗</a>
+      </div>
+      <div class="press-card">
+        <h4>The story of a 17-year-old robotics specialist</h4>
+        <div class="press-meta"><span>IT Park Uzbekistan</span><span>Mar 2023</span></div>
+        <a class="go" href="https://www.it-park.uz/en/itpark/news/the-story-of-a-17-year-old-robotics-specialist" target="_blank" rel="noopener">Read the story ↗</a>
+      </div>
+      <div class="press-card">
+        <h4>From a passion for robotics to a 100% scholarship at Arizona State University</h4>
+        <div class="press-meta"><span>Borderless</span><span></span></div>
+        <a class="go" href="https://borderless.so/stories/from-a-passion-for-robotics-to-a-100-scholarship-for-a-bsc-robotics-engineering-degree-at-arizona-state-university-the-1-university-for-innovation" target="_blank" rel="noopener">Read the story ↗</a>
+      </div>
+      <div class="press-card">
+        <h4>One Million Uzbek Coders — contest results announced</h4>
+        <div class="press-meta"><span>IT Park Uzbekistan</span><span>Feb 2021</span></div>
+        <a class="go" href="https://www.it-park.uz/en/itpark/news/we-announce-the-results-of-the-contests-for-teachers-and-active-participants-of-the-one-million-uzbek-coders-project" target="_blank" rel="noopener">Read the story ↗</a>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 3.4rem; margin-bottom: 0.4rem; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;">Elsewhere</h3>
+    <p style="color: var(--ink-mute); font-family: var(--font-mono); font-size: 0.88rem;">&gt; labs, orgs, and the engineering portfolio</p>
+    <div class="social-row">
+      <a class="social-chip" href="https://ecoroboticslab.com/" target="_blank" rel="noopener">EcoRobotics Lab &rarr;</a>
+      <a class="social-chip" href="https://mraruziev.github.io/portfolio" target="_blank" rel="noopener">Engineering portfolio &rarr;</a>
+      <a class="social-chip" href="https://sundevilcentral.eoss.asu.edu/dronedevils/home/" target="_blank" rel="noopener">Drone Devils · Sun Devil Central &rarr;</a>
+      <a class="social-chip" href="https://joinuzsa.com" target="_blank" rel="noopener">Uzbek Students Association · joinuzsa.com &rarr;</a>
+      <a class="social-chip" href="https://asudronedevils.com" target="_blank" rel="noopener">Drone Devils · asudronedevils.com &rarr;</a>
+      <a class="social-chip" href="https://bestarorg.uz" target="_blank" rel="noopener">BESTARORG · bestarorg.uz &rarr;</a>
+    </div>
+
+    <div style="display:none">
     </div>
 </section>
 
@@ -1545,6 +1925,24 @@ footer .built {
     <div class="courses-divider">Robotics &amp; embedded · the core</div>
     <div class="courses-grid">
 
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">EGR 494</span>
+            </div>
+            <h4 class="course-title">Robotic Systems Integration</h4>
+            <p class="course-desc">Industrial robot integration — PLC control logic and ladder programming, and teaching FANUC arms to run a work cell end to end.</p>
+            <span class="course-tag">industrial robotics</span>
+        </div>
+
+        <div class="course-card">
+            <div class="course-head">
+                <span class="course-code">RAS 585</span>
+            </div>
+            <h4 class="course-title">Machine Learning &amp; Artificial Intelligence</h4>
+            <p class="course-desc">Graduate-level machine learning and AI — training, evaluation, and deciding where learning actually belongs in a robot stack. The model half of the physical AI I build.</p>
+            <span class="course-tag">graduate level</span>
+        </div>
+
         <div class="course-card starred">
             <div class="course-head">
                 <span class="course-code">EGR 456</span>
@@ -1604,6 +2002,15 @@ footer .built {
 
     <div class="courses-divider">Design &amp; making</div>
     <div class="courses-grid">
+
+        <div class="course-card starred">
+            <div class="course-head">
+                <span class="course-code">EGR 401</span>
+            </div>
+            <h4 class="course-title">Professional Design Project I</h4>
+            <p class="course-desc">Senior capstone — a full design project run like industry: requirements, design reviews, and hardware that has to work for a client, not just a grader.</p>
+            <span class="course-tag">capstone</span>
+        </div>
 
         <div class="course-card starred">
             <div class="course-head">
@@ -1743,5 +2150,6 @@ footer .built {
     © 2026 Asadbek Ruziev <span class="built">·</span> built with maroon, gold, and a lot of coffee. Inspired by <a href="https://shauryamanglik.com/" target="_blank" rel="noopener noreferrer">Shaurya</a> and <a href="https://kdashora.github.io/" target="_blank" rel="noopener noreferrer">Kushagra</a>, edited with Claude.
 </footer>
 
+<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
