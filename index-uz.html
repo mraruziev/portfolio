@@ -1041,6 +1041,33 @@ footer .built {
   background:rgba(232,185,59,0.12);border:1px solid rgba(232,185,59,0.4);color:var(--gold,#E8B93B);
   border-radius:9px;padding:0.7rem 1rem;transition:background .18s ease;}
 .press-card .go:hover{background:rgba(232,185,59,0.22);}
+
+/* ---------- recent news ---------- */
+/* The newest things, right under the hero. The ASUS post is the tall one, so it
+   gets a column to itself and the article plus the shorter post stack beside it.
+   On a phone everything falls into one column, newest first. The LinkedIn
+   heights are the ones LinkedIn's own embed code asks for at ~500px wide. */
+.news-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  grid-template-areas:"story asus" "post asus";gap:1.4rem;align-items:start;}
+.news-story{grid-area:story;}
+.news-asus{grid-area:asus;}
+.news-post{grid-area:post;}
+@media(max-width:820px){.news-grid{grid-template-columns:1fr;grid-template-areas:"story" "asus" "post";}}
+.news-story{background:rgba(255,255,255,0.03);border:1px solid rgba(232,185,59,0.34);border-radius:14px;
+  padding:1rem;display:flex;flex-direction:column;}
+.news-story img{width:100%;aspect-ratio:1376/768;object-fit:cover;border-radius:9px;display:block;background:var(--bg-card);}
+.news-kicker{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;margin-top:1rem;
+  font-family:var(--font-mono);font-size:0.74rem;color:var(--ink-mute);letter-spacing:0.04em;}
+.news-kicker .new{color:var(--bg);background:var(--gold);border-radius:999px;padding:0.12rem 0.55rem;
+  font-weight:700;letter-spacing:0.08em;text-transform:uppercase;font-size:0.66rem;}
+.news-story h3{font-family:var(--font-display);font-size:1.4rem;font-weight:700;line-height:1.25;
+  letter-spacing:-0.01em;margin:0.7rem 0 0.6rem;color:var(--ink);}
+.news-story p{color:var(--ink-soft);font-size:0.95rem;line-height:1.6;margin:0 0 1.1rem;}
+.news-story .go{margin-top:auto;display:block;text-align:center;text-decoration:none;
+  font-family:var(--font-mono);font-size:0.82rem;font-weight:600;letter-spacing:0.04em;
+  background:rgba(232,185,59,0.12);border:1px solid rgba(232,185,59,0.4);color:var(--gold,#E8B93B);
+  border-radius:9px;padding:0.7rem 1rem;transition:background .18s ease;}
+.news-story .go:hover{background:rgba(232,185,59,0.22);}
 </style>
 </head>
 <body>
@@ -1090,6 +1117,34 @@ footer .built {
         </div>
     </div>
 </header>
+
+
+<!-- =========================== RECENT NEWS =========================== -->
+<section class="s" id="news">
+    <div class="s-eyebrow">So'nggi yangiliklar</div>
+    <h2 class="s-title">issiq-issiq yangiliklar</h2>
+    <p class="s-sub">CropSCOUT, HackHarvard 2026 va undan keyin bo'lganlar</p>
+
+    <div class="news-grid">
+      <article class="news-story">
+        <img src="https://news.engineering.asu.edu/wp-content/uploads/2026/11/HarvardHack-sustainability.jpg" alt="ASU'dagi CropSCOUT jamoasi robot va virtual issiqxona bilan" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+        <div class="news-kicker"><span class="new">new</span><span>ASU Engineering News · 25-noyabr, 2026</span></div>
+        <h3>ASU students win at HackHarvard for second consecutive year</h3>
+        <p>CropSCOUT HackHarvard 2026'dagi ASUS Sustainability: Save the Earth Challenge tanlovida birinchi o'rinni egalladi. Bu robot pomidor ko'chatlarini birma-bir tekshiradi, kasallikni sun'iy intellekt yordamida aniqlaydi va dorini faqat kerakli joyga sepadi. G'oya bobomning dalasida ko'rgan o'simlik kasalliklaridan boshlangan.</p>
+        <a class="go" href="https://news.engineering.asu.edu/2026/11/asu-students-win-at-hackharvard-for-second-consecutive-year/" target="_blank" rel="noopener">Maqolani o'qish ↗</a>
+      </article>
+      <div class="li-item news-asus">
+        <div class="cap"><b>ASUS Education CropSCOUT jamoasi haqida</b><span>Biz g'olib bo'lgan barqarorlik tanlovining homiysi ASUS e'lon qildi.</span></div>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7530718947067805697" style="height:1507px" frameborder="0" allowfullscreen="" loading="lazy" title="ASUS Education CropSCOUT jamoasi haqida"></iframe>
+        <div class="fallback"><a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7530718947067805697/" target="_blank" rel="noopener">LinkedIn'da ochish →</a></div>
+      </div>
+      <div class="li-item news-post">
+        <div class="cap"><b>O'quv loyihasidan $17,500 gacha</b><span>CropSCOUT shu yil: o'quv loyihasi, xakatonda yangi yo'nalish, HackHarvard'da 1-o'rin va ilk moliyalashtirish.</span></div>
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7527835958885552128" style="height:943px" frameborder="0" allowfullscreen="" loading="lazy" title="O'quv loyihasidan $17,500 gacha"></iframe>
+        <div class="fallback"><a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7527835958885552128/" target="_blank" rel="noopener">LinkedIn'da ochish →</a></div>
+      </div>
+    </div>
+</section>
 
 
 <!-- =========================== ABOUT =========================== -->
@@ -1710,6 +1765,12 @@ footer .built {
     <p style="color: var(--ink-mute); font-family: var(--font-mono); font-size: 0.88rem;">&gt; boshqalar yozgan maqolalar</p>
 
     <div class="press-grid">
+      <div class="press-card">
+        <img src="https://news.engineering.asu.edu/wp-content/uploads/2026/11/HarvardHack-sustainability.jpg" alt="ASU'dagi CropSCOUT jamoasi robot va virtual issiqxona bilan" loading="lazy" referrerpolicy="no-referrer">
+        <h4>ASU students win at HackHarvard for second consecutive year</h4>
+        <div class="press-meta"><span>ASU Engineering News</span><span>Nov 2026</span></div>
+        <a class="go" href="https://news.engineering.asu.edu/2026/11/asu-students-win-at-hackharvard-for-second-consecutive-year/" target="_blank" rel="noopener">Maqolani o'qish ↗</a>
+      </div>
       <div class="press-card">
         <h4>The story of a 17-year-old robotics specialist</h4>
         <div class="press-meta"><span>IT Park Uzbekistan</span><span>Mar 2023</span></div>
